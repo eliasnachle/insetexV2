@@ -1,4 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css';
+import { vars } from '../../styles/theme/theme.css'
 
 export const headerContainer = style({
   width: '100%',
@@ -7,7 +8,7 @@ export const headerContainer = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  boxShadow: 'inset 0 -1px 0 #f3f3f4'
+  boxShadow: `inset 0 -1px 0 ${vars.color.headerShadow}`,
 });
 
 export const headerLogo = style({
@@ -33,6 +34,9 @@ globalStyle(`${headerContainer} > nav > ul`, {
 });
 
 globalStyle(`${headerContainer} > nav > ul > li`, {
+  display: 'flex',
+  alignItems: 'center',
   fontSize: '16px',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  height: '80px'
 });
