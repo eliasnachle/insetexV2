@@ -3,7 +3,6 @@ import {
   serviceItensContainer,
   serviceItem,
 } from "./service.css";
-import CockroachSvg from "../../../../../public/cockroachSvg.svg";
 import serviceMap from "./serviceMap";
 
 export default function Service() {

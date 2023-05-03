@@ -2,7 +2,7 @@ import Button from "../../button/button"
 import { heroContainer } from "./hero.css"
 
 export default function hero() {
-  const btnData = {text: 'FAÇA UM ORÇAMENTO'}
+  const btnData = {text: 'Faça um orçamento'}
 
   return (
     <section className={heroContainer}>

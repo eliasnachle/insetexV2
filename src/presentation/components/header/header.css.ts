@@ -2,6 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css';
 import { vars } from '../../styles/theme/theme.css'
 
 export const headerContainer = style({
+  fontFamily: 'DM Sans',
   width: '100%',
   height: '80px',
   padding: '.5rem 1em',

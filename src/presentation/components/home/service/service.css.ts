@@ -54,8 +54,9 @@ globalStyle(`${serviceItem} > h2`, {
 });
 
 globalStyle(`${serviceItem} > p`, {
+    fontFamily: 'DM Sans',
     color: vars.color.lightBlueText,
-    fontSize: '15px',
+    fontSize: '14px',
     fontWeight: 300,
     lineHeight: '25px',
 });
