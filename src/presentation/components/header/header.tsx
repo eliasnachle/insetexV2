@@ -2,7 +2,7 @@ import { useState } from "react";
 import { headerContainer, headerLogo } from "./header.css";
 import headerMap from "./headerMap";
 import Dropdown from "./dropdown/dropdown";
-import Logo from "../../../../public/logo.svg";
+import Logo from "/public/logo.svg";
 import { RiArrowDownSLine } from "@react-icons/all-files/ri/RiArrowDownSLine";
 
 export default function Header() {
