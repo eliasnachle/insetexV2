@@ -20,7 +20,7 @@ export default function MobileNavbar() {
             return (
               <div key={i}>
                 <motion.span onTap={toggleOn}>
-                  {it.label} <RiArrowDownSLine />
+                  {it.label} <RiArrowDownSLine style={{ transform: toggleHeight === 0 ? 'rotate(0deg)' : 'rotate(180deg)' }} />
                 </motion.span>
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div

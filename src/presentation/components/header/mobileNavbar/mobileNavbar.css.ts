@@ -18,6 +18,7 @@ export const navbar = style({
   left: 0,
   padding: "1em 1.5em",
   fontFamily: "DM Sans",
+  zIndex: '100'
 });
 
 globalStyle(`${navbar} > ul`, {

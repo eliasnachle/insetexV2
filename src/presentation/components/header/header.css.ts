@@ -11,11 +11,7 @@ export const headerContainer = style({
   placeItems: 'center',
   background: vars.color.backgroundLight,
   position: 'fixed',
-  "@media": {
-    "screen and (max-width: 720px)": {
-      // display: 'flex'
-    },
-  }
+  zIndex: '100'
 });
 
 export const headerContent = style({

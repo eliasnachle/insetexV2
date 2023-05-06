@@ -2,6 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "../../../styles/theme/theme.css";
 
 export const AboutContainer = style({
+  zIndex: '10',
   fontFamily: "DM Sans",
   backgroundAttachment: "fixed",
   backgroundImage: "url(/home/control_pest_mall.jpg)",
