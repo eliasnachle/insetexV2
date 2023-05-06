@@ -19,7 +19,7 @@ globalStyle(`${heroContainer} > div`, {
 });
 
 globalStyle(`${heroContainer} > div > h1`, {
-    fontSize: '6em',
+    fontSize: 'clamp(3em, 5vw, 6em)',
     fontWeight: 800,
     color: vars.color.lightText,
     paddingBottom: '1rem'

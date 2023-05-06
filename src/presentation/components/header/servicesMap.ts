@@ -1,4 +1,4 @@
-const dropdownMap = [
+const serviceMap = [
     {
         name: 'desinsetizacao',
         label: 'Desinsetização'
@@ -25,4 +25,4 @@ const dropdownMap = [
     }
 ]
 
-export default dropdownMap;
+export default serviceMap;

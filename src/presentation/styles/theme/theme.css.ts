@@ -13,7 +13,9 @@ export const vars = createGlobalTheme(':root', {
     backgroundLight: '#fff',
     backgroundDark: '#222',
     backgroundBlack: '#111',
-    icon: '#30aded'
+    backgroundGray: '#eee',
+    icon: '#30aded',
+    darkBorder: '#333'
   },
   sizes: {
     desktopWidth: '1200px'

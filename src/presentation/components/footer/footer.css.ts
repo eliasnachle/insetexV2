@@ -29,28 +29,6 @@ globalStyle(`${footerGrid} > article > svg`, {
     width: '200px'
 });
 
-export const FooterContianerItens = style({
-    display: 'flex',
-    justifyContent: 'space-between',    
-});
-
-export const footerItem = style({
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '.75rem',    
-});
-
-globalStyle(`${footerItem} > h2`, {    
-    fontSize: '14px',
-    fontWeight: 500
-});
-
-globalStyle(`${footerItem} > span`, {
-    fontSize: '14px',
-    fontWeight: 300,
-    color: vars.color.grayText
-});
-
 export const footerCopyrigth = style({    
     padding: '20px 0',
     fontSize: '14px',

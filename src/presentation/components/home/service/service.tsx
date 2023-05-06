@@ -4,10 +4,28 @@ import {
   serviceItem,
 } from "./service.css";
 import serviceMap from "./serviceMap";
+import { easeInOut,  motion } from "framer-motion"
 
 export default function Service() {
+  const serviceAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: easeInOut,
+        duration: 0.75,
+      },
+    }
+  }
+
   return (
-    <section className={serviceContainer}>
+    <motion.section 
+    variants={serviceAnimation} 
+    initial="hidden" 
+    animate="show"
+    className={serviceContainer}
+    >
       <article>
         <h1>Porque a Insetex é a melhor no combate de pragas?</h1>
         <div className={serviceItensContainer}>
@@ -22,6 +40,6 @@ export default function Service() {
           })}
         </div>
       </article>
-    </section>
+    </motion.section>
   );
 }

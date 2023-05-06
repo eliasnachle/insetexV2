@@ -3,11 +3,9 @@ import {
   footerContainer,
   footerContent,
   footerCopyrigth,
-  footerItem,
   footerGrid,
-  FooterContianerItens,
 } from "./footer.css";
-import { services, contact, about } from "./footerMap";
+import FooterItens from "./footerItens/footerItens";
 
 export default function Footer() {
   return (
@@ -17,30 +15,7 @@ export default function Footer() {
           <article>
             <Logo />
           </article>
-          <div className={footerItem}>
-            <h2>Serviços</h2>
-            {services.map((it, i) => {
-              return <span key={i}>{it.name}</span>;
-            })}
-          </div>
-          <div className={footerItem}>
-            <h2>Serviços</h2>
-            {services.map((it, i) => {
-              return <span key={i}>{it.name}</span>;
-            })}
-          </div>
-          <div className={footerItem}>
-            <h2>Contato</h2>
-            {contact.map((it, i) => {
-              return <span key={i}>{it.name}</span>;
-            })}
-          </div>
-          <div className={footerItem}>
-            <h2>Sobre nós</h2>
-            {about.map((it, i) => {
-              return <span key={i}>{it.name}</span>;
-            })}
-          </div>
+          <FooterItens />
         </div>
         <div className={footerCopyrigth}>
           <span>Copyright © 2023 Insetex Controle de Pragas.</span>
