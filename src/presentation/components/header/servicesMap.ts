@@ -1,27 +1,33 @@
 const serviceMap = [
     {
         name: 'desinsetizacao',
-        label: 'Desinsetização'
+        label: 'Desinsetização',
+        url: '/servicos/desinsetizacao'
     },
     {
         name: 'desratizacao',
-        label: 'Desratização'
+        label: 'Desratização',
+        url: '/servicos/desratizacao'
     },
     {
         name: 'descupinizacao',
-        label: 'Descupinização'
+        label: 'Descupinização',
+        url: '/servicos/descupinizacao'
     },
     {
         name: 'desentupimento',
-        label: 'Desentupimento'
+        label: 'Desentupimento',
+        url: '/servicos/desentupimento'
     },
     {
         name: 'limpeza',
-        label: 'Limpeza De Caixas D’ Água'
+        label: 'Limpeza De Caixas D’ Água',
+        url: '/servicos/limpeza-de-caixas-d-agua'
     },
     {
         name: 'sanitizacao',
-        label: 'Sanitização'
+        label: 'Sanitização',
+        url: '/servicos/sanitizacao'
     }
 ]
 

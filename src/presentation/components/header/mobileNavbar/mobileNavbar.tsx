@@ -4,6 +4,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import MobileDropdown from "./mobileDropdown/mobileDropdown";
 import { useState } from "react";
 import { motion, easeOut, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function MobileNavbar() {
   const [toggleHeight, setToggleDirection] = useState(0);
@@ -33,7 +34,11 @@ export default function MobileNavbar() {
               </div>
             );
           }
-          return <li key={i}>{it.label}</li>;
+          return (
+            <li key={i}>
+              <Link href={it.url}>{it.label}</Link>
+            </li>
+          );
         })}
       </ul>
     </nav>

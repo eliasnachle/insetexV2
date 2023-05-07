@@ -12,6 +12,7 @@ import Logo from "/public/logo.svg";
 import { RiArrowDownSLine } from "@react-icons/all-files/ri/RiArrowDownSLine";
 import { MdMenu } from "react-icons/md";
 import MobileNavbar from "./mobileNavbar/mobileNavbar";
+import Link from "next/link";
 
 export default function Header() {
   const [isDropdown, setIsDropdown] = useState(false);
@@ -30,7 +31,9 @@ export default function Header() {
       <header className={headerContainer}>
         <div className={headerContent}>
           <div className={headerLogo}>
-            <Logo />
+            <Link href='/'>
+              <Logo />
+            </Link>            
           </div>
           <nav>
             <ul>
@@ -42,17 +45,27 @@ export default function Header() {
                       onMouseEnter={onMouseEnter}
                       onMouseLeave={onMouseLeave}
                     >
-                      {isDropdown && <Dropdown />}
+                      {isDropdown && <Dropdown />}                      
                       {it.label} <RiArrowDownSLine />
                     </li>
                   );
                 } else {
-                  return <li key={i}>{it.label}</li>;
+                  return (
+                    <li key={i}>
+                      <Link href={it.url}>
+                        {it.label}
+                      </Link>
+                    </li>
+                  );
                 }
               })}
             </ul>
           </nav>
-          <button className={headerBtn}>Entrar</button>
+          <button className={headerBtn}>
+            <Link href='/login'>
+              Entrar
+            </Link>
+          </button>
           <MdMenu className={headerBurger} onClick={() => setIsMobile(!isMobile)} />
         </div>
         {isMobile && <MobileNavbar />}        

@@ -1,13 +1,13 @@
-import { btnStyle } from "./button.css"
+import Link from "next/link";
+import { btnStyle } from "./button.css";
 
-type BtnProps = {
-    text: String
-}
+interface BtnProps {
+  text: string,
+  url: string,
+};
 
-export default function Button({text} : BtnProps ) {
-    return(
-        <button className={btnStyle}>
-            {text}
-        </button>
-    )
+export default function Button({text, url} : BtnProps) {
+  return (
+    <Link className={btnStyle} href={url}>{text}</Link>
+  );
 }

@@ -38,10 +38,14 @@ globalStyle(`${dropdownContainer} > ul`, {
 
 globalStyle(`${dropdownContainer} > ul > li`, {
   transition: 'all ease-in 100ms',
-  color: vars.color.lightText,
   cursor: "pointer",
   fontSize: "14px",
   fontWeight: 600,
+});
+
+globalStyle(`${dropdownContainer} > ul > li > a`, {
+  textDecoration: 'none',
+  color: vars.color.lightText,
 });
 
 globalStyle(`${dropdownContainer} > ul > li:hover`, {

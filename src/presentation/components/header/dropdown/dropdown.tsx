@@ -1,6 +1,7 @@
 import serviceMap from "../servicesMap";
 import { dropdownContainer, chevron } from "./dropdown.css";
 import { easeOut, motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Dropdown() {
     const heroAnimation = {
@@ -28,7 +29,11 @@ export default function Dropdown() {
       <div className={chevron}></div>
       <ul>
         {serviceMap.map((it, i) => {
-          return <li key={i}>{it.label}</li>;
+          return (
+          <li key={i}>
+            <Link href={it.url}>{it.label}</Link>
+          </li>
+          );
         })}
       </ul>
     </motion.nav>

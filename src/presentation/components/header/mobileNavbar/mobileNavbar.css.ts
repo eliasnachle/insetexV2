@@ -30,7 +30,6 @@ globalStyle(`${navbar} > ul > li`, {
   paddingTop: ".5rem",
   height: "45px",
   fontSize: "16px",
-  color: vars.color.grayText,
   borderBottom: `1px solid ${vars.color.darkBorder}`,
   cursor: "pointer",
   display: "flex",
@@ -40,6 +39,11 @@ globalStyle(`${navbar} > ul > li`, {
 globalStyle(`${navbar} > ul > li:hover`, {
   opacity: 0.85,
   color: vars.color.lightText,
+});
+
+globalStyle(`${navbar} > ul > li > a`, {
+  color: vars.color.grayText,
+  textDecoration: 'none'
 });
 
 globalStyle(`${navbar} > ul > div`, {

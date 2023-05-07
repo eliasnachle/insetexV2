@@ -8,10 +8,14 @@ export const dropdown = style({
   gridGap: '.75rem'
 });
 
-globalStyle(`${dropdown} > li`, {
-  color: vars.color.grayText,
+globalStyle(`${dropdown} > li`, {  
   fontSize: "16px",
   cursor: 'pointer'
+});
+
+globalStyle(`${dropdown} > li > a`, {
+  color: vars.color.grayText,
+  textDecoration: 'none'
 });
 
 

@@ -9,6 +9,7 @@ export const vars = createGlobalTheme(':root', {
     blueText: '#01293d',
     lightBlueText: '#01293dc9',
     lightText: '#fff',
+    blackText: '#000',
     grayText: '#999',
     backgroundLight: '#fff',
     backgroundDark: '#222',

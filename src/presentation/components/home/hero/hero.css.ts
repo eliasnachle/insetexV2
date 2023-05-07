@@ -27,5 +27,5 @@ globalStyle(`${heroContainer} > div > h1`, {
   fontSize: "clamp(3em, 5vw, 6em)",
   fontWeight: 800,
   color: vars.color.lightText,
-  paddingBottom: "1rem",
+  paddingBottom: "2rem",
 });

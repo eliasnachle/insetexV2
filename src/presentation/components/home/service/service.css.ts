@@ -42,10 +42,11 @@ globalStyle(`${serviceContainer} > article`, {
 
 globalStyle(`${serviceContainer} > article > h1`, {
   color: vars.color.blueText,
-  fontSize: "clamp(1em, 2.5vw, 3em)",
+  fontSize: "clamp(2.5em, 3vw, 3.5em)",
   fontWeight: 700,
   textAlign: "center",
-  maxWidth: "650px",
+  maxWidth: "800px",
+  width: "100%"
 });
 
 export const serviceItem = style({

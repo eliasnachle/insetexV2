@@ -26,7 +26,7 @@ export const headerLogo = style({
   display: 'block'
 });
 
-globalStyle(`${headerLogo} > svg`, {
+globalStyle(`${headerLogo} > a > svg`, {
   width: '5em',
   fontSize: '2em'
 });
@@ -56,6 +56,11 @@ globalStyle(`${headerContent} > nav > ul > li`, {
   height: '65px'
 });
 
+globalStyle(`${headerContent} > nav > ul > li > a`, {
+  textDecoration: 'none',
+  color: vars.color.blackText
+});
+
 export const headerBtn = style({
   fontFamily: 'DM Sans',
   transition: 'all ease-in 200ms',
@@ -78,13 +83,18 @@ export const headerBtn = style({
   }
 });
 
-export const headerBurger = style({
+globalStyle(`${headerBtn} > a`, {
+  textDecoration: 'none',
+  color: vars.color.lightText
+});
+
+export const headerBurger = style({  
   display: 'none',
   fontSize: '2em',  
   background: vars.color.backgroundGray,
   padding: '.25rem',
   borderRadius: '5px',
-  cursor: 'pointer',
+  cursor: 'pointer',  
   "@media": {
     "screen and (max-width: 720px)": {
       display: 'block'
