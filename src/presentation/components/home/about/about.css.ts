@@ -3,7 +3,7 @@ import { vars } from "../../../styles/theme/theme.css";
 
 export const AboutContainer = style({
   zIndex: '10',
-  fontFamily: "DM Sans",
+  fontFamily: vars.fonts.DMSans,
   backgroundAttachment: "fixed",
   backgroundImage: "url(/home/control_pest_mall.jpg)",
   backgroundPosition: 0,

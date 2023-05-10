@@ -5,3 +5,10 @@ globalStyle('html, body, *', {
   padding: 0,
   boxSizing: 'border-box'
 });
+
+globalStyle('main', {
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
+  justifyContent: 'space-between'
+});

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Contact() {
+export default function orcamento() {
   return (
     <div>
-      <h1>Contato</h1>
+      <h1>Orcamento</h1>
     </div>
   )
 }

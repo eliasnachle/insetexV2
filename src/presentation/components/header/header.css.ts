@@ -2,7 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css';
 import { vars } from '../../styles/theme/theme.css'
 
 export const headerContainer = style({
-  fontFamily: 'DM Sans',
+  fontFamily: vars.fonts.DMSans,
   width: '100%',
   height: '80px',
   padding: '.5rem 1em',  
@@ -62,7 +62,7 @@ globalStyle(`${headerContent} > nav > ul > li > a`, {
 });
 
 export const headerBtn = style({
-  fontFamily: 'DM Sans',
+  fontFamily: vars.fonts.DMSans,
   transition: 'all ease-in 200ms',
   background: vars.color.darkBtn,
   color: vars.color.lightText,

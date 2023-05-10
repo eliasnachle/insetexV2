@@ -20,5 +20,8 @@ export const vars = createGlobalTheme(':root', {
   },
   sizes: {
     desktopWidth: '1200px'
+  },
+  fonts: {
+    DMSans: 'DM Sans, sans-serif'
   }
 });

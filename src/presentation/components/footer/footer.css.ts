@@ -2,7 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "../../styles/theme/theme.css";
 
 export const footerContainer = style({
-  fontFamily: "DM Sans",
+  fontFamily: vars.fonts.DMSans,
   background: vars.color.backgroundBlack,
   color: vars.color.lightText,
   display: "grid",

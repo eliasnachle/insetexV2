@@ -17,7 +17,7 @@ export const navbar = style({
   top: "80px",
   left: 0,
   padding: "1em 1.5em",
-  fontFamily: "DM Sans",
+  fontFamily: vars.fonts.DMSans,
   zIndex: '100'
 });
 

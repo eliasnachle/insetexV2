@@ -84,7 +84,7 @@ globalStyle(`${serviceItem} > h2`, {
 });
 
 globalStyle(`${serviceItem} > p`, {
-  fontFamily: "DM Sans",
+  fontFamily: vars.fonts.DMSans,
   color: vars.color.lightBlueText,
   fontSize: "14px",
   fontWeight: 300,

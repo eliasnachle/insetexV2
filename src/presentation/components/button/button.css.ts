@@ -3,7 +3,7 @@ import { vars } from "../../styles/theme/theme.css";
 
 export const btnStyle = style({
   textDecoration: "none",
-  fontFamily: "DM Sans",
+  fontFamily: vars.fonts.DMSans,
   transition: "all ease-in 200ms",
   background: vars.color.backgroundLight,
   color: vars.color.lightBlueText,

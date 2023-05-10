@@ -2,7 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "../../../styles/theme/theme.css";
 
 export const chevron = style({
-  fontFamily: "DM Sans",
+  fontFamily: vars.fonts.DMSans,
   zIndex: "100",
   position: "absolute",
   marginTop: "-30px",
