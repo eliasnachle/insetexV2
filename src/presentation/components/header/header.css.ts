@@ -61,6 +61,10 @@ globalStyle(`${headerContent} > nav > ul > li > a`, {
   color: vars.color.blackText
 });
 
+globalStyle(`${headerContent} > nav > ul > li > a:hover`, {
+  opacity: 0.8
+});
+
 export const headerBtn = style({
   fontFamily: vars.fonts.DMSans,
   transition: 'all ease-in 200ms',

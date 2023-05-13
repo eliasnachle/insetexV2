@@ -7,11 +7,9 @@ import Service from "@/presentation/components/home/service/service";
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <Service />
       <About />
-      <Footer />
     </>
   )
 }
