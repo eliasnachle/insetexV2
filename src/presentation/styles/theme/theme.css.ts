@@ -11,6 +11,7 @@ export const vars = createGlobalTheme(':root', {
     lightText: '#fff',
     blackText: '#000',
     grayText: '#999',
+    lightBlueGrayText: '#618496',
     backgroundLight: '#fff',
     backgroundDark: '#222',
     backgroundBlack: '#111',

@@ -1,5 +1,5 @@
 import { TbPhoneCall, TbBrandWhatsapp } from "react-icons/tb";
-import { RiMapPinLine } from "react-icons/ri";
+import { HiOutlineMail } from "react-icons/hi";
 
 export const contactListMap = [
   {
@@ -15,9 +15,9 @@ export const contactListMap = [
     value: "Fale agora!",
   },
   {
-    figure: <RiMapPinLine />,
-    title: "Endereco",
-    description: "",
-    value: "Av.Rio Branco, 712 - Campos Elísios",
+    figure: <HiOutlineMail />,
+    title: "E-mail",
+    description: "Fique à vontade para nos contatar através do e-mail para obter suporte e informações adicionais.",
+    value: "contato@insetex.com.br",
   },
 ];
