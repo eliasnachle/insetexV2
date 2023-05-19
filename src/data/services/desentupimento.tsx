@@ -1,5 +1,6 @@
 import desentupimento from "/public/services/desentupimento.jpg";
-import {GiWaterfall, GiTeePipe} from "react-icons/gi";
+import {GiWaterfall} from "@react-icons/all-files/gi/GiWaterfall";
+import {GiTeePipe} from "@react-icons/all-files/gi/GiTeePipe";
 
 export const serviceItemMap = {
   title: "Desentupimento",

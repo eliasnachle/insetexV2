@@ -1,6 +1,6 @@
 import limpeza from "/public/services/limpeza.jpg";
-import {AiOutlineClear} from "react-icons/ai"
-import {FaTablets} from "react-icons/fa"
+import {AiOutlineClear} from "@react-icons/all-files/ai/AiOutlineClear"
+import {FaTablets} from "@react-icons/all-files/fa/FaTablets"
 
 export const serviceItemMap = {
   title: "Limpeza de Caixas D' Água",

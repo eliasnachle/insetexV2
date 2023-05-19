@@ -10,14 +10,14 @@ export const serviceItemMap = {
   imgAlt: "Desinsetização",
   itemDetail: [
     {
-      icon: <DesinsetizacaoIcon />,
+      icon: <Gel />,
       title: "Gel",
       describe:
         "O confortável e eficiente sistema gel e massinha, totalmente inodoro; cuja aplicação é direcionada a focos e pontos estratégicos. O produto age por reação em cadeia efeito dominó; no caso das formigas, possibilita que o produto seja levado para dentro da colônia eliminando-a por completo.",
     },
     {
-      icon: <Gel />,
-      title: "Gel",
+      icon: <DesinsetizacaoIcon />,
+      title: "Líquido",
       describe:
         "A desinsetização com líquido é realizada através de micropulverização com bombas de alta pressão. O tratamento abrange a cobertura de todo piso, rodapé, contorno dos batentes de portas, janelas e fendas localizadas na edificação. Em alguns casos, também é feito o uso da aplicação de gel inodoro e pó químico nos conduítes como forma de controle dessas pragas.",
     },

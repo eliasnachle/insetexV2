@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import { Key } from "react";
 import {
   layoutCotnainer,
   serviceDetail,
@@ -18,6 +19,12 @@ type Item = {
   }[];
 };
 
+interface IItemDetail {
+  icon: JSX.Element;
+  title: string;
+  describe: string;
+}
+
 export default function Layout({ serviceItemMap }: { serviceItemMap: Item }) {
   return (
     <div className={layoutCotnainer}>
@@ -33,7 +40,7 @@ export default function Layout({ serviceItemMap }: { serviceItemMap: Item }) {
       <div className={serviceDetail}>
         <h1>Metódos</h1>
         <div className={serviceDetailContainer}>
-          {serviceItemMap.itemDetail.map((it, i) => {
+          {serviceItemMap.itemDetail.map((it: IItemDetail, i: Key) => {
             return (
               <article key={i}>
                 {it.icon}

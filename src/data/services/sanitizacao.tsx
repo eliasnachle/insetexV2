@@ -1,5 +1,5 @@
 import sanitizacao from "/public/services/sanitizacao.jpg";
-import {GiVacuumCleaner} from "react-icons/gi"
+import {GiVacuumCleaner} from "@react-icons/all-files/gi/GiVacuumCleaner"
 import DesinsetizacaoIcon from "/public/services/icon/desinsetizacao.svg";
 
 

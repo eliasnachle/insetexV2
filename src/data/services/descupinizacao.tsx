@@ -1,6 +1,6 @@
 import descupinizacao from "/public/services/descupinizacao.jpg";
-import {GiChemicalDrop} from "react-icons/gi";
-import {BiShieldQuarter} from "react-icons/bi";
+import {GiChemicalDrop} from "@react-icons/all-files/gi/GiChemicalDrop";
+import {BiShieldQuarter} from "@react-icons/all-files/bi/BiShieldQuarter";
 
 export const serviceItemMap = {
   title: "Descupinização",

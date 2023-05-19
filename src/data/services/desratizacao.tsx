@@ -1,6 +1,6 @@
 import desratizacao from "/public/services/desratizacao.jpg";
-import {FaCubes} from "react-icons/fa";
-import {GiWolfTrap} from "react-icons/gi";
+import {FaCubes} from "@react-icons/all-files/fa/FaCubes";
+import {GiWolfTrap} from "@react-icons/all-files/gi/GiWolfTrap";
 
 export const serviceItemMap = {
   title: "Desratização",

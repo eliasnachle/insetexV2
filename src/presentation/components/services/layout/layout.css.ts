@@ -2,7 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "../../../styles/theme/theme.css";
 
 export const layoutCotnainer = style({
-  padding: "calc(2em + 80px) 2em",
+  padding: "calc(80px + 2em) 2em",
   display: "grid",
   placeItems: "center",
 });
@@ -15,11 +15,21 @@ export const serviceItem = style({
   gridGap: "1em",
   alignItems: "center",
   paddingBottom: "3em",
+  "@media": {
+    "screen and (max-width: 1080px)": {
+      gridTemplateColumns: "none",
+    },
+  },
 });
 
 globalStyle(`${serviceItem} > article`, {
   maxWidth: "550px",
   width: "100%",
+  "@media": {
+    "screen and (max-width: 1080px)": {
+      maxWidth: "100%",
+    },
+  },
 });
 
 globalStyle(`${serviceItem} > article > h1`, {
@@ -34,6 +44,14 @@ globalStyle(`${serviceItem} > article > p`, {
   color: vars.color.lightBlueText,
   lineHeight: "30px",
   fontFamily: vars.fonts.DMSans,
+});
+
+globalStyle(`${serviceItem} > figure`, {
+  "@media": {
+    "screen and (max-width: 1080px)": {
+      display: "none",
+    },
+  },
 });
 
 globalStyle(`${serviceItem} > figure > img`, {
@@ -51,6 +69,11 @@ export const serviceDetail = style({
   borderRadius: "20px",
   color: vars.color.lightText,
   fontFamily: vars.fonts.DMSans,
+  "@media": {
+    "screen and (max-width: 1080px)": {
+      padding: "1em",
+    },
+  },
 });
 
 globalStyle(`${serviceDetail} > h1`, {
@@ -66,6 +89,11 @@ export const serviceDetailContainer = style({
   placeItems: "center",
   gridGap: "1em 4em",
   justifyContent: "space-between",
+  "@media": {
+    "screen and (max-width: 1080px)": {
+      gridTemplateColumns: "none",
+    },
+  },
 });
 
 globalStyle(`${serviceDetailContainer} > article`, {
@@ -74,23 +102,22 @@ globalStyle(`${serviceDetailContainer} > article`, {
 
 globalStyle(`${serviceDetailContainer} > article > svg`, {
   width: "2.5em",
-  height: '2.5em',
-  fill: 'white',
-  color: 'white'
+  height: "2.5em",
+  fill: "white",
+  color: "white",
 });
 
 globalStyle(`${serviceDetailContainer} > article > svg > path`, {
-    fill: 'white',
-    color: 'white'
+  fill: "white",
+  color: "white",
 });
 
 globalStyle(`${serviceDetailContainer} > article > h2`, {
   fontSize: "25px",
   paddingBottom: ".5rem",
-//   opacity: '0.5'
 });
 
 globalStyle(`${serviceDetailContainer} > article > p`, {
   fontSize: "16px",
-  opacity: '0.7',
+  opacity: "0.7",
 });
