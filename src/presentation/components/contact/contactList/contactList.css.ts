@@ -29,8 +29,17 @@ globalStyle(`${ContactItem} > div > p`, {
   color: vars.color.lightBlueText,
 });
 
-globalStyle(`${ContactItem} > div > span`, {
+globalStyle(`${ContactItem} > div > a`, {
+  textDecoration: "none"
+});
+
+globalStyle(`${ContactItem} > div > a > span`, {
+  transition: 'all ease-in 150ms',
   fontSize: "15px",
   color: vars.color.btnColor,
   fontWeight: 600,
+});
+
+globalStyle(`${ContactItem} > div > a > span:hover`, {
+  opacity: 0.7
 });

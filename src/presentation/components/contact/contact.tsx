@@ -1,5 +1,3 @@
-import Footer from "../footer/footer";
-import Header from "../header/header";
 import {
   ContactContainer,
   ContactContent,
@@ -40,9 +38,9 @@ export default function Contact() {
           <Link className={Button} href="/contato/fale-conosco">
             Fale conosco
           </Link>
-          <Link className={Button} href="/contato/orcamento">
+          {/* <Link className={Button} href="/contato/orcamento">
             Faça um Orcamento
-          </Link>
+          </Link> */}
         </motion.article>
       </div>
     </section>

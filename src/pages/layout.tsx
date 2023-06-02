@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <>
     <main className={inter.className}>
-      <Header />
+      {/* <Header /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </main>
   </>    
   );

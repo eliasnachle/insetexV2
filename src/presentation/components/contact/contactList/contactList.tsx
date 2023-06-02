@@ -1,6 +1,7 @@
 import { ContactItens, ContactItem } from "./contactList.css";
 import { contactListMap } from "./contactListMap";
 import { easeInOut, motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ContactList() {
   const contactAnimation = {
@@ -28,7 +29,9 @@ export default function ContactList() {
             <div>
               <h3>{it.title}</h3>
               <p>{it.description}</p>
-              <span>{it.value}</span>
+              <Link href={it.href}>
+                <span>{it.value}</span>
+              </Link>
             </div>
           </article>
         );

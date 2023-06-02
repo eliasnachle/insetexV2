@@ -1,9 +1,7 @@
-import React from 'react'
+import ContactForm from '@/presentation/components/contact/contactForm/contactForm'
 
 export default function FaleConosco() {
   return (
-    <div>
-      <h1>Fale-Conosco</h1>
-    </div>
+    <ContactForm />
   )
 }
