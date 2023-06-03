@@ -2,19 +2,29 @@ import headerMap from "../headerMap";
 import { navbar } from "./mobileNavbar.css";
 import { RiArrowDownSLine } from "react-icons/ri";
 import MobileDropdown from "./mobileDropdown/mobileDropdown";
-import { useState } from "react";
-import { motion, easeOut, AnimatePresence } from "framer-motion";
+import { Dispatch, SetStateAction, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-export default function MobileNavbar() {
+interface UseStateProps {
+  isMobile: boolean,
+  setIsMobile: Dispatch<SetStateAction<boolean>>,
+};
+
+export default function MobileNavbar({isMobile, setIsMobile} : UseStateProps) {
   const [toggleHeight, setToggleDirection] = useState(0);
+  const [isDropdown, setIsDropdown] = useState(false);
 
   const toggleOn = () => {
     setToggleDirection(toggleHeight === 0 ? 220 : 0);
   };
 
+  const handleMobileClick = () => {
+    setIsMobile(false)
+  }
+
   return (
-    <nav className={navbar}>
+    <nav className={navbar} style={{display: isDropdown ? 'block' : 'hidden'}}>
       <ul>
         {headerMap.map((it, i) => {
           if (it.name == "services") {
@@ -28,14 +38,14 @@ export default function MobileNavbar() {
                     style={{ overflowY: "auto" }}
                     animate={{ height: toggleHeight }}
                   >
-                    <MobileDropdown />
+                    <MobileDropdown isMobile={isMobile} setIsMobile={setIsMobile} />
                   </motion.div>
                 </AnimatePresence>
               </div>
             );
           }
           return (
-            <li key={i}>
+            <li key={i} onClick={handleMobileClick}>
               <Link href={it.url}>{it.label}</Link>
             </li>
           );

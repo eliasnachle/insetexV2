@@ -5,25 +5,50 @@ export const ContactContainer = style({
   padding: "calc(3em + 80px) 2em",
   display: "grid",
   placeItems: "center",
+  "@media": {
+    "screen and (max-width: 890px)": {
+      padding: "calc(1em + 80px) 2em",
+    },
+  },
 });
 
 export const ContactContent = style({
-  width: vars.sizes.desktopWidth,
+  maxWidth: vars.sizes.desktopWidth,
+  width: "100%",
   display: "grid",
   gridTemplateColumns: "400px auto",
   gridGap: "3em",
   justifyContent: "space-between",
+  "@media": {
+    "screen and (max-width: 890px)": {
+      gridTemplateColumns: "300px auto",
+    },
+    "screen and (max-width: 720px)": {
+      gridTemplateColumns: "none",
+      gridGap: "1em"
+    },
+  },
 });
 
 export const ContactArticle = style({
   display: "grid",
   gridGap: ".5rem",
+  "@media": {
+    "screen and (max-width: 720px)": {
+      textAlign: "center"
+    },
+  },
 });
 
 globalStyle(`${ContactArticle} > h1`, {
   fontSize: "3em",
   color: vars.color.blueText,
   maxWidth: "550px",
+  "@media": {
+    "screen and (max-width: 720px)": {
+      fontSize: "2em"
+    },
+  },
 });
 
 globalStyle(`${ContactArticle} > p`, {
@@ -35,7 +60,7 @@ globalStyle(`${ContactArticle} > p`, {
 
 export const Button = style({
   textAlign: "center",
-  width: "600px",
+  maxWidth: "600px",
   textDecoration: "none",
   fontFamily: vars.fonts.DMSans,
   fontWeight: 500,

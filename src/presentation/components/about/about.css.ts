@@ -30,7 +30,12 @@ globalStyle(`${aboutContainer} > div > article > p`, {
 export const historyContainer = style({
     display: 'grid',
     gridGap: '1em',
-    gridTemplateColumns: '800px auto'
+    gridTemplateColumns: '800px auto',
+    "@media": {
+        "screen and (max-width: 1080px)": {
+            gridTemplateColumns: "none"
+        },
+    },
 });
 
 globalStyle(`${historyContainer} > div`, {
@@ -38,20 +43,25 @@ globalStyle(`${historyContainer} > div`, {
     flexDirection: 'column',
     alignItems: 'center',
     gap: '1em',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    "@media": {
+        "screen and (max-width: 1080px)": {
+            flexDirection: "row"
+        },
+    },
 });
 
 export const historyItens = style({
     display: 'grid',
     gridGap: '1em',
-    gridTemplateColumns: '800px auto'
+    gridTemplateColumns: '800px auto',
 });
 
 globalStyle(`${historyItens} > div`, {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '1em'
+    gap: '1em',
 });
 
 globalStyle(`${historyItens} > div > svg`, {
@@ -80,7 +90,20 @@ globalStyle(`${historyItens} > div > span`, {
 export const serviceContainer = style({
     display: 'grid',
     gridGap: '1em',
-    gridTemplateColumns: 'auto 700px'
+    gridTemplateColumns: 'auto 700px',
+    "@media": {
+        "screen and (max-width: 1080px)": {
+            gridTemplateColumns: "none"
+        },
+    },
+});
+
+globalStyle(`${serviceContainer} > figure`, {        
+    "@media": {
+        "screen and (max-width: 1080px)": {
+            display: "none"
+        },
+    },
 });
 
 export const customersContainer = style({

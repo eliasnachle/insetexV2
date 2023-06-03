@@ -4,7 +4,7 @@ import { vars } from "../../../styles/theme/theme.css";
 export const formContainer = style({
   padding: "calc(80px + 2em) 2em",
   display: "grid",
-  placeItems: "center",
+  placeItems: "center",  
 });
 
 globalStyle(`${formContainer} > h1`, {
@@ -12,6 +12,7 @@ globalStyle(`${formContainer} > h1`, {
   fontSize: "3em",
   fontWeight: 700,
   color: vars.color.blueText,
+  textAlign: "center"
 });
 
 globalStyle(`${formContainer} > p`, {
@@ -20,13 +21,23 @@ globalStyle(`${formContainer} > p`, {
   fontWeight: 400,
   padding: ".25rem 0 2em 0",
   width: "500px",
-  textAlign: "center"
+  textAlign: "center",
+  "@media": {
+    "screen and (max-width: 580px)": {
+        width: "100%"
+    },
+  },
 });
 
 globalStyle(`${formContainer} > div`, {
   display: "flex",
   flexDirection: "column",
   gap: "1.25em",
+  "@media": {
+    "screen and (max-width: 580px)": {
+        width: "100%"
+    },
+  },
 });
 
 export const formInput = style({
@@ -60,6 +71,11 @@ globalStyle(`${formInput} > input, ${formTextArea} > textarea`, {
   borderRadius: "10px",
   outline: "none",
   fontFamily: vars.fonts.DMSans,
+  "@media": {
+    "screen and (max-width: 580px)": {
+        width: "100%"
+    },
+  },
 });
 
 globalStyle(`${formInput} > span, ${formTextArea} > span`, {
@@ -104,4 +120,50 @@ globalStyle(`${formContainer} > div > button, ${formTextArea} > div > button`, {
 
 globalStyle(`${formContainer} > div > button:hover`, {
     opacity: 0.7
+});
+
+export const sentMailContainer = style({
+  padding: "0 3em 2em",
+  display: "flex",
+  alignItems: "center",
+  maxWidth: "700px",
+  width: "100%",
+  textAlign: "center",
+  background: "#121826",
+  borderRadius: "35px"
+});
+
+globalStyle(`${sentMailContainer} > div > svg`, {
+  marginBottom: "-45px"
+});
+
+globalStyle(`${sentMailContainer} > div > h1`, {
+  fontSize: "2.5em",
+  color: vars.color.lightText  
+});
+
+globalStyle(`${sentMailContainer} > div > p`, {
+  padding: "1em",
+  fontSize: "17px",
+  color: "#939DB8",
+  opacity: 0.6
+});
+
+globalStyle(`${sentMailContainer} > div > button`, {
+  textDecoration: "none",
+  fontFamily: vars.fonts.DMSans,
+  transition: "all ease-in 200ms",
+  background: vars.color.backgroundLight,
+  color: vars.color.blackText,
+  borderRadius: "12px",
+  cursor: "pointer",
+  outline: "none",
+  padding: "16px 40px",
+  border: "none",
+  fontSize: "16px",
+  marginTop: "10px",  
+});
+
+globalStyle(`${sentMailContainer} > div > button:hover`, {
+  opacity: 0.8  
 });

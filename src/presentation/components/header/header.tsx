@@ -75,7 +75,7 @@ export default function Header() {
             onClick={() => setIsMobile(!isMobile)}
           />
         </div>
-        {isMobile && <MobileNavbar />}
+        {isMobile && <MobileNavbar isMobile={isMobile} setIsMobile={setIsMobile} />}
       </header>
     </>
   );

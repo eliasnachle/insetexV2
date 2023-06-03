@@ -11,11 +11,11 @@ import {
     Text,
   } from '@react-email/components';
 
-  export const CustomerRecivedEmail = (name : string) => (
+  export const ContactSentMail = (name : string) => (
     <Html>
       <Head />
       <Preview>
-        Recebemos seu orçamento!
+        Recebemos sua mensagem!
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -28,8 +28,7 @@ import {
           />
           <Text style={paragraph}>Olá {name},</Text>
           <Text style={paragraph}>
-          Estamos comprometidos em atender às suas necessidades e oferecer as melhores soluções, \
-          ficamos à disposição para esclarecer dúvidas adicionais.
+          Recebemos sua mensagem e nossa equipe está trabalhando para responder o mais breve possível.
           </Text>
           <Section style={btnContainer}>
           </Section>
@@ -45,7 +44,7 @@ import {
     </Html>
   );
   
-  export default CustomerRecivedEmail;
+  export default ContactSentMail;
   
   const main = {
     backgroundColor: '#ffffff',
