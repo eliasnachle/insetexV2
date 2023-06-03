@@ -1,8 +1,13 @@
 import About from '@/presentation/components/about/about'
-import React from 'react'
+import Head from 'next/head';
 
 export default function sobreNos() {
   return (
-    <About />
+    <>
+      <Head>
+        <title>Insetex - Sobre nós</title>
+      </Head>
+      <About />
+    </>
   )
 }
