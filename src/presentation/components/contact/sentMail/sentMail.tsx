@@ -1,14 +1,15 @@
 import { easeIn, easeInOut, motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { sentMailContainer } from "../contactForm/contactForm.css";
-import successCheck from "/public/success_check.json"
-import Lottie from "lottie-react";
 import { useRouter } from 'next/router'
+import Lottie from "lottie-react";
 
 interface UseStateProps {
     isSent: boolean,
     setIsSent: Dispatch<SetStateAction<boolean>>,
 };
+
+const successCheck = require("/public/success_check.json")
 
 export default function SentMail({isSent, setIsSent} : UseStateProps) {
     const router = useRouter()
