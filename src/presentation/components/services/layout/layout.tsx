@@ -34,7 +34,7 @@ export default function Layout({ serviceItemMap }: { serviceItemMap: Item }) {
           <p>{serviceItemMap.describe}</p>
         </article>
         <figure>
-          <Image src={serviceItemMap.img} alt={serviceItemMap.imgAlt} />
+          <Image src={serviceItemMap.img} alt={serviceItemMap.imgAlt} placeholder="blur" />
         </figure>
       </div>
       <div className={serviceDetail}>
