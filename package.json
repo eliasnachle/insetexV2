@@ -35,6 +35,7 @@
     "react-email": "1.9.3",
     "react-icons": "^4.8.0",
     "react-visibility-sensor": "^5.1.1",
+    "sharp": "^0.32.1",
     "typescript": "5.0.4",
     "use-count-up": "^3.0.1"
   }
