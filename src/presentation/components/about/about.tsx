@@ -1,7 +1,7 @@
-import { aboutContainer } from "./about.css";
-import AboutService from "./aboutService";
-import Customers from "./customers";
-import History from "./history";
+import { aboutContainer } from './about.css'
+import AboutService from './aboutService'
+import Customers from './customers'
+import History from './history'
 
 export default function About() {
   return (
@@ -12,5 +12,5 @@ export default function About() {
         <AboutService />
       </section>
     </>
-  );
+  )
 }

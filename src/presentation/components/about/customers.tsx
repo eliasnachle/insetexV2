@@ -1,7 +1,7 @@
-import { customersContainer } from "./about.css";
-import Image from "next/image";
-import customersMap from "./customersMap";
-import { easeInOut, motion } from "framer-motion";
+import { customersContainer } from './about.css'
+import Image from 'next/image'
+import customersMap from './customersMap'
+import { easeInOut, motion } from 'framer-motion'
 
 export default function Customers() {
   const customerAnimation = {
@@ -13,7 +13,7 @@ export default function Customers() {
         duration: 1,
       },
     },
-  };
+  }
 
   return (
     <>
@@ -24,11 +24,11 @@ export default function Customers() {
         animate="show"
       >
         <div>
-          {customersMap.map((it, i) => {
-            return <Image key={i} src={it.img} alt={it.alt} />;
-          })}
+          {customersMap.map((it, i) => (
+            <Image key={i} src={it.img} alt={it.alt} />
+          ))}
         </div>
       </motion.div>
     </>
-  );
+  )
 }

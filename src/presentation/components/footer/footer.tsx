@@ -1,11 +1,11 @@
-import Logo from "/public/logo_light.svg";
+import Logo from '/public/logo_light.svg'
 import {
   footerContainer,
   footerContent,
   footerCopyrigth,
   footerGrid,
-} from "./footer.css";
-import FooterItens from "./footerItens/footerItens";
+} from './footer.css'
+import FooterItens from './footerItens/footerItens'
 
 export default function Footer() {
   return (
@@ -22,5 +22,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

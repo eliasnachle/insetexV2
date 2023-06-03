@@ -1,12 +1,12 @@
-import Button from "../../button/button";
-import { heroContainer } from "./hero.css";
-import { easeInOut, motion } from "framer-motion";
+import Button from '../../button/button'
+import { heroContainer } from './hero.css'
+import { easeInOut, motion } from 'framer-motion'
 
 export default function hero() {
-  const btnData = { 
-    text: "Faça um orçamento", 
-    url: "/contato/orcamento" 
-  };
+  const btnData = {
+    text: 'Faça um orçamento',
+    url: '/contato/orcamento',
+  }
   const heroAnimation = {
     hidden: { opacity: 0, y: 20 },
     show: {
@@ -17,7 +17,7 @@ export default function hero() {
         duration: 0.75,
       },
     },
-  };
+  }
 
   return (
     <section className={heroContainer}>
@@ -26,5 +26,5 @@ export default function hero() {
         <Button text={btnData.text} url={btnData.url} />
       </motion.div>
     </section>
-  );
+  )
 }

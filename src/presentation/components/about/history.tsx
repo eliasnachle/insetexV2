@@ -1,20 +1,20 @@
-import { IoIosPeople } from "react-icons/io";
-import { RiCustomerService2Fill } from "react-icons/ri";
-import { BsHourglassSplit } from "react-icons/bs";
-import { historyContainer, historyItens } from "./about.css";
-import { useCountUp } from "use-count-up";
+import { IoIosPeople } from 'react-icons/io'
+import { RiCustomerService2Fill } from 'react-icons/ri'
+import { BsHourglassSplit } from 'react-icons/bs'
+import { historyContainer, historyItens } from './about.css'
+import { useCountUp } from 'use-count-up'
 export default function History() {
   const { value: costumerCounter } = useCountUp({
     isCounting: true,
     end: 10.967,
     duration: 2,
-  });
+  })
 
   const { value: experienceCounter } = useCountUp({
     isCounting: true,
     end: 30,
     duration: 3,
-  });
+  })
 
   return (
     <div className={historyContainer}>
@@ -53,5 +53,5 @@ export default function History() {
         </div>
       </div>
     </div>
-  );
+  )
 }

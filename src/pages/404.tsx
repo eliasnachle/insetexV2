@@ -8,7 +8,7 @@ export default function Custom404() {
       <Head>
         <title>Insetex - Página não Encontrada</title>
       </Head>
-     <NotFound />
+      <NotFound />
     </>
   )
 }

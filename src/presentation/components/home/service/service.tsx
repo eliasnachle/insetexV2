@@ -2,9 +2,9 @@ import {
   serviceContainer,
   serviceItensContainer,
   serviceItem,
-} from "./service.css";
-import serviceMap from "./serviceMap";
-import { easeInOut,  motion } from "framer-motion"
+} from './service.css'
+import serviceMap from './serviceMap'
+import { easeInOut, motion } from 'framer-motion'
 
 export default function Service() {
   const serviceAnimation = {
@@ -16,30 +16,28 @@ export default function Service() {
         ease: easeInOut,
         duration: 0.75,
       },
-    }
+    },
   }
 
   return (
-    <motion.section 
-    variants={serviceAnimation} 
-    initial="hidden" 
-    animate="show"
-    className={serviceContainer}
+    <motion.section
+      variants={serviceAnimation}
+      initial="hidden"
+      animate="show"
+      className={serviceContainer}
     >
       <article>
         <h1>Porque a Insetex é a melhor no combate de pragas?</h1>
         <div className={serviceItensContainer}>
-          {serviceMap.map((it, i) => {
-            return (
-              <article key={i} className={serviceItem}>
-                {it.svg}
-                <h2>{it.title}</h2>
-                <p>{it.description}</p>
-              </article>
-            );
-          })}
+          {serviceMap.map((it, i) => (
+            <article key={i} className={serviceItem}>
+              {it.svg}
+              <h2>{it.title}</h2>
+              <p>{it.description}</p>
+            </article>
+          ))}
         </div>
       </article>
     </motion.section>
-  );
+  )
 }

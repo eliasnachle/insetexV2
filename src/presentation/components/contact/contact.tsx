@@ -3,10 +3,10 @@ import {
   ContactContent,
   ContactArticle,
   Button,
-} from "./contact.css";
-import Link from "next/link";
-import ContactList from "./contactList/contactList";
-import { easeInOut, motion } from "framer-motion";
+} from './contact.css'
+import Link from 'next/link'
+import ContactList from './contactList/contactList'
+import { easeInOut, motion } from 'framer-motion'
 
 export default function Contact() {
   const contactAnimation = {
@@ -18,7 +18,7 @@ export default function Contact() {
         duration: 0.5,
       },
     },
-  };
+  }
 
   return (
     <section className={ContactContainer}>
@@ -44,5 +44,5 @@ export default function Contact() {
         </motion.article>
       </div>
     </section>
-  );
+  )
 }

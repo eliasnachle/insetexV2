@@ -1,5 +1,5 @@
-import { serviceContainer } from "./about.css";
-import AboutUs from "/public/about/about_us.svg";
+import { serviceContainer } from './about.css'
+import AboutUs from '/public/about/about_us.svg'
 
 export default function AboutService() {
   return (
@@ -21,5 +21,5 @@ export default function AboutService() {
         </p>
       </article>
     </div>
-  );
+  )
 }

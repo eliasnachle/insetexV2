@@ -1,5 +1,5 @@
-import Head from "next/head";
-import Home from "../presentation/components/home/home";
+import Head from 'next/head'
+import Home from '../presentation/components/home/home'
 
 export default function Index() {
   return (
@@ -9,5 +9,5 @@ export default function Index() {
       </Head>
       <Home />
     </>
-  );
+  )
 }

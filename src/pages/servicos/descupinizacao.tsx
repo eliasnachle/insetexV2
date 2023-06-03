@@ -1,6 +1,6 @@
-import Layout from "@/presentation/components/services/layout/layout";
-import { serviceItemMap } from "@/data/services/descupinizacao";
-import Head from "next/head";
+import Layout from '@/presentation/components/services/layout/layout'
+import { serviceItemMap } from '@/data/services/descupinizacao'
+import Head from 'next/head'
 
 export default function descupinizacao() {
   return (
@@ -10,5 +10,5 @@ export default function descupinizacao() {
       </Head>
       <Layout serviceItemMap={serviceItemMap} />
     </>
-  );
+  )
 }

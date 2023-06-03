@@ -1,4 +1,4 @@
-import { createGlobalTheme } from '@vanilla-extract/css';
+import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const vars = createGlobalTheme(':root', {
   color: {
@@ -17,12 +17,12 @@ export const vars = createGlobalTheme(':root', {
     backgroundBlack: '#111',
     backgroundGray: '#eee',
     icon: '#30aded',
-    darkBorder: '#333'
+    darkBorder: '#333',
   },
   sizes: {
-    desktopWidth: '1200px'
+    desktopWidth: '1200px',
   },
   fonts: {
-    DMSans: 'DM Sans, sans-serif'
-  }
-});
+    DMSans: 'DM Sans, sans-serif',
+  },
+})

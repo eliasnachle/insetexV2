@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",    
+    "prettier"
+  ],
+  "rules": {
+    "prefer-const": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "react/self-closing-comp": ["error", { "component": true, "html": true }],
+    "quotes": ["error", "single"]    
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  }
 }

@@ -4,10 +4,10 @@ import Head from 'next/head'
 export default function Contato() {
   return (
     <>
-    <Head>
+      <Head>
         <title>Insetex - Contato</title>
-    </Head>
-    <Contact />
+      </Head>
+      <Contact />
     </>
   )
 }

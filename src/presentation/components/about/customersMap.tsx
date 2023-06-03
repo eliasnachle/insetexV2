@@ -1,59 +1,59 @@
-import magalu from "/public/customers/magalu.png";
-import bmg from "/public/customers/bmg.png";
-import passarelli from "/public/customers/passarelli.png";
-import pao from "/public/customers/pao_de_queijo.png";
-import plano from "/public/customers/planoeplano.png";
-import shell from "/public/customers/shell.png";
+import magalu from '/public/customers/magalu.png'
+import bmg from '/public/customers/bmg.png'
+import passarelli from '/public/customers/passarelli.png'
+import pao from '/public/customers/pao_de_queijo.png'
+import plano from '/public/customers/planoeplano.png'
+import shell from '/public/customers/shell.png'
 
 const customersMap = [
   {
     img: magalu,
-    alt: "Magazine Luiza",
+    alt: 'Magazine Luiza',
   },
   {
     img: bmg,
-    alt: "Banco BMG",
+    alt: 'Banco BMG',
   },
   {
     img: passarelli,
-    alt: "Passarelli",
+    alt: 'Passarelli',
   },
   {
     img: pao,
-    alt: "Casa do Pao de Queijo",
+    alt: 'Casa do Pao de Queijo',
   },
   {
     img: plano,
-    alt: "Plano e Plano",
+    alt: 'Plano e Plano',
   },
   {
     img: shell,
-    alt: "Shell",
+    alt: 'Shell',
   },
   {
     img: magalu,
-    alt: "Magazine Luiza",
+    alt: 'Magazine Luiza',
   },
   {
     img: bmg,
-    alt: "Banco BMG",
+    alt: 'Banco BMG',
   },
   {
     img: passarelli,
-    alt: "Passarelli",
+    alt: 'Passarelli',
   },
   {
     img: pao,
-    alt: "Casa do Pao de Queijo",
+    alt: 'Casa do Pao de Queijo',
   },
   {
     img: plano,
-    alt: "Plano e Plano",
+    alt: 'Plano e Plano',
   },
   {
     img: shell,
-    alt: "Shell",
+    alt: 'Shell',
   },
-];
+]
 
-export default customersMap;
+export default customersMap
