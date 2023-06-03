@@ -1,6 +1,5 @@
 import {
     Body,
-    Button,
     Container,
     Head,
     Hr,
@@ -20,7 +19,7 @@ import {
       <Body style={main}>
         <Container style={container}>
           <Img
-            src="/logo.png"
+            src="https://www.insetex.com.br/logo.png"
             width="auto"
             height="50"
             alt="Insetex"
@@ -68,16 +67,6 @@ import {
   
   const btnContainer = {
     textAlign: 'center' as const,
-  };
-  
-  const button = {
-    backgroundColor: '#5F51E8',
-    borderRadius: '3px',
-    color: '#fff',
-    fontSize: '16px',
-    textDecoration: 'none',
-    textAlign: 'center' as const,
-    display: 'block',
   };
   
   const hr = {

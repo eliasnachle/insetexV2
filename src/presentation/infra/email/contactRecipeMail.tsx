@@ -29,7 +29,7 @@ export const ContactRecipeMail = (customerData: ICustomerData) => (
         <Section>
           <Column>
             <Img
-              src="/logo.png"
+              src="https://www.insetex.com.br/logo.png"
               width="auto"
               height="42"
               alt="Insetex"
@@ -72,10 +72,10 @@ export const ContactRecipeMail = (customerData: ICustomerData) => (
         <Section>
           <Column align="center" style={block}>
             <Img
-              src={`/logo.png`}
+              src="https://www.insetex.com.br/logo.png"
               width="auto"
               height="17"
-              alt="Apple Card"
+              alt="Insetex"
             />
           </Column>
         </Section>                             
