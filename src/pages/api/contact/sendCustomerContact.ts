@@ -41,7 +41,7 @@ export default async function sendEmail(req: IContact, res: any) {
     console.log(companyMail.messageId)
   } catch (error: any) {
     res.status(500).json({ error: error.message || error.toString() });
-  }  
+  }
 
   return res.status(200).json({ error: "" });
 }

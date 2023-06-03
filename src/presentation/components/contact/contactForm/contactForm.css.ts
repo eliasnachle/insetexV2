@@ -1,4 +1,4 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { globalStyle, keyframes, style } from "@vanilla-extract/css";
 import { vars } from "../../../styles/theme/theme.css";
 
 export const formContainer = style({
@@ -110,7 +110,7 @@ globalStyle(`${formContainer} > div > button, ${formTextArea} > div > button`, {
   transition: "all ease-in-out 150ms",
   fontFamily: vars.fonts.DMSans,
   fontSize: '15px',
-  fontWeight: 600,
+  fontWeight: 500,
   background: "#00a5ff",
   color: vars.color.lightText,
   border: 'none',
@@ -156,7 +156,6 @@ globalStyle(`${sentMailContainer} > div > button`, {
   background: vars.color.backgroundLight,
   color: vars.color.blackText,
   borderRadius: "12px",
-  cursor: "pointer",
   outline: "none",
   padding: "16px 40px",
   border: "none",
@@ -166,4 +165,14 @@ globalStyle(`${sentMailContainer} > div > button`, {
 
 globalStyle(`${sentMailContainer} > div > button:hover`, {
   opacity: 0.8  
+});
+
+const rotate = keyframes({
+  '0%': { transform: 'rotateZ(0deg)' },
+  '100%': { transform: 'rotateZ(360deg)' }
+});
+
+export const loadingButton = style({
+  fontSize: "1em",
+  animation: `${rotate} 1.25s linear infinite`,
 });

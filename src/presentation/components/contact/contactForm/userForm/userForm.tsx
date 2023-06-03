@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { formInput, formTextArea } from "../contactForm.css";
+import { formInput, formTextArea, loadingButton } from "../contactForm.css";
 import inputFormMap from "./inputForm";
+import { AiOutlineLoading3Quarters } from "@react-icons/all-files/ai/AiOutlineLoading3Quarters"
 
 interface UseStateProps {
     isSent: boolean,
@@ -9,6 +10,7 @@ interface UseStateProps {
 };
 
 export default function UserForm({isSent, setIsSent} : UseStateProps) {    
+    const [isValited, setIsValited] = useState(false)
     const [formErrors, setFormErrors] = useState({
       name: "",
       phone: "",
@@ -64,13 +66,13 @@ export default function UserForm({isSent, setIsSent} : UseStateProps) {
         errors.message = defaultMessage;
       }
       if (Object.values(errors).every((o) => o === "")) {
-          setIsSent(true)
+        setIsValited(true)
       }
       return errors;
     };
   
     const handleSubmitForm = (e: any) => {
-      e.preventDefault();      
+      e.preventDefault();
       setTimeout(() => {
         setFormErrors(validateFormStep(formData));  
       }, 250);      
@@ -78,12 +80,13 @@ export default function UserForm({isSent, setIsSent} : UseStateProps) {
   
     useEffect(() => {
       const getContact = async () => {
-          if(!isSent) return
+          if(!isValited) return
           const response = await axios.post(`/api/contact/sendCustomerContact`, formData)
-          if(response.status != 200) console.log(response)
+          if(response.status != 200) return console.log(response)
+          setIsSent(true)
         }
       getContact()      
-    }, [formData, isSent])
+    }, [formData, isValited, setIsSent])
   
     return (
       <div>
@@ -116,8 +119,8 @@ export default function UserForm({isSent, setIsSent} : UseStateProps) {
               </div>
             );
           })}
-          <button onClick={handleSubmitForm}>
-            Enviar
+          <button onClick={handleSubmitForm} style={{cursor: isValited ? "default" : "pointer"}}>
+            {isValited ? <AiOutlineLoading3Quarters className={loadingButton} /> : "Enviar"}
           </button>
         </div>
     )
