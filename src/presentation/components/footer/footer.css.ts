@@ -15,11 +15,10 @@ export const footerContent = style({
   padding: '0 1em',
 })
 
-export const footerGrid = style({
+export const footerGrid = style({  
   display: 'flex',
   justifyContent: 'space-between',
-  gap: '.5rem',
-  padding: '45px 0',
+  padding: '45px 0 0 0',
   '@media': {
     'screen and (max-width: 920px)': {
       flexDirection: 'column',
@@ -30,15 +29,45 @@ export const footerGrid = style({
 })
 
 globalStyle(`${footerGrid} > article`, {
-  width: 'auto',
+  maxWidth: '350px', 
+})
+
+globalStyle(`${footerGrid} > article > p`, {
+  padding: '1em 0',
+  fontSize: '16px',
+  opacity: 0.6
+})
+
+globalStyle(`${footerGrid} > div`, {
+  display: 'flex',
+  gap: '3em',
+  '@media': {
+    'screen and (max-width: 920px)': {
+      flexDirection: 'column',
+      padding: '1em 0'
+    },
+  },
 })
 
 globalStyle(`${footerGrid} > article > svg`, {
   width: '200px',
 })
 
+globalStyle(`${footerGrid} > article > svg > path`, {
+  fill: '#fff !important'
+})
+
 export const footerCopyrigth = style({
-  padding: '20px 0',
-  fontSize: '14px',
-  color: vars.color.grayText,
+  padding: '20px 0px 30px 0px',
+  fontSize: '16px',
+  color: vars.color.lightText,
+})
+
+globalStyle(`${footerCopyrigth} > hr`, {
+  opacity: 0.25,
+  margin: '1.75em 0'
+})
+
+globalStyle(`${footerCopyrigth} > span`, {
+  fontSize: '16px',
 })

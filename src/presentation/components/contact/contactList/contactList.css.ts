@@ -20,7 +20,7 @@ globalStyle(`${ContactItem} > figure > svg`, {
 
 globalStyle(`${ContactItem} > div > h3`, {
   fontSize: '18px',
-  color: vars.color.blueText,
+  color: vars.color.primary,
 })
 
 globalStyle(`${ContactItem} > div > p`, {
@@ -30,7 +30,8 @@ globalStyle(`${ContactItem} > div > p`, {
 })
 
 globalStyle(`${ContactItem} > div > a`, {
-  textDecoration: 'none',
+  textDecoration: 'none',  
+  color: vars.color.primary
 })
 
 globalStyle(`${ContactItem} > div > a > span`, {

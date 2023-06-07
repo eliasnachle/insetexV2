@@ -33,7 +33,7 @@ globalStyle(`${AboutContainer} > div > article`, {
   position: 'absolute',
   width: '700px',
   height: '25em',
-  background: 'linear-gradient(28deg,#2b5ba2 35%,#30aded 97%)',
+  background: `linear-gradient(28deg,${vars.color.primary} 35%, ${vars.color.blue} 97%)`,
   '@media': {
     'screen and (max-width: 720px)': {
       width: 'calc(100% - 50px)',

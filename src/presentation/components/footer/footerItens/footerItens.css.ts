@@ -9,11 +9,25 @@ export const footerItem = style({
 
 globalStyle(`${footerItem} > h2`, {
   fontSize: '14px',
-  fontWeight: 500,
+  fontWeight: 600,
+  color: vars.color.lightText,
+  textTransform: 'uppercase',
+  '@media': {
+    'screen and (max-width: 920px)': {
+      fontSize: '16px',
+    },
+  },
 })
 
 globalStyle(`${footerItem} > span`, {
+  fontFamily: vars.fonts.DMSans,
   fontSize: '14px',
-  fontWeight: 300,
-  color: vars.color.grayText,
+  fontWeight: 500,
+  color: vars.color.lightText,
+  opacity: 0.7,
+  '@media': {
+    'screen and (max-width: 920px)': {
+      fontSize: '18px',
+    },
+  },
 })

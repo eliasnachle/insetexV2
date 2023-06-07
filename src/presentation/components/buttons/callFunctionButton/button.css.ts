@@ -1,5 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css'
-import { vars } from '../../styles/theme/theme.css'
+import { vars } from '../../../styles/theme/theme.css'
 
 export const btnStyle = style({
   textDecoration: 'none',
@@ -18,8 +18,4 @@ export const btnStyle = style({
     background: vars.color.darkBtn,
     color: vars.color.lightText,
   },
-})
-
-globalStyle(`${btnStyle} > a`, {
-  textDecoration: 'none',
 })

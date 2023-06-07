@@ -14,10 +14,10 @@ globalStyle(`${aboutContainer} > div`, {
 })
 
 globalStyle(`${aboutContainer} > div > article > h1`, {
-  fontFamily: vars.fonts.DMSans,
   fontSize: '60px',
-  fontWeight: 700,
   color: vars.color.blueText,
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 500
 })
 
 globalStyle(`${aboutContainer} > div > article > p`, {
@@ -65,9 +65,9 @@ globalStyle(`${historyItens} > div`, {
 })
 
 globalStyle(`${historyItens} > div > svg`, {
-  color: vars.color.primary,
+  color: vars.color.icon,
   fontSize: '3.5em',
-  background: vars.color.backgroundGray,
+  background: vars.color.backgroundLightBlue,
   borderRadius: '100px',
   padding: '12px',
 })

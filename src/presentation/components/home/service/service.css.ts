@@ -33,20 +33,22 @@ export const serviceItensContainer = style({
   },
 })
 
-globalStyle(`${serviceContainer} > article`, {
+globalStyle(`${serviceContainer} > article`, {  
   maxWidth: vars.sizes.desktopWidth,
   display: 'grid',
   placeItems: 'center',
   gridGap: '3em',
 })
 
-globalStyle(`${serviceContainer} > article > h1`, {
+globalStyle(`${serviceContainer} > article > h1`, {  
   color: vars.color.blueText,
-  fontSize: 'clamp(2.5em, 3vw, 3.5em)',
-  fontWeight: 700,
+  fontSize: 'clamp(2.5em, 3vw, 4em)',
   textAlign: 'center',
-  maxWidth: '800px',
+  maxWidth: '950px',
   width: '100%',
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 500,
+  lineHeight: '1.2em',
 })
 
 export const serviceItem = style({
@@ -79,8 +81,9 @@ export const serviceItemSvg = style({
 
 globalStyle(`${serviceItem} > h2`, {
   color: vars.color.blueText,
-  fontSize: '1.5em',
-  fontWeight: 700,
+  fontSize: '1.25em',
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 500,
 })
 
 globalStyle(`${serviceItem} > p`, {

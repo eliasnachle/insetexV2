@@ -61,7 +61,7 @@ globalStyle(`${serviceItem} > figure > img`, {
 })
 
 export const serviceDetail = style({
-  background: vars.color.darkBtn,
+  background: vars.color.backgroundDetailItem,
   maxWidth: vars.sizes.desktopWidth,
   width: '100%',
   display: 'grid',
@@ -81,7 +81,8 @@ export const serviceDetail = style({
 
 globalStyle(`${serviceDetail} > h1`, {
   fontSize: '3em',
-  color: vars.color.lightBlueGrayText,
+  color: vars.color.titleBackgroundDetailItem,
+  opacity: 0.8,
   paddingBottom: '.75rem',
   width: '100%',
 })

@@ -42,7 +42,7 @@ globalStyle(`${navbar} > ul > li:hover`, {
 })
 
 globalStyle(`${navbar} > ul > li > a`, {
-  color: vars.color.grayText,
+  color: vars.color.lightText,
   textDecoration: 'none',
 })
 
@@ -51,10 +51,10 @@ globalStyle(`${navbar} > ul > div`, {
 })
 
 globalStyle(`${navbar} > ul > div > span`, {
+  color: vars.color.lightText,
   transition: 'all ease-in-out 150ms',
   paddingTop: '.5rem',
   fontSize: '16px',
-  color: vars.color.grayText,
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',

@@ -7,14 +7,14 @@ export const chevron = style({
   position: 'absolute',
   marginTop: '-30px',
   marginRight: '20px',
-  background: vars.color.backgroundDark,
+  background: vars.color.backgroundBlack,
   width: '15px',
   height: '15px',
   transform: 'rotate(-45deg)',
 })
 
 export const dropdownContainer = style({
-  background: vars.color.backgroundDark,
+  background: vars.color.backgroundBlack,
   padding: '1.5em',
   position: 'absolute',
   marginTop: '315px',
@@ -40,7 +40,7 @@ globalStyle(`${dropdownContainer} > ul > li`, {
   transition: 'all ease-in 100ms',
   cursor: 'pointer',
   fontSize: '14px',
-  fontWeight: 600,
+  fontWeight: 500,
 })
 
 globalStyle(`${dropdownContainer} > ul > li > a`, {

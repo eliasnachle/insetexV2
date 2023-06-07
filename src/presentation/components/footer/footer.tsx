@@ -14,10 +14,12 @@ export default function Footer() {
         <div className={footerGrid}>
           <article>
             <Logo />
+            <p>Sua defesa imbatível contra pragas, soluções sob medida para um ambiente livre e tranquilo.</p>
           </article>
           <FooterItens />
         </div>
         <div className={footerCopyrigth}>
+          <hr />
           <span>Copyright © 2023 Insetex Controle de Pragas.</span>
         </div>
       </div>

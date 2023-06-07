@@ -1,21 +1,32 @@
 import axios from 'axios'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import { formInput, formTextArea, loadingButton } from '../contactForm.css'
-import inputFormMap from './inputForm'
+import {
+  errorButton,
+  errorMessage,
+  formInput,
+  formTextArea,
+  loadingButton,
+} from '../contactForm.css'
+import inputFormMap from './inputFormMap'
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters'
+import Inputform from './inputForm/inputForm'
+import TextareaForm from './textareaForm/textareaForm'
+import { IUserForm } from './userFormTypes'
+import { useRouter } from 'next/router'
 
 interface UseStateProps {
   setIsSent: Dispatch<SetStateAction<boolean>>
 }
 
-interface IUserForm {
-  name: string
-  phone: string
-  email: string
-  message: string
+enum StatusResponse {
+  NONE,
+  SUCCESS,
+  FAILED,
 }
 
 export default function UserForm({ setIsSent }: UseStateProps) {
+  const router = useRouter()
+  const [statusResponse, setStatusResponse] = useState(StatusResponse.NONE)
   const [isValited, setIsValited] = useState(false)
   const [formErrors, setFormErrors] = useState({
     name: '',
@@ -29,22 +40,6 @@ export default function UserForm({ setIsSent }: UseStateProps) {
     email: '',
     message: '',
   })
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target
-    if (name == 'phone') {
-      let maskedValue = e.target.value
-      maskedValue = maskedValue
-        .replace(/\D+/g, '')
-        .replace(/(\d{2})(\d)/, '($1) $2')
-        .replace(/(\d{4})(\d)/, '$1-$2')
-        .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-        .replace(/(-\d{4})\d+?$/, '$1')
-      return setFormData({ ...formData, phone: maskedValue })
-    }
-    return setFormData({ ...formData, [name]: value })
-  }
 
   const validateFormStep = (values: IUserForm) => {
     const errors = { name: '', phone: '', email: '', message: '' }
@@ -53,27 +48,19 @@ export default function UserForm({ setIsSent }: UseStateProps) {
     const regexPhone = /^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
 
-    if (values.name.length < 3) {
-      errors.name = defaultMessage
-    } else if (!regexName.test(values.name)) {
-      errors.name = 'Contém espaços em branco'
+    if (values.name.length < 3 || !regexName.test(values.name)) {
+      errors.name = values.name.length < 3 ? defaultMessage : 'Contém espaços em branco'
     }
-    if (values.phone.length < 15) {
-      errors.phone = defaultMessage
-    } else if (!regexPhone.test(values.phone)) {
-      errors.phone = 'Telefone inválido'
+    if (values.phone.length < 15 || !regexPhone.test(values.phone)) {
+      errors.phone = values.phone.length < 15 ? defaultMessage : 'Telefone inválido'
     }
-    if (!values.email) {
-      errors.email = defaultMessage
-    } else if (!regexEmail.test(values.email)) {
-      errors.email = 'Formato inválido!'
+    if (!values.email || !regexEmail.test(values.email)) {
+      errors.email = !values.email ? defaultMessage : 'Formato inválido!'
     }
     if (!values.message || values.message.length < 4) {
       errors.message = defaultMessage
     }
-    if (Object.values(errors).every((o) => o === '')) {
-      setIsValited(true)
-    }
+    setIsValited(Object.values(errors).every((o) => o === ''))
     return errors
   }
 
@@ -86,12 +73,13 @@ export default function UserForm({ setIsSent }: UseStateProps) {
   useEffect(() => {
     const getContact = async () => {
       if (!isValited) return
-      const response = await axios.post(
-        '/api/contact/sendCustomerContact',
-        formData
-      )
-      if (response.status != 200) return console.log(response)
-      setIsSent(true)
+      try {
+        await axios.post('/api/contact/sendCustomerContact', formData)
+        setStatusResponse(StatusResponse.SUCCESS)
+        setIsSent(true)
+      } catch (e) {
+        setStatusResponse(StatusResponse.FAILED)
+      }
     }
     getContact()
   }, [formData, isValited, setIsSent])
@@ -103,40 +91,39 @@ export default function UserForm({ setIsSent }: UseStateProps) {
           return (
             <div className={formTextArea} key={i}>
               <label>{it.label}</label>
-              <textarea
-                placeholder={it.placeholder}
-                name={it.name}
-                value={formData.message}
-                onChange={handleChange}
+              <TextareaForm
+                values={it}
+                formErrors={formErrors}
+                formData={formData}
+                setFormData={setFormData}
               />
-              <span>{formErrors[it.name as keyof typeof formData]}</span>
             </div>
           )
         }
         return (
           <div className={formInput} key={i}>
             <label>{it.label}</label>
-            <input
-              type={it.type}
-              name={it.name}
-              placeholder={it.placeholder}
-              value={formData[it.name as keyof typeof formData]}
-              onChange={handleChange}
+            <Inputform
+              values={it}
+              formErrors={formErrors}
+              formData={formData}
+              setFormData={setFormData}
             />
-            <span>{formErrors[it.name as keyof typeof formData]}</span>
           </div>
         )
       })}
       <button
         onClick={handleSubmitForm}
         style={{ cursor: isValited ? 'default' : 'pointer' }}
-      >
-        {isValited ? (
-          <AiOutlineLoading3Quarters className={loadingButton} />
-        ) : (
-          'Enviar'
-        )}
+        className={statusResponse == StatusResponse.FAILED ? errorButton : ''}>
+        {isValited ? <AiOutlineLoading3Quarters className={loadingButton} /> : 'Enviar mensagem'}
       </button>
+      {statusResponse == StatusResponse.FAILED && (
+        <span className={errorMessage}>
+          Houve alguma falha ao enviar, por favor atualize a página{' '}
+          <a onClick={() => router.reload()}>clicando aqui</a>.
+        </span>
+      )}
     </div>
   )
 }

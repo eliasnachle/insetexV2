@@ -3,13 +3,7 @@ import { footerItem } from './footerItens.css'
 
 export default function FooterItens() {
   return (
-    <>
-      <div className={footerItem}>
-        <h2>Serviços</h2>
-        {services.map((it, i) => (
-          <span key={i}>{it.name}</span>
-        ))}
-      </div>
+    <div>
       <div className={footerItem}>
         <h2>Serviços</h2>
         {services.map((it, i) => (
@@ -28,6 +22,6 @@ export default function FooterItens() {
           <span key={i}>{it.name}</span>
         ))}
       </div>
-    </>
+    </div>
   )
 }

@@ -2,7 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../../../styles/theme/theme.css'
 
 export const heroContainer = style({
-  background: vars.color.primary,
+  background: 'linear-gradient(100deg,#002445 35%, #003362 97%)',
   width: '100%',
   height: '50vh',
   display: 'flex',

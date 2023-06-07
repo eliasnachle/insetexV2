@@ -44,6 +44,9 @@ globalStyle(`${ContactArticle} > h1`, {
   fontSize: '3em',
   color: vars.color.blueText,
   maxWidth: '550px',
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 600,
+  lineHeight: '1.2em',
   '@media': {
     'screen and (max-width: 720px)': {
       fontSize: '2em',
@@ -66,7 +69,7 @@ export const Button = style({
   fontWeight: 500,
   fontSize: '14px',
   transition: 'all ease-in 200ms',
-  background: vars.color.btnColor,
+  background: vars.color.primary,
   color: vars.color.lightText,
   borderRadius: '12px',
   cursor: 'pointer',

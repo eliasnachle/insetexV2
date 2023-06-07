@@ -1,4 +1,4 @@
-import Button from '../../button/button'
+import Button from '../../buttons/defaultButton/button'
 import { heroContainer } from './hero.css'
 import { easeInOut, motion } from 'framer-motion'
 

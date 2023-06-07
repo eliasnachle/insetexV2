@@ -2,17 +2,16 @@ import { globalStyle, keyframes, style } from '@vanilla-extract/css'
 import { vars } from '../../../styles/theme/theme.css'
 
 export const formContainer = style({
-  padding: 'calc(80px + 2em) 2em',
+  padding: 'calc(80px + 2em) 1em',
   display: 'grid',
-  placeItems: 'center',
+  placeItems: 'center'
 })
 
 globalStyle(`${formContainer} > h1`, {
-  fontFamily: vars.fonts.DMSans,
   fontSize: '3em',
-  fontWeight: 700,
-  color: vars.color.blueText,
-  textAlign: 'center',
+  color: vars.color.blueText,  
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 500
 })
 
 globalStyle(`${formContainer} > p`, {
@@ -25,6 +24,7 @@ globalStyle(`${formContainer} > p`, {
   '@media': {
     'screen and (max-width: 580px)': {
       width: '100%',
+      textAlign: 'start',
     },
   },
 })
@@ -55,32 +55,39 @@ export const formTextArea = style({
 globalStyle(`${formInput} > label, ${formTextArea} > label`, {
   color: vars.color.blackText,
   opacity: 0.7,
-  fontSize: '16px',
+  fontSize: '14px',
   fontWeight: 500,
   padding: '0 0 .25rem .25rem',
+  '@media': {
+    'screen and (max-width: 580px)': {
+      fontSize: '16px'
+    },
+  },
 })
 
 globalStyle(`${formInput} > input, ${formTextArea} > textarea`, {
   transition: 'all ease-in 50ms',
-  background: '#dedde921',
+  background: vars.color.backgroundLight,
   height: '55px',
   width: '500px',
   fontSize: '16px',
   padding: '10px 15px',
-  border: '2px solid #bab8cb',
-  borderRadius: '10px',
+  border: `2px solid ${vars.color.inputBorder}`,
+  borderRadius: '12px',
   outline: 'none',
   fontFamily: vars.fonts.DMSans,
   '@media': {
     'screen and (max-width: 580px)': {
       width: '100%',
+      minHeight: '65px'
     },
   },
 })
 
 globalStyle(`${formInput} > span, ${formTextArea} > span`, {
-  color: '#de071c',
+  color: vars.color.backgroundError,
   fontSize: '12px',
+  fontWeight: 500
 })
 
 globalStyle(`${formTextArea} > textarea`, {
@@ -112,12 +119,12 @@ globalStyle(`${formContainer} > div > button, ${formTextArea} > div > button`, {
   cursor: 'pointer',
   transition: 'all ease-in-out 150ms',
   fontFamily: vars.fonts.DMSans,
-  fontSize: '15px',
+  fontSize: '16px',
   fontWeight: 500,
-  background: '#00a5ff',
+  background: vars.color.blue,
   color: vars.color.lightText,
   border: 'none',
-  borderRadius: '10px',
+  borderRadius: '16px',
   height: '60px',
 })
 
@@ -132,7 +139,7 @@ export const sentMailContainer = style({
   maxWidth: '700px',
   width: '100%',
   textAlign: 'center',
-  background: '#121826',
+  background: vars.color.backgroundBlackBlue,
   borderRadius: '35px',
 })
 
@@ -147,9 +154,24 @@ globalStyle(`${sentMailContainer} > div > h1`, {
 
 globalStyle(`${sentMailContainer} > div > p`, {
   padding: '1em',
-  fontSize: '17px',
-  color: '#939DB8',
+  fontSize: '16px',
+  color: vars.color.lightText,
   opacity: 0.6,
+})
+
+globalStyle(`${sentMailContainer} > div > button:hover`, {
+  cursor: 'pointer',
+  opacity: 0.8,
+})
+
+const rotate = keyframes({
+  '0%': { transform: 'rotateZ(0deg)' },
+  '100%': { transform: 'rotateZ(360deg)' },
+})
+
+export const loadingButton = style({
+  fontSize: '1em',
+  animation: `${rotate} 1.25s linear infinite`,
 })
 
 globalStyle(`${sentMailContainer} > div > button`, {
@@ -166,16 +188,18 @@ globalStyle(`${sentMailContainer} > div > button`, {
   marginTop: '10px',
 })
 
-globalStyle(`${sentMailContainer} > div > button:hover`, {
-  opacity: 0.8,
+export const errorButton = style({
+  background: `${vars.color.backgroundError} !important`
 })
 
-const rotate = keyframes({
-  '0%': { transform: 'rotateZ(0deg)' },
-  '100%': { transform: 'rotateZ(360deg)' },
+export const errorMessage = style({
+  textAlign: 'center',
+  fontSize: '14px',
+  color: vars.color.grayText,
 })
 
-export const loadingButton = style({
-  fontSize: '1em',
-  animation: `${rotate} 1.25s linear infinite`,
+globalStyle(`${errorMessage} > a`, {
+  color: vars.color.primary,
+  textDecoration: 'none',
+  cursor: 'pointer'
 })
