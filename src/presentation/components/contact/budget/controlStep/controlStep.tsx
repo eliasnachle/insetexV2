@@ -6,7 +6,7 @@ interface IStep {
   handleSetStep: (newStep: number) => void
 }
 
-class ControlStep extends Component<IStep> {
+export default class ControlStep extends Component<IStep> {
   render() {
     const handleNextStep = () => {
       this.props.handleSetStep(this.props.step + 1)
@@ -24,5 +24,3 @@ class ControlStep extends Component<IStep> {
     )
   }
 }
-
-export default ControlStep

@@ -71,20 +71,20 @@ globalStyle(`${chebkboxItemChecked} > label > div > svg`, {
 
 export const problemContainer = style({
   display: 'grid',
-  placeItems: 'center',
+  padding: '.25rem 1em',
   width: '100%'
 })
 
-globalStyle(`${problemContainer} > p`, {   
-  padding: '.5rem 0',
-  fontSize: '16px',
+globalStyle(`${problemContainer} > p`, {     
+  fontSize: '14px',
+  fontWeight: 500,
   fontFamily: vars.fonts.DMSans,  
   color: vars.color.blueText
 })
 
 globalStyle(`${problemContainer} > div`, {  
   width: '100%',
-  padding: '.5rem 1em'
+  padding: '.5rem 0'
 })
 
 globalStyle(`${problemContainer} > div > textarea`, {

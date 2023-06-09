@@ -16,7 +16,9 @@ interface IStepProps {
   step: number
 }
 
-class Stepper extends Component<IStepProps> {
+const stepperAnimation = { duration: 0.5, ease: 'easeInOut', delay: 0.2 }
+
+export default class Stepper extends Component<IStepProps> {
   render() {
     return (
       <div className={StepperContainer}>
@@ -24,39 +26,35 @@ class Stepper extends Component<IStepProps> {
           const isActiveStep = this.props.step === i
           const isCompletedStep = i < this.props.step
           return (
-          <Fragment key={i}>            
-            {this.stepIcon(it, isActiveStep, isCompletedStep)}
-            {it.id < 2 && this.progressBar(isActiveStep, isCompletedStep)}
-          </Fragment>
+            <Fragment key={i}>
+              {this.stepIcon(it, isActiveStep, isCompletedStep)}
+              {it.id < 2 && this.progressBar(isActiveStep, isCompletedStep)}
+            </Fragment>
           )
         })}
       </div>
     )
   }
 
-  private stepIcon(it: { id: number; icon: JSX.Element; label: string }, isActiveStep: boolean, isCompletedStep: boolean) {
+  private stepIcon(
+    it: { id: number; icon: JSX.Element; label: string },
+    isActiveStep: boolean,
+    isCompletedStep: boolean,
+  ) {
     const iconBorderColor = isActiveStep ? vars.color.blue : isCompletedStep ? vars.color.success : vars.color.pendentItem
     const iconBackground = isActiveStep ? '' : isCompletedStep ? vars.color.success : ''
     return (
-      <div className={`${StepperItem}              
-            ${isActiveStep && activeStep}
-            ${isCompletedStep && completedStep}`}>
-      <motion.div
-        className={StepperIcon}
-        initial={false}
-        animate={{
-          border: `2px solid ${iconBorderColor}`,
-          background: iconBackground,
-        }}
-        transition={{
-          duration: 0.5,
-          ease: 'easeInOut',
-          delay: 0.2,
-        }}>
-        {it.icon}
-      </motion.div>
-      <span>{it.label}</span>
-    </div>
+      <div
+        className={`${StepperItem} ${isActiveStep && activeStep} ${isCompletedStep && completedStep}`}>
+        <motion.div
+          className={StepperIcon}
+          initial={false}
+          animate={{ border: `2px solid ${iconBorderColor}`, background: iconBackground }}
+          transition={{ animation: stepperAnimation }}>
+          {it.icon}
+        </motion.div>
+        <span>{it.label}</span>
+      </div>
     )
   }
 
@@ -68,19 +66,10 @@ class Stepper extends Component<IStepProps> {
         <motion.div
           className={progress}
           initial={false}
-          animate={{
-            width: progressBarWidth,
-            background: progressBarBackground
-          }}
-          transition={{
-            duration: 0.5,
-            ease: 'easeInOut',
-            delay: 0.2,
-          }}
+          animate={{ width: progressBarWidth, background: progressBarBackground }}
+          transition={{ animation: stepperAnimation }}
         />
       </div>
     )
   }
 }
-
-export default Stepper

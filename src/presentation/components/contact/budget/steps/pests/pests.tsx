@@ -11,12 +11,12 @@ interface PestsProps {
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-class Pests extends Component<PestsProps> {
+export default class Pests extends Component<PestsProps> {
   render() {
     return (
       <div className={stepContainer}>
         <h1>Quais serviços serão contratados?</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <p>Selecione os serviços que você está buscando.</p>
         <div className={stepItem}>
           {pestsMap.map((it, i) => {
             const service = this.props.services.find((service) => service.name === it.name)
@@ -42,5 +42,3 @@ class Pests extends Component<PestsProps> {
     )
   }
 }
-
-export default Pests

@@ -12,7 +12,7 @@ interface BudgetState {
   userData: IUserData
 }
 
-class Budget extends Component<object, BudgetState> {
+export default class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
@@ -59,5 +59,3 @@ class Budget extends Component<object, BudgetState> {
     )
   }
 }
-
-export default Budget
