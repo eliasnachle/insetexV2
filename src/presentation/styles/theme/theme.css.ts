@@ -24,6 +24,8 @@ export const vars = createGlobalTheme(':root', {
     inputBorder: '#e7ebed',
     backgroundDetailItem: '#011b3e',
     titleBackgroundDetailItem: '#5d7ba3',
+    pendentItem: '#dad9d9',
+    radioBorder: '#c9cfd2'
   },
   sizes: {
     desktopWidth: '1200px',
