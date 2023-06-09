@@ -17,6 +17,14 @@ export const lineProgress = style({
   margin: '0 1em 25px 1em',
 })
 
+export const lineProgressActive = style({
+  background: vars.color.blue,
+})
+
+export const lineProgressCompleted = style({
+  background: vars.color.success,
+})
+
 export const StepperItem = style({
   display: 'grid',
   placeItems: 'center',
@@ -45,32 +53,32 @@ globalStyle(`${StepperIcon} > svg`, {
   width: '100%',
 })
 
-export const currentStep = style({})
+export const activeStep = style({})
 
-globalStyle(`${currentStep} > div`, {
+globalStyle(`${activeStep} > div`, {
   border: `2px solid ${vars.color.blue}`,
 })
 
-globalStyle(`${currentStep} > div > svg`, {
+globalStyle(`${activeStep} > div > svg`, {
   color: vars.color.blue,
   fill: vars.color.blue,
 })
 
-globalStyle(`${currentStep} > span`, {
+globalStyle(`${activeStep} > span`, {
   color: vars.color.backgroundBlackBlue,
 })
 
-export const concludedStep = style({})
+export const completedStep = style({})
 
-globalStyle(`${concludedStep} > div`, {
+globalStyle(`${completedStep} > div`, {
   border: `2px solid ${vars.color.success}`,
   background: vars.color.success,
 })
 
-globalStyle(`${concludedStep} > div > svg`, {  
+globalStyle(`${completedStep} > div > svg`, {  
   fill: vars.color.lightText,
 })
 
-globalStyle(`${concludedStep} > span`, {
+globalStyle(`${completedStep} > span`, {
   color: vars.color.success,
 })

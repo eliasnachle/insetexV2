@@ -1,13 +1,12 @@
 import { ChangeEvent, Component } from 'react'
 import { budgetContainer, budgetSection } from './budget.css'
-import { ESteps } from './budgetEnums'
-import { IAddress, IService, IStep, IUserData } from './budgetTypes'
+import { IAddress, IService, IUserData } from './budgetTypes'
 import ControlStep from './controlStep/controlStep'
 import Stepper from './stepper/stepper'
 import Pests from './steps/pests/pests'
 
 interface BudgetState {
-  step: IStep
+  step: number
   services: IService[]
   address: IAddress
   userData: IUserData
@@ -17,7 +16,7 @@ class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
-      step: { currentStep: 0, status: ESteps.ACTIVE },
+      step: 0,
       services: [
         { name: 'rat', checked: false },
         { name: 'ant', checked: false },
@@ -40,7 +39,7 @@ class Budget extends Component<object, BudgetState> {
     }))
   }
 
-  handleSetStep = (newStep: IStep) => {
+  handleSetStep = (newStep: number) => {
     this.setState({
       step: newStep
     })
@@ -52,7 +51,7 @@ class Budget extends Component<object, BudgetState> {
         <div className={budgetContainer}>
           <Stepper step={this.state.step} />
           <Pests services={this.state.services} handleInputChange={this.handleInputChange} />
-          {/* <ControlStep handleSetStep={this.handleSetStep} step={this.state.step.currentStep} /> */}
+          <ControlStep handleSetStep={this.handleSetStep} step={this.state.step} />
         </div>
       </section>
     )

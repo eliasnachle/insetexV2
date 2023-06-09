@@ -1,10 +1,3 @@
-import { ESteps } from './budgetEnums'
-
-export interface IStep {
-  currentStep: number
-  status: ESteps
-}
-
 export interface IService {
   name: string
   checked: boolean

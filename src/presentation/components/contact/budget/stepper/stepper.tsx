@@ -1,18 +1,18 @@
 import {
-  concludedStep,
-  currentStep,
+  completedStep,
+  activeStep,
   lineProgress,
+  lineProgressActive,
   StepperContainer,
   StepperIcon,
   StepperItem,
+  lineProgressCompleted,
 } from './stepper.css'
 import { Component, Fragment } from 'react'
 import stepsMap from './stepsMap'
-import { IStep } from '../budgetTypes'
-import { ESteps } from '../budgetEnums'
 
 interface IStepProps {
-  step: IStep
+  step: number
 }
 
 class Stepper extends Component<IStepProps> {
@@ -23,13 +23,18 @@ class Stepper extends Component<IStepProps> {
           <Fragment key={i}>
             <div
               className={`${StepperItem}              
-              ${this.props.step.currentStep === i && currentStep}
-              ${i < this.props.step.currentStep && concludedStep}
-              `}>
+              ${this.props.step === i && activeStep}
+              ${i < this.props.step && completedStep}`}>
               <div className={StepperIcon}>{it.icon}</div>
               <span>{it.label}</span>
             </div>
-            {it.id < 2 && <div className={lineProgress} />}
+            {it.id < 2 && (
+              <div
+                className={`${lineProgress}  
+                ${this.props.step === i && lineProgressActive}
+                ${i < this.props.step && lineProgressCompleted}`}
+              />
+            )}
           </Fragment>
         ))}
       </div>
