@@ -1,27 +1,13 @@
 import { ChangeEvent, Component } from 'react'
-import { budgetContainer } from './budget.css'
+import { budgetContainer, budgetSection } from './budget.css'
+import { ESteps } from './budgetEnums'
+import { IAddress, IService, IStep, IUserData } from './budgetTypes'
+import ControlStep from './controlStep/controlStep'
 import Stepper from './stepper/stepper'
 import Pests from './steps/pests/pests'
 
-export interface IService {
-  name: string
-  checked: boolean
-}
-
-interface IAddress {
-  type: string
-}
-
-interface IUserData {
-  name: string
-  phone: string
-  mail: string
-  cep: string
-  address: string
-  number: string
-}
-
 interface BudgetState {
+  step: IStep
   services: IService[]
   address: IAddress
   userData: IUserData
@@ -31,43 +17,17 @@ class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
+      step: { currentStep: 0, status: ESteps.ACTIVE },
       services: [
-        {
-          name: 'rat',
-          checked: false,
-        },
-        {
-          name: 'ant',
-          checked: false,
-        },
-        {
-          name: 'cockroach',
-          checked: false,
-        },
-        {
-          name: 'covid',
-          checked: false,
-        },
-        {
-          name: 'clean',
-          checked: false,
-        },
-        {
-          name: 'pipe',
-          checked: false,
-        },
+        { name: 'rat', checked: false },
+        { name: 'ant', checked: false },
+        { name: 'cockroach', checked: false },
+        { name: 'covid', checked: false },
+        { name: 'clean', checked: false },
+        { name: 'pipe', checked: false },
       ],
-      address: {
-        type: '',
-      },
-      userData: {
-        name: '',
-        phone: '',
-        mail: '',
-        cep: '',
-        address: '',
-        number: '',
-      },
+      address: { type: '' },
+      userData: { name: '', phone: '', mail: '', cep: '', address: '', number: '' },
     }
   }
 
@@ -80,13 +40,21 @@ class Budget extends Component<object, BudgetState> {
     }))
   }
 
+  handleSetStep = (newStep: IStep) => {
+    this.setState({
+      step: newStep
+    })
+  }
+
   render() {
     return (
-      <div className={budgetContainer}>
-        <Stepper />
-        <Pests services={this.state.services} handleInputChange={this.handleInputChange} />
-        <button onClick={() => console.log(this.state.services)}>VER</button>
-      </div>
+      <section className={budgetSection}>
+        <div className={budgetContainer}>
+          <Stepper step={this.state.step} />
+          <Pests services={this.state.services} handleInputChange={this.handleInputChange} />
+          {/* <ControlStep handleSetStep={this.handleSetStep} step={this.state.step.currentStep} /> */}
+        </div>
+      </section>
     )
   }
 }

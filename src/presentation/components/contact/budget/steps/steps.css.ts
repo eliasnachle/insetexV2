@@ -4,7 +4,7 @@ import { vars } from '../../../../styles/theme/theme.css'
 export const stepContainer = style({
   display: 'grid',
   placeItems: 'center',
-  padding: '1em 0'
+  padding: '1em 0 0 0'
 })
 
 globalStyle(`${stepContainer} > h1`, {   

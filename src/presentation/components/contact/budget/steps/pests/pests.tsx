@@ -1,7 +1,7 @@
 import { ChangeEvent, Component } from 'react'
-import { IService } from '../../budget'
+import { IService } from '../../budgetTypes'
 import { stepContainer, stepItem } from '../steps.css'
-import { chebkboxItem, chebkboxItemChecked, radioInput } from './pests.css'
+import PestInput from './pestInput/pestInput'
 import pestsMap from './pestsMap'
 
 interface PestsProps {
@@ -18,26 +18,14 @@ class Pests extends Component<PestsProps> {
         <div className={stepItem}>
           {pestsMap.map((it, i) => {
             const service = this.props.services.find((service) => service.name === it.name)
-            const isChecked = service && service.checked
+            const isChecked = service?.checked ?? false
             return (
-              <div
-                className={isChecked ? `${chebkboxItemChecked} ${chebkboxItem}` : chebkboxItem}
-                key={i}>
-                <label>
-                  <div>
-                    {it.icon}
-                    <span>{it.label}</span>
-                    <p>{it.description}</p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    className={radioInput}
-                    name={it.name}
-                    id={it.name}
-                    onChange={this.props.handleInputChange}
-                  />
-                </label>
-              </div>
+                <PestInput
+                key={i}
+                inputData={it}
+                isChecked={isChecked}
+                handleInputChange={this.props.handleInputChange}
+              />
             )
           })}
         </div>
