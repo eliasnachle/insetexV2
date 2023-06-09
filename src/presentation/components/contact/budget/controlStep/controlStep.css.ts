@@ -4,8 +4,9 @@ import { vars } from '../../../../styles/theme/theme.css'
 export const containerControlStep = style({
   width: '100%',
   display: 'flex',
-  justifyContent: 'end',
-  alignItems: 'center'
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '2em'
 })
 
 globalStyle(`${containerControlStep} > button`, {
@@ -24,4 +25,10 @@ globalStyle(`${containerControlStep} > button`, {
 
 globalStyle(`${containerControlStep} > button:hover`, {
   opacity: 0.8
+})
+
+export const previousButton = style({
+  padding: '0 15px !important',
+  background: `${vars.color.backgroundLight} !important`,
+  color: `${vars.color.blueText} !important`
 })

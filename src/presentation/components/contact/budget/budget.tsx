@@ -18,9 +18,9 @@ class Budget extends Component<object, BudgetState> {
     this.state = {
       step: 0,
       services: [
-        { name: 'rat', checked: false },
-        { name: 'ant', checked: false },
-        { name: 'cockroach', checked: false },
+        { name: 'desratizacao', checked: false },
+        { name: 'descupinizacao', checked: false },
+        { name: 'desinsetizacao', checked: false },
         { name: 'covid', checked: false },
         { name: 'clean', checked: false },
         { name: 'pipe', checked: false },
@@ -51,7 +51,7 @@ class Budget extends Component<object, BudgetState> {
         <div className={budgetContainer}>
           <Stepper step={this.state.step} />
           <Pests services={this.state.services} handleInputChange={this.handleInputChange} />
-          <ControlStep handleSetStep={this.handleSetStep} step={this.state.step} />
+          <ControlStep step={this.state.step} handleSetStep={this.handleSetStep} />
         </div>
       </section>
     )

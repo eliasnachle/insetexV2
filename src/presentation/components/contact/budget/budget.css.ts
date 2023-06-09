@@ -1,5 +1,4 @@
-import { globalStyle, style } from '@vanilla-extract/css'
-import { vars } from '../../../styles/theme/theme.css'
+import { style } from '@vanilla-extract/css'
 
 export const budgetSection = style({
   display: 'grid',

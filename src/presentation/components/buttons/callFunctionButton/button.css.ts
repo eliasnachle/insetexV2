@@ -1,4 +1,4 @@
-import { globalStyle, style } from '@vanilla-extract/css'
+import { style } from '@vanilla-extract/css'
 import { vars } from '../../../styles/theme/theme.css'
 
 export const btnStyle = style({
@@ -15,7 +15,7 @@ export const btnStyle = style({
   fontWeight: 600,
   fontSize: '16px',
   ':hover': {
-    background: vars.color.darkBtn,
+    background: vars.color.backgroundDark,
     color: vars.color.lightText,
   },
 })

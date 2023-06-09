@@ -10,19 +10,18 @@ export const StepperContainer = style({
 })
 
 export const lineProgress = style({
-  background: vars.color.pendentItem,
+  background: vars.color.inputBorder,
   height: '2px',
   borderRadius: '10px',
   width: '100%',
   margin: '0 1em 25px 1em',
 })
 
-export const lineProgressActive = style({
+export const progress = style({
   background: vars.color.blue,
-})
-
-export const lineProgressCompleted = style({
-  background: vars.color.success,
+  height: '2px',
+  borderRadius: '10px',
+  width: '0%',
 })
 
 export const StepperItem = style({
@@ -39,6 +38,7 @@ globalStyle(`${StepperItem} > span`, {
 })
 
 export const StepperIcon = style({
+  transition: 'all ease-in-out 250ms',
   border: `2px solid ${vars.color.pendentItem}`,
   height: '45px',
   width: '45px',
@@ -47,6 +47,7 @@ export const StepperIcon = style({
 })
 
 globalStyle(`${StepperIcon} > svg`, {
+  transition: 'all ease-in-out 250ms',
   color: vars.color.pendentItem,
   fill: vars.color.pendentItem,
   height: '100%',

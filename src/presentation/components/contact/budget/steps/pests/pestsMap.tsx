@@ -8,39 +8,39 @@ import Pipe from '/public/home/serviceIcons/pipe.svg'
 const pestsMap = [
   {
     icon: <Rat />,
-    label: 'Ratos',
-    name: 'rat',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Desratização',
+    name: 'desratizacao',
+    description: 'Combate contra de ratos e roedores.',
   },
   {
     icon: <Ant />,
-    label: 'Formiga',
-    name: 'ant',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Descupinização',
+    name: 'descupinizacao',
+    description: 'Remoção eficaz de cupins infestadores.',
   },
   {
     icon: <Cockroach />,
-    label: 'Barata',
-    name: 'cockroach',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Desinsetização',
+    name: 'desinsetizacao',
+    description: 'Controle de pragas e insetos indesejados.',
   },
   {
     icon: <Clean />,
     label: 'Limpeza De Caixas D’ Água',
     name: 'clean',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    description: 'Limpeza e manutenção de reservatórios.',
   },
   {
     icon: <Covid />,
     label: 'Sanitização',
     name: 'covid',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    description: 'Desinfecção e eliminação de germes.',
   },
   {
     icon: <Pipe />,
     label: 'Desentupimento',
     name: 'pipe',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    description: 'Remoção de obstruções em encanamentos.',
   },
 ]
 
