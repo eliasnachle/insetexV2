@@ -17,7 +17,7 @@ class ControlStep extends Component<IStep> {
     }
 
     return (
-      <div className={containerControlStep}>        
+      <div className={containerControlStep} style={{justifyContent: this.props.step >= 1 ? 'space-between' : 'end'}}>        
         {this.props.step >= 1 && <button className={previousButton} onClick={handlePrevStep}>Voltar</button>}
         <button onClick={handleNextStep}>Continuar</button>
       </div>

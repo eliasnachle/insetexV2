@@ -68,3 +68,27 @@ export const chebkboxItemChecked = style({
 globalStyle(`${chebkboxItemChecked} > label > div > svg`, {
   fill: vars.color.blue
 })
+
+export const problemContainer = style({
+  display: 'grid',
+  placeItems: 'center',
+  width: '100%'
+})
+
+globalStyle(`${problemContainer} > p`, {   
+  padding: '.5rem 0',
+  fontSize: '16px',
+  fontFamily: vars.fonts.DMSans,  
+  color: vars.color.blueText
+})
+
+globalStyle(`${problemContainer} > div`, {  
+  width: '100%',
+  padding: '.5rem 1em'
+})
+
+globalStyle(`${problemContainer} > div > textarea`, {
+  height: '80px',
+  marginBottom: '1.5em',
+  width: '100%'
+})

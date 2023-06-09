@@ -1,7 +1,9 @@
 import { ChangeEvent, Component } from 'react'
+import { formTextArea } from '../../../contactForm/contactForm.css'
 import { IService } from '../../budgetTypes'
-import { stepContainer, stepItem } from '../steps.css'
+import { divideBar, stepContainer, stepItem } from '../steps.css'
 import PestInput from './pestInput/pestInput'
+import { problemContainer } from './pests.css'
 import pestsMap from './pestsMap'
 
 interface PestsProps {
@@ -20,15 +22,22 @@ class Pests extends Component<PestsProps> {
             const service = this.props.services.find((service) => service.name === it.name)
             const isChecked = service?.checked ?? false
             return (
-                <PestInput
+              <PestInput
                 key={i}
                 inputData={it}
                 isChecked={isChecked}
                 handleInputChange={this.props.handleInputChange}
               />
             )
-          })}
+          })}          
         </div>
+        <div className={divideBar} />
+          <div className={problemContainer}>
+            <p>Nos conte um pouco sobre o seu problema</p>
+            <div className={formTextArea}>              
+              <textarea placeholder='Ex: Tenho enfrentado problemas com insetos em casa, incluindo formigas na despensa e mosquitos que conseguem entrar.' />
+            </div>
+          </div>
       </div>
     )
   }

@@ -21,9 +21,17 @@ globalStyle(`${stepContainer} > p`, {
     color: vars.color.lightBlueText
 })
 
+export const divideBar = style({
+  height: '1px',
+  width: '100%',
+  background: vars.color.radioBorder,
+  margin: '1em 0',
+  borderRadius: '10px'
+})
+
 export const stepItem = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(3, auto)',
   gridGap: '1em',
-  padding: '2em 0'
+  padding: '2em 0 .5em 0'
 })

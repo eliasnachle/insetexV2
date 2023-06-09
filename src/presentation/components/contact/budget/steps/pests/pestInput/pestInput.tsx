@@ -29,6 +29,7 @@ export default function PestInput({ inputData, isChecked, handleInputChange }: P
           name={inputData.name}
           id={inputData.name}
           onChange={handleInputChange}
+          checked={isChecked}
         />
       </label>
     </div>

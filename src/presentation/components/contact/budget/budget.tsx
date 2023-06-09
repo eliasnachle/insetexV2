@@ -50,7 +50,9 @@ class Budget extends Component<object, BudgetState> {
       <section className={budgetSection}>
         <div className={budgetContainer}>
           <Stepper step={this.state.step} />
-          <Pests services={this.state.services} handleInputChange={this.handleInputChange} />
+          {this.state.step == 0 && <Pests services={this.state.services} handleInputChange={this.handleInputChange} />}
+          {this.state.step == 1 && <h1>2</h1>}      
+          {this.state.step == 2 && <h1>3</h1>}      
           <ControlStep step={this.state.step} handleSetStep={this.handleSetStep} />
         </div>
       </section>

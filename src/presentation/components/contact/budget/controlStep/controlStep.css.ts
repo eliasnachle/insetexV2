@@ -4,7 +4,6 @@ import { vars } from '../../../../styles/theme/theme.css'
 export const containerControlStep = style({
   width: '100%',
   display: 'flex',
-  justifyContent: 'space-between',
   alignItems: 'center',
   gap: '2em'
 })
