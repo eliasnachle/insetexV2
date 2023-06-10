@@ -1,5 +1,5 @@
+import { formTextArea } from '@/presentation/styles/inputs/inputs.css'
 import { ChangeEvent, Component } from 'react'
-import { formTextArea } from '../../../contactForm/contactForm.css'
 import { IService } from '../../budgetTypes'
 import { divideBar, stepContainer, stepItem } from '../steps.css'
 import PestInput from './pestInput/pestInput'

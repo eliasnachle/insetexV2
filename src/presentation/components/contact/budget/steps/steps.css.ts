@@ -4,7 +4,9 @@ import { vars } from '../../../../styles/theme/theme.css'
 export const stepContainer = style({
   display: 'grid',
   placeItems: 'center',
-  padding: '1em 0 0 0'
+  padding: '1em 0 0 0',
+  width: '100%',
+  height: '700px'
 })
 
 globalStyle(`${stepContainer} > h1`, {   
@@ -33,5 +35,6 @@ export const stepItem = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(3, auto)',
   gridGap: '1em',
-  padding: '2em 0 .5em 0'
+  padding: '2em 0 .5em 0',
+  width: '100%'
 })

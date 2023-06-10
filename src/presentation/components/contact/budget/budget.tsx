@@ -3,12 +3,13 @@ import { budgetContainer, budgetSection } from './budget.css'
 import { IAddress, IService, IUserData } from './budgetTypes'
 import ControlStep from './controlStep/controlStep'
 import Stepper from './stepper/stepper'
+import AddressDetail from './steps/address/address'
 import Pests from './steps/pests/pests'
 
 interface BudgetState {
   step: number
   services: IService[]
-  address: IAddress
+  addressData: IAddress
   userData: IUserData
 }
 
@@ -25,8 +26,8 @@ export default class Budget extends Component<object, BudgetState> {
         { name: 'clean', checked: false },
         { name: 'pipe', checked: false },
       ],
-      address: { type: '' },
-      userData: { name: '', phone: '', mail: '', cep: '', address: '', number: '' },
+      addressData: { typeClient: '', address: '', addressNumber: '', complement: '', reference: '' },
+      userData: { name: '', phone: '', mail: '' },
     }
   }
 
@@ -45,13 +46,23 @@ export default class Budget extends Component<object, BudgetState> {
     })
   }
 
+  handleInputChangeUserType = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name } = e.target
+    this.setState(({
+      addressData: {
+        ...this.state.addressData,
+        typeClient: name        
+      }
+    }))
+  }
+
   render() {
     return (
       <section className={budgetSection}>
         <div className={budgetContainer}>
           <Stepper step={this.state.step} />
           {this.state.step == 0 && <Pests services={this.state.services} handleInputChange={this.handleInputChange} />}
-          {this.state.step == 1 && <h1>2</h1>}      
+          {this.state.step == 1 && <AddressDetail addressData={this.state.addressData} handleInputChangeUserType={this.handleInputChangeUserType} />}      
           {this.state.step == 2 && <h1>3</h1>}      
           <ControlStep step={this.state.step} handleSetStep={this.handleSetStep} />
         </div>

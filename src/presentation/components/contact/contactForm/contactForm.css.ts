@@ -1,3 +1,4 @@
+import { formTextArea } from '@/presentation/styles/inputs/inputs.css'
 import { globalStyle, keyframes, style } from '@vanilla-extract/css'
 import { vars } from '../../../styles/theme/theme.css'
 
@@ -38,76 +39,6 @@ globalStyle(`${formContainer} > div`, {
       width: '100%',
     },
   },
-})
-
-export const formInput = style({
-  display: 'flex',
-  flexDirection: 'column',
-  fontFamily: vars.fonts.DMSans,
-})
-
-export const formTextArea = style({
-  display: 'flex',
-  flexDirection: 'column',
-  fontFamily: vars.fonts.DMSans,
-})
-
-globalStyle(`${formInput} > label, ${formTextArea} > label`, {
-  color: vars.color.blackText,
-  opacity: 0.7,
-  fontSize: '14px',
-  fontWeight: 500,
-  padding: '0 0 .25rem .25rem',
-  '@media': {
-    'screen and (max-width: 580px)': {
-      fontSize: '16px'
-    },
-  },
-})
-
-globalStyle(`${formInput} > input, ${formTextArea} > textarea`, {
-  transition: 'all ease-in 50ms',
-  background: vars.color.backgroundLight,
-  height: '55px',
-  width: '500px',
-  fontSize: '16px',
-  padding: '10px 15px',
-  border: `2px solid ${vars.color.inputBorder}`,
-  borderRadius: '12px',
-  outline: 'none',
-  fontFamily: vars.fonts.DMSans,
-  '@media': {
-    'screen and (max-width: 580px)': {
-      width: '100%',
-      minHeight: '65px'
-    },
-  },
-})
-
-globalStyle(`${formInput} > span, ${formTextArea} > span`, {
-  color: vars.color.backgroundError,
-  fontSize: '12px',
-  fontWeight: 500
-})
-
-globalStyle(`${formTextArea} > textarea`, {
-  height: '150px',
-  resize: 'none',
-})
-
-globalStyle(
-  `${formInput} > input::placeholder, ${formTextArea} > textarea::placeholder`,
-  {
-    fontSize: '14px',
-    fontFamily: vars.fonts.DMSans,
-    fontWeight: 400,
-    color: '#9795ab',
-  }
-)
-
-globalStyle(`${formInput} > input:focus, ${formTextArea} > textarea:focus`, {
-  border: '2px solid #00a5ff',
-  background: '#00a5ff03',
 })
 
 globalStyle(`${formContainer} > div > button, ${formTextArea} > div > button`, {
@@ -169,6 +100,10 @@ const rotate = keyframes({
   '100%': { transform: 'rotateZ(360deg)' },
 })
 
+export const errorButton = style({
+  background: `${vars.color.backgroundError} !important`
+})
+
 export const loadingButton = style({
   fontSize: '1em',
   animation: `${rotate} 1.25s linear infinite`,
@@ -186,10 +121,6 @@ globalStyle(`${sentMailContainer} > div > button`, {
   border: 'none',
   fontSize: '16px',
   marginTop: '10px',
-})
-
-export const errorButton = style({
-  background: `${vars.color.backgroundError} !important`
 })
 
 export const errorMessage = style({

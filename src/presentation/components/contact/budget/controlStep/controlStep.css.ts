@@ -26,8 +26,8 @@ globalStyle(`${containerControlStep} > button:hover`, {
   opacity: 0.8
 })
 
-export const previousButton = style({
-  padding: '0 15px !important',
+export const previousButton = style({  
   background: `${vars.color.backgroundLight} !important`,
-  color: `${vars.color.blueText} !important`
+  color: `${vars.color.blueText} !important`,
+  border: `2px solid ${vars.color.blueText} !important`
 })

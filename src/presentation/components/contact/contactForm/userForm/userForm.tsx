@@ -1,18 +1,13 @@
 import axios from 'axios'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import {
-  errorButton,
-  errorMessage,
-  formInput,
-  formTextArea,
-  loadingButton,
-} from '../contactForm.css'
 import inputFormMap from './inputFormMap'
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters'
 import Inputform from './inputForm/inputForm'
 import TextareaForm from './textareaForm/textareaForm'
 import { IUserForm } from './userFormTypes'
 import { useRouter } from 'next/router'
+import { formInput, formTextArea } from '@/presentation/styles/inputs/inputs.css'
+import { errorButton, errorMessage, loadingButton } from '../contactForm.css'
 
 interface UseStateProps {
   setIsSent: Dispatch<SetStateAction<boolean>>

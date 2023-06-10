@@ -4,14 +4,15 @@ export interface IService {
 }
 
 export interface IAddress {
-  type: string
+  typeClient: string
+  address: string
+  addressNumber: string
+  complement: string
+  reference: string
 }
 
 export interface IUserData {
   name: string
   phone: string
   mail: string
-  cep: string
-  address: string
-  number: string
 }

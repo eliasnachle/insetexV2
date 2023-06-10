@@ -1,5 +1,5 @@
+import { chebkboxItem, chebkboxItemChecked, checkboxInput } from '@/presentation/styles/inputs/inputs.css'
 import React, { ChangeEvent } from 'react'
-import { chebkboxItem, chebkboxItemChecked, radioInput } from '../pests.css'
 
 interface IInputData {
   icon: JSX.Element
@@ -25,7 +25,7 @@ export default function PestInput({ inputData, isChecked, handleInputChange }: P
         </div>
         <input
           type="checkbox"
-          className={radioInput}
+          className={checkboxInput}
           name={inputData.name}
           id={inputData.name}
           onChange={handleInputChange}
