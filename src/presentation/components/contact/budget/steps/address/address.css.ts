@@ -27,9 +27,53 @@ export const inlineInputContainer = style({
 })
 
 globalStyle(`${inlineInputContainer} > div:first-child > input`, {
-  maxWidth: '150px'
+  maxWidth: '200px'
 })
 
 globalStyle(`${inlineInputContainer} > div:nth-child(2) > input`, {
-  maxWidth: '350px'
+  maxWidth: '400px'
+})
+
+export const suggestionContainer = style({
+  marginTop: '90px',
+  border: `2px solid ${vars.color.inputBorder}`,
+  borderRadius: '12px',
+  background: vars.color.backgroundLight,
+  position: 'absolute',
+  zIndex: '999',
+  width: '736px'
+})
+
+globalStyle(`${suggestionContainer} > div`, {
+  padding: '0 1em',
+  height: '60px',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '20px',
+  cursor: 'pointer'
+})
+
+globalStyle(`${suggestionContainer} > div > svg`, {
+  fill: vars.color.lightBlueText
+})
+
+export const suggestionItem = style({
+  display: 'flex',
+  flexDirection: 'column',
+})
+
+globalStyle(`${suggestionItem} > span`, {
+  fontSize: '16px',
+  transition: 'all ease-in 150ms',
+  color: vars.color.lightBlueText,
+})
+
+globalStyle(`${suggestionContainer} > span:hover`, {
+  color: vars.color.blackText,
+})
+
+globalStyle(`${suggestionItem} > span:nth-child(2)`, {
+  fontSize: '14px',
+  transition: 'all ease-in 150ms',
+  color: vars.color.grayText,  
 })

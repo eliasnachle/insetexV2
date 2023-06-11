@@ -2,7 +2,7 @@ import { formTextArea } from '@/presentation/styles/inputs/inputs.css'
 import { ChangeEvent, Component } from 'react'
 import { IService } from '../../budgetTypes'
 import { divideBar, stepContainer, stepItem } from '../steps.css'
-import PestInput from './pestInput/pestInput'
+import CheckboxInput from '../../../../form/checkbox/checkbox'
 import { problemContainer } from './pests.css'
 import pestsMap from './pestsMap'
 
@@ -22,7 +22,7 @@ export default class Pests extends Component<PestsProps> {
             const service = this.props.services.find((service) => service.name === it.name)
             const isChecked = service?.checked ?? false
             return (
-              <PestInput
+              <CheckboxInput
                 key={i}
                 inputData={it}
                 isChecked={isChecked}

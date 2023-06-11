@@ -14,7 +14,7 @@ interface PestItemProps {
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export default function PestInput({ inputData, isChecked, handleInputChange }: PestItemProps) {
+export default function CheckboxInput({ inputData, isChecked, handleInputChange }: PestItemProps) {
   return (
     <div className={isChecked ? `${chebkboxItemChecked} ${chebkboxItem}` : chebkboxItem}>
       <label>

@@ -6,19 +6,19 @@ const addressMap = [
     icon: <BsFillHouseFill />,
     label: 'Residencial',
     name: 'residence',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: 'Para a sua residência, seja casa, condomínio ou apartamento.',
   },
   {
     icon: <BsFillBuildingFill />,
     label: 'Comercial',
     name: 'commerce',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: 'Para seu comércio, seja loja, restaurante ou escritório.',
   },
   {
     icon: <MdFactory />,
     label: 'Industrial',
     name: 'factory',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: 'Para sua indústria, seja ela de manufatura, produção ou processamento.',
   },
 ]
 
