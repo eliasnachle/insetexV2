@@ -4,14 +4,13 @@ export interface IService {
 }
 
 export interface IAddressData {
+  [key: string]: any
   typeClient: string
   address: string
   addressNumber: string
   complement: string
   reference: string
   zipCode: string
-  state: string
-  city: string
 }
 
 export interface IUserData {

@@ -1,7 +1,7 @@
 import { BsFillBuildingFill, BsFillHouseFill } from 'react-icons/bs'
 import { MdFactory } from 'react-icons/md'
 
-const addressMap = [
+const typeClient = [
   {
     icon: <BsFillHouseFill />,
     label: 'Residencial',
@@ -22,4 +22,17 @@ const addressMap = [
   },
 ]
 
-export default addressMap
+export const addressInputsInline = [
+  {
+    type: 'text',
+    name: 'addressNumber',  
+    label: 'Número'  
+  },
+  {
+    type: 'text',
+    name: 'complement',    
+    label: 'Complemento'
+  },
+]
+
+export default typeClient

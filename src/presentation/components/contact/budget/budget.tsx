@@ -6,9 +6,11 @@ import ControlStep from './controlStep/controlStep'
 import Stepper from './stepper/stepper'
 import AddressDetail from './steps/address/address'
 import Pests from './steps/pests/pests'
+import User from './steps/user/user'
 
 interface BudgetState {
   step: number
+  detail: string
   services: IService[]
   addressData: IAddressData
   userData: IUserData
@@ -20,6 +22,7 @@ export default class Budget extends Component<object, BudgetState> {
     super(props)
     this.state = {
       step: 0,
+      detail: '',
       services: [
         { name: 'desratizacao', checked: false },
         { name: 'descupinizacao', checked: false },
@@ -28,13 +31,27 @@ export default class Budget extends Component<object, BudgetState> {
         { name: 'clean', checked: false },
         { name: 'pipe', checked: false },
       ],
-      addressData: { typeClient: '', address: '', addressNumber: '', complement: '', reference: '', zipCode: '', state: '', city: '' },
+      addressData: {
+        typeClient: '',
+        address: '',
+        addressNumber: '',
+        complement: '',
+        reference: '',
+        zipCode: '',
+      },
       userData: { name: '', phone: '', mail: '' },
-      suggestions: []
+      suggestions: [],
     }
   }
 
-  handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  handleInputDetail = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = e.target
+    this.setState({
+      detail: value,
+    })
+  }
+
+  handleInputChangeServices = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target
     this.setState((prevState) => ({
       services: prevState.services.map((service) =>
@@ -45,52 +62,52 @@ export default class Budget extends Component<object, BudgetState> {
 
   handleSetStep = (newStep: number) => {
     this.setState({
-      step: newStep
+      step: newStep,
     })
   }
 
   handleInputChangeUserType = (e: ChangeEvent<HTMLInputElement>) => {
     const { name } = e.target
-    this.setState(({
+    this.setState({
       addressData: {
         ...this.state.addressData,
-        typeClient: name        
-      }
-    }))
+        typeClient: name,
+      },
+    })
   }
 
-  handleChangeAddress = async (e: any) => { 
-    const { value, name } = e.target
-    this.setState(({
-      addressData: {
-        ...this.state.addressData,
-        address: value        
-      }
-    }))
-    console.log(value)
-    if(value?.length <= 3) return
-    try {
-      const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/${value}.json?access_token=${process.env.NEXT_PUBLIC_MAP_BOX as string}&autocomplete=true&country=BR&language=BR`
-      const response = await fetch(endpoint)
-      const results = await response.json()
-      this.setState({
-        suggestions: results?.features,
-      })
-    } catch (e) {
-      console.error('error autoComplete =>', e)
-    }
+  handleAddressData = (newAddressData: IAddressData) => {
+    this.setState({
+      addressData: newAddressData,
+    })
   }
 
-  render() {  
+  render() {
     return (
       <section className={budgetSection}>
         <div className={budgetContainer}>
           <Stepper step={this.state.step} />
-          {this.state.step == 0 && <Pests services={this.state.services} handleInputChange={this.handleInputChange} />}
-          {this.state.step == 1 && <AddressDetail addressData={this.state.addressData} handleInputChangeUserType={this.handleInputChangeUserType} handleChangeAddress={this.handleChangeAddress} suggestions={this.state.suggestions} />}
-          {this.state.step == 2 && <h1>3</h1>}      
-          <ControlStep step={this.state.step} handleSetStep={this.handleSetStep}/>
+          {this.state.step == 0 && (
+            <Pests
+              services={this.state.services}
+              detail={this.state.detail}
+              handleInputDetail={this.handleInputDetail}
+              handleInputChangeServices={this.handleInputChangeServices}
+            />
+          )}
+          {this.state.step == 1 && (
+            <AddressDetail
+              addressData={this.state.addressData}
+              handleInputChangeUserType={this.handleInputChangeUserType}
+              handleAddressData={this.handleAddressData}
+            />
+          )}
+          {this.state.step == 2 && (
+            <User />
+          )}
+          <ControlStep step={this.state.step} handleSetStep={this.handleSetStep} />
         </div>
+        {/* <button onClick={() => console.log(this.state.addressData)}>oi</button> */}
       </section>
     )
   }

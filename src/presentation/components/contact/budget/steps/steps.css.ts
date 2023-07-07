@@ -3,24 +3,34 @@ import { vars } from '../../../../styles/theme/theme.css'
 
 export const stepContainer = style({
   display: 'grid',
-  placeItems: 'center',
   padding: '1em 0 0 0',
   width: '100%',
-  height: '700px'
+  height: '650px',
 })
 
-globalStyle(`${stepContainer} > h1`, {   
-    fontSize: '2em',
-    fontFamily: vars.fonts.Poppins,
-    fontWeight: 500,
-    color: vars.color.blueText
+globalStyle(`${stepContainer} > div`, {
+  height: '500px',
 })
 
-globalStyle(`${stepContainer} > p`, {   
-    padding: '1em 0',
-    fontSize: '16px',
-    fontFamily: vars.fonts.DMSans,
-    color: vars.color.lightBlueText
+globalStyle(`${stepContainer} > article`, {
+  display: 'grid',
+  placeItems: 'center',
+  height: '100px',
+})
+
+globalStyle(`${stepContainer} > article > h1`, {
+  fontSize: '2em',
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 500,
+  color: vars.color.blueText,
+})
+
+globalStyle(`${stepContainer} > article > p`, {
+  padding: '1em 0',
+  fontSize: '16px',
+  fontFamily: vars.fonts.DMSans,
+  color: vars.color.lightBlueText,
+  height: '100%',
 })
 
 export const divideBar = style({
@@ -28,13 +38,13 @@ export const divideBar = style({
   width: '100%',
   background: vars.color.radioBorder,
   margin: '1em 0',
-  borderRadius: '10px'
+  borderRadius: '10px',
 })
 
 export const stepItem = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(3, auto)',
   gridGap: '1em',
-  padding: '2em 0 .5em 0',
-  width: '100%'
+  width: '100%',
+  justifyContent: 'space-between'
 })

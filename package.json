@@ -43,6 +43,7 @@
     "use-count-up": "^3.0.1"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.2",
     "@types/nodemailer": "^6.4.8",
     "eslint-auto-fix": "^1.0.4",
     "eslint-config-prettier": "^8.8.0",

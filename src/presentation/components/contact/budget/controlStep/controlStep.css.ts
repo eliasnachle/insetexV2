@@ -5,7 +5,8 @@ export const containerControlStep = style({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
-  gap: '2em'
+  gap: '2em',
+  height: '60px'
 })
 
 globalStyle(`${containerControlStep} > button`, {

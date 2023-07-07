@@ -42,7 +42,7 @@ export default class Stepper extends Component<IStepProps> {
     isCompletedStep: boolean,
   ) {
     const iconBorderColor = isActiveStep ? vars.color.blue : isCompletedStep ? vars.color.success : vars.color.pendentItem
-    const iconBackground = isActiveStep ? '' : isCompletedStep ? vars.color.success : ''
+    const iconBackground = isActiveStep ? vars.color.none : isCompletedStep ? vars.color.success : vars.color.none
     return (
       <div
         className={`${StepperItem} ${isActiveStep && activeStep} ${isCompletedStep && completedStep}`}>

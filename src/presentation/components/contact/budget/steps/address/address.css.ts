@@ -3,6 +3,7 @@ import { vars } from '../../../../../styles/theme/theme.css'
 
 export const typeContainer = style({
   display: 'flex',
+  justifyContent: 'space-between',
   gap: '1em'
 })
 
