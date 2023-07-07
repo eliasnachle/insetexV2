@@ -5,7 +5,7 @@ import { easeInOut, motion } from 'framer-motion'
 export default function hero() {
   const btnData = {
     text: 'Faça um orçamento',
-    url: '/contato/orcamento',
+    url: '/contato/fale-conosco',
   }
   const heroAnimation = {
     hidden: { opacity: 0, y: 20 },
