@@ -26,14 +26,14 @@ export default async function sendEmail(req: IContact, res: NextApiResponse) {
 
   try {
     const customerMail = await transporter.sendMail({
-      from: '',
+      from: process.env.CONTACT_MAIL_USER,
       to: req.body.email,
       subject: `${req.body.name}, recebemos seu pedido de orçamento`,
       html: render(ContactSentMail(req.body.name)),
     })
     console.log(customerMail.messageId)
     const companyMail = await transporter.sendMail({
-      from: '',
+      from: process.env.CONTACT_MAIL_USER,
       to: 'contato-site@insetex.com.br',
       subject: `${req.body.name}, envio uma mensagem.`,
       html: render(ContactRecipeMail(req.body)),
