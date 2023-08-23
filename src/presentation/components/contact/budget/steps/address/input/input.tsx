@@ -1,7 +1,7 @@
-import { formInput } from '@/presentation/styles/inputs/inputs.css'
 import React, { ChangeEvent, Component } from 'react'
 
-interface AddressInputProps {
+interface InputProps {
+    className: string | undefined
     label: string
     value: string
     type: string
@@ -9,10 +9,10 @@ interface AddressInputProps {
     handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export default class AddressInput extends Component<AddressInputProps> {
+export default class Input extends Component<InputProps> {
   render() {
     return (
-      <div className={formInput}>
+      <div className={this.props.className}>
         <label>{this.props.label}</label>
         <input
           type={this.props.type}

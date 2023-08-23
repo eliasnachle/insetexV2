@@ -4,7 +4,7 @@ import CheckboxInput from '../../../../form/checkbox/checkbox'
 import typeClient, { addressInputsInline } from './addressMap'
 import { AddressDetailProps, AddressDetailState, AddressSuggestion } from './addressTypes'
 import AutoComplete from '@/infra/http/autoComplete'
-import AddressInput from './adddressInput/addressInput'
+import Input from './input/input'
 import {
   addressContainer,
   inlineInputContainer,
@@ -13,8 +13,10 @@ import {
 } from './address.css'
 import { stepContainer } from '../steps.css'
 import Suggestion from './suggestion/suggestion'
+import { formInput } from '@/presentation/styles/inputs/inputs.css'
 
-export default class AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
+export default class 
+AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
   autoComplete: AutoComplete
 
   handleChangeSuggestion = (
@@ -66,8 +68,8 @@ export default class AddressDetail extends Component<AddressDetailProps, Address
     return (
       <div className={stepContainer}>
         <article>
-          <h1>Quais serviços serão contratados?</h1>
-          <p>Selecione os serviços que você está buscando.</p>
+          <h1>Qual a sua necessidade?</h1>
+          <p>Escolha o seu tipo de estabelecimento e nos informe seu endereço.</p>
         </article>
         <div>
           <div className={typeContainer}>
@@ -84,12 +86,13 @@ export default class AddressDetail extends Component<AddressDetailProps, Address
             })}
           </div>
           <div className={addressContainer}>
-            <AddressInput
+            <Input
               label="Endereço"
               value={this.props.addressData.address}
               type="text"
               name="address"
               handleInputChange={this.handleInputChange}
+              className={formInput}
             />
             {this.state.isSuggestion && this.props.addressData.address.length > 3 && (
               <div className={suggestionContainer}>
@@ -100,22 +103,24 @@ export default class AddressDetail extends Component<AddressDetailProps, Address
             )}
             <div className={inlineInputContainer}>
               {addressInputsInline.map((it, i) => (
-                <AddressInput
+                <Input
                   key={i}
                   label={it.label}
                   value={this.props.addressData[it.name]}
                   type={it.type}
                   name={it.name}
                   handleInputChange={this.handleInputChange}
+                  className={formInput}
                 />
               ))}
             </div>
-            <AddressInput
+            <Input
               label="Referência"
               value={this.props.addressData.reference}
               type="text"
               name="reference"
               handleInputChange={this.handleInputChange}
+              className={formInput}
             />
           </div>
         </div>

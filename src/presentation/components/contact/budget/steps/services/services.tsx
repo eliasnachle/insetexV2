@@ -3,17 +3,17 @@ import { ChangeEvent, Component } from 'react'
 import { IService } from '../../budgetTypes'
 import { divideBar, stepContainer, stepItem } from '../steps.css'
 import CheckboxInput from '../../../../form/checkbox/checkbox'
-import { problemContainer } from './pests.css'
-import pestsMap from './pestsMap'
+import { problemContainer } from './services.css'
+import servicesMap from './servicesMap'
 
-interface PestsProps {
+interface ServicesProps {
   detail: string
   services: IService[]
   handleInputDetail: (e: ChangeEvent<HTMLTextAreaElement>) => void
   handleInputChangeServices: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export default class Pests extends Component<PestsProps> {
+export default class Services extends Component<ServicesProps> {
   render() {
     return (
       <div className={stepContainer}>
@@ -23,7 +23,7 @@ export default class Pests extends Component<PestsProps> {
         </article>
         <div>
           <div className={stepItem}>
-            {pestsMap.map((it, i) => {
+            {servicesMap.map((it, i) => {
               const service = this.props.services.find((service) => service.name === it.name)
               const isChecked = service?.checked ?? false
               return (

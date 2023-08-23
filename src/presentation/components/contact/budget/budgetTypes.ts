@@ -16,5 +16,6 @@ export interface IAddressData {
 export interface IUserData {
   name: string
   phone: string
-  mail: string
+  email: string
+  message: string
 }

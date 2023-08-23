@@ -5,7 +5,7 @@ import Clean from '/public/home/serviceIcons/clean.svg'
 import Covid from '/public/home/serviceIcons/covid.svg'
 import Pipe from '/public/home/serviceIcons/pipe.svg'
 
-const pestsMap = [
+const servicesMap = [
   {
     icon: <Rat />,
     label: 'Desratização',
@@ -44,4 +44,4 @@ const pestsMap = [
   },
 ]
 
-export default pestsMap
+export default servicesMap

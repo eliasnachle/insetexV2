@@ -1,20 +1,28 @@
 import React from 'react'
 import { ChangeEvent, Component } from 'react'
+import SentMail from '../sentMail/sentMail'
 import { budgetContainer, budgetSection } from './budget.css'
 import { IAddressData, IService, IUserData } from './budgetTypes'
 import ControlStep from './controlStep/controlStep'
 import Stepper from './stepper/stepper'
 import AddressDetail from './steps/address/address'
-import Pests from './steps/pests/pests'
+import Services from './steps/services/services'
 import User from './steps/user/user'
 
-interface BudgetState {
+export interface BudgetState {
   step: number
   detail: string
   services: IService[]
   addressData: IAddressData
   userData: IUserData
   suggestions: string[]
+}
+
+export enum Steps {
+  STEP_SERVICES = 0,
+  STEP_ADDRESS = 1,
+  STEP_USER = 2,
+  STEP_SUCCESS = 3
 }
 
 export default class Budget extends Component<object, BudgetState> {
@@ -39,7 +47,7 @@ export default class Budget extends Component<object, BudgetState> {
         reference: '',
         zipCode: '',
       },
-      userData: { name: '', phone: '', mail: '' },
+      userData: { name: '', phone: '', email: '', message: '' },
       suggestions: [],
     }
   }
@@ -82,32 +90,40 @@ export default class Budget extends Component<object, BudgetState> {
     })
   }
 
+  handleUserData = (newUserData: IUserData) => {
+    this.setState({
+      userData: newUserData,
+    })
+  }
+
   render() {
     return (
       <section className={budgetSection}>
         <div className={budgetContainer}>
           <Stepper step={this.state.step} />
-          {this.state.step == 0 && (
-            <Pests
+          {this.state.step == Steps.STEP_SERVICES && (
+            <Services
               services={this.state.services}
               detail={this.state.detail}
               handleInputDetail={this.handleInputDetail}
               handleInputChangeServices={this.handleInputChangeServices}
             />
           )}
-          {this.state.step == 1 && (
+          {this.state.step == Steps.STEP_ADDRESS && (
             <AddressDetail
               addressData={this.state.addressData}
               handleInputChangeUserType={this.handleInputChangeUserType}
               handleAddressData={this.handleAddressData}
             />
           )}
-          {this.state.step == 2 && (
-            <User />
+          {this.state.step == Steps.STEP_USER && (
+            <User
+              userData={this.state.userData}
+              handleUserData={this.handleUserData}
+            />
           )}
-          <ControlStep step={this.state.step} handleSetStep={this.handleSetStep} />
+          <ControlStep state={this.state} handleSetStep={this.handleSetStep} />
         </div>
-        {/* <button onClick={() => console.log(this.state.addressData)}>oi</button> */}
       </section>
     )
   }
