@@ -1,6 +1,4 @@
-import { ChangeEvent } from 'react'
-import { BudgetState } from '../../budget'
-import { IAddressData } from '../../budgetTypes'
+import { BudgetState, IAddressData } from '@/domain/types/budget/budgetTypes'
 
 export interface AddressDetailProps {
   addressData: IAddressData

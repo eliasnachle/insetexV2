@@ -1,5 +1,4 @@
 import { ChangeEvent, Component } from 'react'
-import { IAddressData } from '../../budgetTypes'
 import CheckboxInput from '../../../../form/checkbox/checkbox'
 import typeClient, { addressInputsInline } from './addressMap'
 import { AddressDetailProps, AddressDetailState, AddressSuggestion } from './addressTypes'
@@ -14,6 +13,7 @@ import {
 import { stepContainer } from '../steps.css'
 import Suggestion from './suggestion/suggestion'
 import { formInput } from '@/presentation/styles/inputs/inputs.css'
+import { IAddressData } from '@/domain/types/budget/budgetTypes'
 
 export default class 
 AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
@@ -43,7 +43,7 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
   ) => {
     const { value, name, type } = e.target
     if (name === 'address') this.autoComplete.autoCompleteSuggestion(value)
-    if(type == 'checkbox') {
+    if(type === 'checkbox') {
       return this.props.handleInputChange('addressData', {
         ...this.props.addressData,
         typeClient: name

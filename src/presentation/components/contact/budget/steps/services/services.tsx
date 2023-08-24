@@ -1,15 +1,14 @@
 import { formTextArea } from '@/presentation/styles/inputs/inputs.css'
 import { ChangeEvent, Component } from 'react'
-import { IService } from '../../budgetTypes'
 import { divideBar, stepContainer, stepItem } from '../steps.css'
 import CheckboxInput from '../../../../form/checkbox/checkbox'
 import { problemContainer } from './services.css'
 import servicesMap from './servicesMap'
-import { BudgetState } from '../../budget'
+import { BudgetState, IService } from '@/domain/types/budget/budgetTypes'
 
-interface ServicesProps {
-  detail: string
+export interface ServicesProps {
   services: IService[]
+  detail: string
   handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void
 }
 

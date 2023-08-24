@@ -1,16 +1,15 @@
+import { BudgetState, IUserData } from '@/domain/types/budget/budgetTypes'
 import {
   formInput,
   formInputFullWidth,
   formTextArea,
 } from '@/presentation/styles/inputs/inputs.css'
 import { ChangeEvent, Component } from 'react'
-import { BudgetState } from '../../budget'
-import { IUserData } from '../../budgetTypes'
 import Input from '../address/input/input'
 import { divideBar, stepContainer } from '../steps.css'
 import { userContainer, inlineInputContainer, userTextAreaContainer, smallText } from './user.css'
 
-interface UserProps {
+export interface UserProps {
   userData: IUserData  
   handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void
 }
@@ -21,7 +20,7 @@ export default class User extends Component<UserProps> {
   ) => {
     let { value } = e.target
     const { name } = e.target    
-    if (name == 'phone') {
+    if (name === 'phone') {
       value = value
         .replace(/\D+/g, '')
         .replace(/(\d{2})(\d)/, '($1) $2')

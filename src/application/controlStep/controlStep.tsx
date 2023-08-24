@@ -1,5 +1,6 @@
+import { BudgetState } from '@/domain/types/budget/budgetTypes'
 import { Component } from 'react'
-import { BudgetState, Steps } from '../budget'
+import { Steps } from '../budget/budget'
 import { containerControlStep, previousButton } from './controlStep.css'
 
 interface IStep {
@@ -34,14 +35,14 @@ export default class ControlStep extends Component<IStep> {
 }
 
 function validateStep(state: BudgetState) {
-  if (state.step == Steps.STEP_SERVICES) {
+  if (state.step === Steps.STEP_SERVICES) {
     console.log(state.services)
     console.log(state.detail)
   }
-  if (state.step == Steps.STEP_ADDRESS) {
+  if (state.step === Steps.STEP_ADDRESS) {
     console.log(state.addressData)
   }
-  if(state.step == Steps.STEP_USER) {
+  if(state.step === Steps.STEP_USER) {
     console.log(state.userData)
   }
 }

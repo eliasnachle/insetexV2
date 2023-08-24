@@ -1,5 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css'
-import { vars } from '../../../../styles/theme/theme.css'
+import { vars } from '../../presentation/styles/theme/theme.css'
 
 export const containerControlStep = style({
   width: '100%',
