@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { easeIn, motion } from 'framer-motion'
-import { sentMailContainer } from '../contactForm/contactForm.css'
+import { sentMailContainer } from '../../../../application/contactForm/contactForm.css'
 import { useRouter } from 'next/router'
 import Lottie from 'lottie-react'
 

@@ -2,11 +2,11 @@ import React from 'react'
 import { Component } from 'react'
 import { budgetContainer, budgetSection } from './budget.css'
 import { BudgetState, StepComponents } from '../../domain/types/budget/budgetTypes'
-import Services from '@/presentation/components/contact/budget/steps/services/services'
-import AddressDetail from '@/presentation/components/contact/budget/steps/address/address'
-import User from '@/presentation/components/contact/budget/steps/user/user'
 import Stepper from '@/presentation/components/contact/budget/stepper/stepper'
-import ControlStep from '../controlStep/controlStep'
+import ControlStep from './controlStep/controlStep'
+import Services from './services/services'
+import AddressDetail from './address/address'
+import User from './user/user'
 
 export enum Steps {
   STEP_SERVICES,

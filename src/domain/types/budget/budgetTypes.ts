@@ -1,7 +1,7 @@
-import { AddressDetailProps } from '@/presentation/components/contact/budget/steps/address/addressTypes'
-import { ServicesProps } from '@/presentation/components/contact/budget/steps/services/services'
-import { UserProps } from '@/presentation/components/contact/budget/steps/user/user'
+import { ServicesProps } from '@/application/budget/services/services'
+import { UserProps } from '@/application/budget/user/user'
 import { Steps } from '../../../application/budget/budget'
+import { AddressDetailProps } from './addressTypes'
 
 export interface IService {
   name: string
@@ -9,7 +9,7 @@ export interface IService {
 }
 
 export interface IAddressData {
-  [key: string]: any
+  [key: string]: string
   typeClient: string
   address: string
   addressNumber: string
