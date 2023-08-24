@@ -1,10 +1,10 @@
 import { ChangeEvent } from 'react'
+import { BudgetState } from '../../budget'
 import { IAddressData } from '../../budgetTypes'
 
 export interface AddressDetailProps {
   addressData: IAddressData
-  handleInputChangeUserType: (e: ChangeEvent<HTMLInputElement>) => void
-  handleAddressData: (newAddressData: IAddressData) => void
+  handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void
 }
 
 export interface AddressSuggestion {

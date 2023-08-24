@@ -1,4 +1,5 @@
 import React, { ChangeEvent, Component } from 'react'
+import { BudgetState } from '../../../budget'
 
 interface InputProps {
     className: string | undefined

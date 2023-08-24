@@ -38,30 +38,33 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
     this.autoComplete = new AutoComplete({ handleChangeSuggestion: this.handleChangeSuggestion })
   }
 
-  handleInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
-    const { addressData, handleAddressData } = this.props
-    const { value, name } = e.target
-    const newAddressData: IAddressData = {
-      ...addressData,
-      [name]: value,
+  handleInputChange = (fieldName: keyof IAddressData) => (
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
+    const { value, name, type } = e.target
+    if (name === 'address') this.autoComplete.autoCompleteSuggestion(value)
+    if(type == 'checkbox') {
+      return this.props.handleInputChange('addressData', {
+        ...this.props.addressData,
+        typeClient: name
+      });  
     }
-    handleAddressData(newAddressData)
-    if (name === 'address') {
-      this.autoComplete.autoCompleteSuggestion(value)
-    }
-  }
+    this.props.handleInputChange('addressData', {
+      ...this.props.addressData,
+      [fieldName]: value,
+    });
+  };
 
   handleSetSuggestion = (e: AddressSuggestion) => {
     this.setState({ isSuggestion: false })
-    const { addressData, handleAddressData } = this.props
     const zipCodeContext = e.context.find((item) => item?.id?.startsWith('postcode'))
     const zipCode = zipCodeContext ? zipCodeContext.text : ''
     const newAddressData: IAddressData = {
-      ...addressData,
+      ...this.props.addressData,
       address: e.text,
       zipCode: zipCode,
     }
-    handleAddressData(newAddressData)
+    this.props.handleInputChange('addressData', newAddressData);
   }
 
   render() {
@@ -80,7 +83,7 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
                   key={i}
                   inputData={it}
                   isChecked={isChecked}
-                  handleInputChange={this.props.handleInputChangeUserType}
+                  handleInputChange={this.handleInputChange(it.name)}
                 />
               )
             })}
@@ -91,7 +94,7 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
               value={this.props.addressData.address}
               type="text"
               name="address"
-              handleInputChange={this.handleInputChange}
+              handleInputChange={this.handleInputChange('address')}
               className={formInput}
             />
             {this.state.isSuggestion && this.props.addressData.address.length > 3 && (
@@ -109,7 +112,7 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
                   value={this.props.addressData[it.name]}
                   type={it.type}
                   name={it.name}
-                  handleInputChange={this.handleInputChange}
+                  handleInputChange={this.handleInputChange(it.name)}
                   className={formInput}
                 />
               ))}
@@ -119,7 +122,7 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
               value={this.props.addressData.reference}
               type="text"
               name="reference"
-              handleInputChange={this.handleInputChange}
+              handleInputChange={this.handleInputChange('reference')}
               className={formInput}
             />
           </div>
