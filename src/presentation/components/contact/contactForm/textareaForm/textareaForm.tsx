@@ -1,4 +1,4 @@
-import { InputUseStateProps } from '../../../../domain/types/contactForm/userFormTypes'
+import { InputUseStateProps } from '@/domain/types/contactForm/userFormTypes'
 
 export default function TextareaForm({
   values,
