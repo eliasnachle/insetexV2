@@ -5,6 +5,7 @@ import servicesMap from '../../../presentation/components/contact/budget/service
 import { BudgetState, IService } from '@/domain/types/budget/budgetTypes'
 import { divideBar, stepContainer, stepItem } from '@/presentation/styles/budget/steps.css'
 import CheckboxInput from '@/presentation/components/form/checkbox/checkbox'
+import { TextArea } from '@/presentation/components/contact/budget/input/input'
 
 export interface ServicesProps {
   services: IService[]
@@ -14,13 +15,13 @@ export interface ServicesProps {
 
 export default class Services extends Component<ServicesProps> {
   handleInputChangeServices = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
+    const { name, checked } = e.target
     const updatedServices = this.props.services.map((service) =>
-      service.name === name ? { ...service, checked } : service
-    );
-    this.props.handleInputChange('services', updatedServices);
-  };
-  
+      service.name === name ? { ...service, checked } : service,
+    )
+    this.props.handleInputChange('services', updatedServices)
+  }
+
   render() {
     return (
       <div className={stepContainer}>
@@ -47,16 +48,17 @@ export default class Services extends Component<ServicesProps> {
           <div className={problemContainer}>
             <p>Nos conte um pouco sobre o seu problema</p>
             <div className={formTextArea}>
-              <textarea
+              <TextArea
                 placeholder="Ex: Tenho enfrentado problemas com insetos em casa, incluindo formigas na despensa e mosquitos que conseguem entrar."
                 value={this.props.detail}
                 name="detail"
-                onChange={(e) => this.props.handleInputChange('detail', e.target.value)}
+                handleInputChange={(e) => this.props.handleInputChange('detail', e.target.value)}
+                className={formTextArea}
               />
             </div>
           </div>
         </div>
-        </div>
+      </div>
     )
   }
 }

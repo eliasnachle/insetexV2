@@ -1,5 +1,5 @@
 import { BudgetState, IUserData } from '@/domain/types/budget/budgetTypes'
-import Input from '@/presentation/components/contact/budget/input/input'
+import Input, { TextArea } from '@/presentation/components/contact/budget/input/input'
 import { divideBar, stepContainer } from '@/presentation/styles/budget/steps.css'
 import {
   formInput,
@@ -10,29 +10,31 @@ import { ChangeEvent, Component } from 'react'
 import { userContainer, inlineInputContainer, userTextAreaContainer, smallText } from './user.css'
 
 export interface UserProps {
-  userData: IUserData  
+  userData: IUserData
   handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void
 }
 
 export default class User extends Component<UserProps> {
-  handleInputChange = (fieldName: keyof IUserData) => (
-    e: ChangeEvent<HTMLInputElement>
-  ) => {
-    let { value } = e.target
-    const { name } = e.target    
-    if (name === 'phone') {
-      value = value
-        .replace(/\D+/g, '')
-        .replace(/(\d{2})(\d)/, '($1) $2')
-        .replace(/(\d{4})(\d)/, '$1-$2')
-        .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-        .replace(/(-\d{4})\d+?$/, '$1') 
+  handleInputChange =
+    <K extends keyof IUserData>(fieldName: K) =>
+    (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
+      let { value } = e.target
+      const { name } = e.target
+
+      if (name === 'phone') {
+        value = value
+          .replace(/\D+/g, '')
+          .replace(/(\d{2})(\d)/, '($1) $2')
+          .replace(/(\d{4})(\d)/, '$1-$2')
+          .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+          .replace(/(-\d{4})\d+?$/, '$1')
+      }
+
+      this.props.handleInputChange('userData', {
+        ...this.props.userData,
+        [fieldName]: value,
+      })
     }
-    this.props.handleInputChange('userData', {
-      ...this.props.userData,
-      [fieldName]: value
-    });
-  };
 
   render() {
     return (
@@ -75,7 +77,13 @@ export default class User extends Component<UserProps> {
                 Gostaria de enviar alguma mensagem?
                 <span className={smallText}> (Não obrigatório)</span>
               </p>
-              <textarea placeholder="Use este campo para inserir uma mensagem, se necessário." />
+              <TextArea
+                placeholder='Use este campo para inserir uma mensagem, se necessário.'
+                value={this.props.userData.message}
+                name="message"
+                handleInputChange={this.handleInputChange('message')}
+                className={formTextArea}
+              />
             </div>
           </div>
         </div>

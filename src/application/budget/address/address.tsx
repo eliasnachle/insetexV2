@@ -39,7 +39,7 @@ AddressDetail extends Component<AddressDetailProps, AddressDetailState> {
   }
 
   handleInputChange = (fieldName: keyof IAddressData) => (
-    e: ChangeEvent<HTMLInputElement>
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { value, name, type } = e.target
     if (name === 'address') this.autoComplete.autoCompleteSuggestion(value)
