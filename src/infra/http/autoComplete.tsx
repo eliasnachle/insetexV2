@@ -15,7 +15,6 @@ export default class AutoComplete extends Component<AddressDetailProps> {
       }&autocomplete=true&country=BR&language=BR`
       const response = await fetch(endpoint)
       const results = await response.json()
-      console.log(results)
       this.props.handleChangeSuggestion('suggestions', results?.features)
     } catch (e) {
       console.error('Error in handleInputChange =>', e)

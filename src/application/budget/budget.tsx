@@ -7,12 +7,7 @@ import ControlStep from './controlStep/controlStep'
 import Services from './services/services'
 import AddressDetail from './address/address'
 import User from './user/user'
-
-export enum Steps {
-  STEP_SERVICES,
-  STEP_ADDRESS,
-  STEP_USER,
-}
+import { Steps } from '@/domain/types/budget/budgetEnum'
 
 const stepComponents: StepComponents = {
   [Steps.STEP_SERVICES]: Services,
@@ -69,7 +64,10 @@ export default class Budget extends Component<object, BudgetState> {
           {StepComponent && (
             <StepComponent {...this.state} handleInputChange={this.handleInputChange} />
           )}
-          <ControlStep state={this.state} handleSetStep={this.handleSetStep} />
+          <ControlStep
+            state={this.state}
+            handleSetStep={this.handleSetStep}
+          />
         </div>
       </section>
     )

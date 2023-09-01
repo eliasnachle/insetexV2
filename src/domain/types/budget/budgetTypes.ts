@@ -1,7 +1,7 @@
 import { ServicesProps } from '@/application/budget/services/services'
 import { UserProps } from '@/application/budget/user/user'
-import { Steps } from '../../../application/budget/budget'
 import { AddressDetailProps } from './addressTypes'
+import { Steps } from './budgetEnum'
 
 export interface IService {
   name: string
