@@ -1,9 +1,11 @@
 import { Steps } from '@/domain/types/budget/budgetEnum'
 import { BudgetState } from '@/domain/types/budget/budgetTypes'
-import { ValidateStep } from '@/domain/types/budget/validateStepTypes'
 import { Component } from 'react'
 import { containerControlStep, previousButton } from './controlStep.css'
-import ValidateServiceStep from './validateStep/validateServiceStep'
+import ValidateAddressStep from './validateStep/validateAddressStep'
+import ValidateServicesStep from './validateStep/validateServiceStep'
+import ValidateStep from './validateStep/validateStep'
+import ValidateUserStep from './validateStep/validateUserStep'
 
 interface IStep {
   state: BudgetState
@@ -11,15 +13,10 @@ interface IStep {
   handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void
 }
 
-const validationFunctions: {
-  [step in Steps]: (
-    state: BudgetState,
-    handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void,
-  ) => boolean
-} = {
-  [Steps.STEP_SERVICES]: validateServicesStep,
-  [Steps.STEP_ADDRESS]: validateAddressStep,
-  [Steps.STEP_USER]: validateUserStep,
+const validationFunctions: { [step in Steps]: ValidateStep } = {
+  [Steps.STEP_SERVICES]: new ValidateServicesStep(),
+  [Steps.STEP_ADDRESS]: new ValidateAddressStep(),
+  [Steps.STEP_USER]: new ValidateUserStep(),
 }
 
 export default class ControlStep extends Component<IStep> {
@@ -28,7 +25,7 @@ export default class ControlStep extends Component<IStep> {
 
     const handleNextStep = () => {
       const validationFunction = validationFunctions[state.step as Steps]
-      if (validationFunction && validationFunction(state, handleInputChange))
+      if (validationFunction && validationFunction.validate(state, handleInputChange))
         handleSetStep(state.step + 1)
     }
 
@@ -49,30 +46,4 @@ export default class ControlStep extends Component<IStep> {
       </div>
     )
   }
-}
-
-function validateServicesStep(
-  state: BudgetState,
-  handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void,
-): boolean {
-  const isCheckedService = state.serviceData.services.filter((it) => it.checked == true).length > 0
-  handleInputChange('serviceData', {
-    ...state.serviceData,
-    servicesErrorMessage: isCheckedService ? '' : 'erro',
-  })
-  return isCheckedService
-}
-
-function validateAddressStep(
-  state: BudgetState,
-  handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void,
-): boolean {
-  return state.addressData.address.length >= 1
-}
-
-function validateUserStep(
-  state: BudgetState,
-  handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void,
-): boolean {
-  return state.userData.email.length >= 1
 }
