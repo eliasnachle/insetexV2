@@ -3,6 +3,12 @@ import { UserProps } from '@/application/budget/user/user'
 import { AddressDetailProps } from './addressTypes'
 import { Steps } from './budgetEnum'
 
+export interface IServiceData {
+  detail: string
+  services: IService[]
+  servicesErrorMessage: string
+}
+
 export interface IService {
   name: string
   checked: boolean
@@ -26,9 +32,8 @@ export interface IUserData {
 }
 
 export interface BudgetState {
-  step: number
-  detail: string
-  services: IService[]
+  step: number  
+  serviceData: IServiceData
   addressData: IAddressData
   userData: IUserData
   suggestions: string[]

@@ -19,16 +19,19 @@ export default class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
-      step: Steps.STEP_SERVICES,
-      detail: '',
-      services: [
-        { name: 'desratizacao', checked: false },
-        { name: 'descupinizacao', checked: false },
-        { name: 'desinsetizacao', checked: false },
-        { name: 'covid', checked: false },
-        { name: 'clean', checked: false },
-        { name: 'pipe', checked: false },
-      ],
+      step: Steps.STEP_SERVICES,      
+      serviceData: {
+        services:[
+          { name: 'desratizacao', checked: false },
+          { name: 'descupinizacao', checked: false },
+          { name: 'desinsetizacao', checked: false },
+          { name: 'covid', checked: false },
+          { name: 'clean', checked: false },
+          { name: 'pipe', checked: false },
+        ],
+        detail: '',
+        servicesErrorMessage: ''
+      },
       addressData: {
         typeClient: '',
         address: '',
@@ -67,6 +70,7 @@ export default class Budget extends Component<object, BudgetState> {
           <ControlStep
             state={this.state}
             handleSetStep={this.handleSetStep}
+            handleInputChange={this.handleInputChange}
           />
         </div>
       </section>
