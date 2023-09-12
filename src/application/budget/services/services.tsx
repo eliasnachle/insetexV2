@@ -1,4 +1,4 @@
-import { formTextArea } from '@/presentation/styles/inputs/inputs.css'
+import { errorMessage, formTextArea } from '@/presentation/styles/inputs/inputs.css'
 import { ChangeEvent, Component } from 'react'
 import { problemContainer } from './services.css'
 import servicesMap from '../../../presentation/components/contact/budget/servicesMap'
@@ -65,7 +65,7 @@ export default class Services extends Component<ServicesProps> {
                 className={formTextArea}
               />
             </div>
-            <p>{this.props.serviceData.servicesErrorMessage}</p>
+            <p className={errorMessage}>{this.props.serviceData.servicesErrorMessage}</p>
           </div>
         </div>
       </div>

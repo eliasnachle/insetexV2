@@ -14,21 +14,20 @@ export interface IService {
   checked: boolean
 }
 
-export interface IAddressData {
-  [key: string]: string
-  typeClient: string
-  address: string
-  addressNumber: string
-  complement: string
-  reference: string
-  zipCode: string
+export interface IAddressData {  
+  typeClient: IInputData
+  address: IInputData
+  addressNumber: IInputData
+  complement: IInputData
+  reference: IInputData
+  zipCode: IInputData
 }
 
 export interface IUserData {
-  name: string
-  phone: string
-  email: string
-  message: string
+  name: IInputData
+  phone: IInputData
+  email: IInputData
+  message: IInputData
 }
 
 export interface BudgetState {
@@ -43,6 +42,11 @@ export type StepPropsMap = {
   [Steps.STEP_SERVICES]: ServicesProps
   [Steps.STEP_ADDRESS]: AddressDetailProps
   [Steps.STEP_USER]: UserProps
+}
+
+export interface IInputData {
+  inputValue: string
+  error?: string
 }
 
 export type StepComponents = {

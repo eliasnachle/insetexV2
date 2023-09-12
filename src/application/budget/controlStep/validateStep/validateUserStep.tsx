@@ -1,4 +1,4 @@
-import { BudgetState } from '@/domain/types/budget/budgetTypes'
+import { BudgetState, IUserData } from '@/domain/types/budget/budgetTypes'
 import ValidateStep from './validateStep'
 
 export default class ValidateUserStep extends ValidateStep {
@@ -6,12 +6,31 @@ export default class ValidateUserStep extends ValidateStep {
     state: BudgetState,
     handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void,
   ): boolean {
-    const isCheckedService =
-      state.serviceData.services.filter((it) => it.checked == true).length > 0
-    handleInputChange('serviceData', {
-      ...state.serviceData,
-      servicesErrorMessage: isCheckedService ? '' : 'erro',
+    let isValidated = false
+    const fieldsToValidate: [keyof IUserData, string][] = [
+      ['name', 'Nome inválido'],
+      ['phone', 'Telefone inválido'],
+      ['email', 'E-mail inválido'],
+    ]
+    console.log(state.addressData)
+    const updatedUserData: Partial<IUserData> = {}
+    fieldsToValidate.forEach(([fieldName, errorMessage]) => {
+      const inputValue = state.userData[fieldName].inputValue
+      if (inputValue.length === 0) {
+        updatedUserData[fieldName] = {
+          ...state.userData[fieldName],
+          error: errorMessage,
+        }
+      }
     })
-    return isCheckedService
+    if (Object.keys(updatedUserData).length > 0) {
+      handleInputChange('userData', {
+        ...state.userData,
+        ...updatedUserData,
+      })
+    } else {
+      isValidated = true
+    }
+    return isValidated
   }
 }

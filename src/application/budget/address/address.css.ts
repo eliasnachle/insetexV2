@@ -1,20 +1,25 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../../../presentation/styles/theme/theme.css'
 
-export const typeContainer = style({
+export const containerTypeClient = style({
+  display: 'flex',
+  flexDirection: 'column'
+})
+
+export const contentTypeClient = style({
   display: 'flex',
   justifyContent: 'space-between',
   gap: '1em'
 })
 
-globalStyle(`${typeContainer} > div `, {
+globalStyle(`${contentTypeClient} > div `, {
   width: '230px'
 })
 
 export const addressContainer = style({
   display: 'grid',
   gridGap: '1.5em',
-  padding: '1.5em 0 3em 0',
+  padding: '0 0 3em 0',
   width: '100%'
 })
 
@@ -77,4 +82,13 @@ globalStyle(`${suggestionItem} > span:nth-child(2)`, {
   fontSize: '14px',
   transition: 'all ease-in 150ms',
   color: vars.color.grayText,  
+})
+
+
+export const typeClientError = style({
+  display: 'flex',
+  padding: '0.5em 0',
+  color: vars.color.backgroundError,
+  fontSize: '13px',
+  fontWeight: 500,
 })

@@ -36,7 +36,7 @@ export default class ControlStep extends Component<IStep> {
     return (
       <div
         className={containerControlStep}
-        style={{ justifyContent: state.step >= 1 ? 'space-between' : 'end' }}>
+        style={{ justifyContent: state.step >= Steps.STEP_ADDRESS ? 'space-between' : 'end' }}>
         {state.step >= 1 && (
           <button className={previousButton} onClick={handlePrevStep}>
             Voltar

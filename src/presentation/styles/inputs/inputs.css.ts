@@ -145,3 +145,7 @@ globalStyle(`${formInput} > input:focus, ${formTextArea} > textarea:focus, ${for
 globalStyle(`${formInputFullWidth} > input`, {
   width: '100%'
 })
+
+export const errorMessage = style({
+  color: `${vars.color.backgroundError} !important`
+})

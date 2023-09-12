@@ -47,28 +47,31 @@ export default class User extends Component<UserProps> {
           <div className={inlineInputContainer}>
             <Input
               label="Nome"
-              value={this.props.userData.name}
+              value={this.props.userData.name.inputValue}
               type="text"
               name="name"
               handleInputChange={this.handleInputChange('name')}
               className={formInput}
+              error={this.props.userData.name.error}
             />
             <Input
               label="Telefone"
-              value={this.props.userData.phone}
+              value={this.props.userData.phone.inputValue}
               type="text"
               name="phone"
               handleInputChange={this.handleInputChange('phone')}
               className={formInput}
+              error={this.props.userData.phone.error}
             />
           </div>
           <Input
             label="E-mail"
-            value={this.props.userData.email}
+            value={this.props.userData.email.inputValue}
             type="text"
             name="email"
             handleInputChange={this.handleInputChange('email')}
             className={formInputFullWidth}
+            error={this.props.userData.email.error}
           />
           <div className={divideBar} />
           <div className={userTextAreaContainer}>
@@ -79,7 +82,7 @@ export default class User extends Component<UserProps> {
               </p>
               <TextArea
                 placeholder='Use este campo para inserir uma mensagem, se necessário.'
-                value={this.props.userData.message}
+                value={this.props.userData.message.inputValue}
                 name="message"
                 handleInputChange={this.handleInputChange('message')}
                 className={formTextArea}
