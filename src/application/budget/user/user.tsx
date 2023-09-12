@@ -32,7 +32,9 @@ export default class User extends Component<UserProps> {
 
       this.props.handleInputChange('userData', {
         ...this.props.userData,
-        [fieldName]: value,
+        [fieldName]: {
+          inputValue: value,
+        },
       })
     }
 
