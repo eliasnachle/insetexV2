@@ -15,7 +15,7 @@ export default class ValidateAddressStep extends ValidateStep {
     ]
     const updatedAddressData: Partial<IAddressData> = {}
     fieldsToValidate.forEach(([fieldName, errorMessage]) => {
-      const inputValue = state.addressData[fieldName].inputValue
+      const inputValue = state.addressData[fieldName].inputValue      
       if (inputValue.length === 0) {
         updatedAddressData[fieldName] = {
           ...state.addressData[fieldName],

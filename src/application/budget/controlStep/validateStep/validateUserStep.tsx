@@ -13,8 +13,14 @@ export default class ValidateUserStep extends ValidateStep {
       ['email', 'E-mail inválido'],
     ]
     const updatedUserData: Partial<IUserData> = {}
-    fieldsToValidate.forEach(([fieldName, errorMessage]) => {
+    fieldsToValidate.forEach(([fieldName, errorMessage]) => {      
       const inputValue = state.userData[fieldName].inputValue
+      // if(fieldName === 'phone') {
+      //   updatedUserData[fieldName] = {
+      //     ...state.userData[fieldName],
+      //     error: errorMessage,
+      //   } 
+      // }
       if (inputValue.length === 0) {
         updatedUserData[fieldName] = {
           ...state.userData[fieldName],
