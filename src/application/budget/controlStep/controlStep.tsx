@@ -24,16 +24,25 @@ export default class ControlStep extends Component<IStep> {
   render() {
     const { state, handleSetStep, handleInputChange } = this.props
 
-    if (state.step === Steps.STEP_SUCCESS) return null    
+    if (state.step === Steps.STEP_SUCCESS) return null
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
 
     const handleNextStep = () => {
       const validationFunction = validationFunctions[state.step as Steps]
       if (validationFunction && validationFunction.validate(state, handleInputChange))
         handleSetStep(state.step + 1)
+        scrollToTop()
     }
 
     const handlePrevStep = () => {
       handleSetStep(state.step - 1)
+      scrollToTop()
     }    
 
     return (      

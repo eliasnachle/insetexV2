@@ -59,7 +59,7 @@ export default class User extends Component<UserProps> {
             <Input
               label="Telefone"
               value={this.props.userData.phone.inputValue}
-              type="text"
+              type="number"
               name="phone"
               handleInputChange={this.handleInputChange('phone')}
               className={formInput}
@@ -69,7 +69,7 @@ export default class User extends Component<UserProps> {
           <Input
             label="E-mail"
             value={this.props.userData.email.inputValue}
-            type="text"
+            type="email"
             name="email"
             handleInputChange={this.handleInputChange('email')}
             className={formInputFullWidth}

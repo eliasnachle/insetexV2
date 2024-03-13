@@ -4,7 +4,7 @@ import {
   serviceItem,
 } from './service.css'
 import serviceMap from './serviceMap'
-import { easeInOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export default function Service() {
   const serviceAnimation = {
@@ -13,7 +13,7 @@ export default function Service() {
       opacity: 1,
       y: 0,
       transition: {
-        ease: easeInOut,
+        ease: 'easeInOut',
         duration: 0.75,
       },
     },

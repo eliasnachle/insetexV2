@@ -24,7 +24,7 @@ const typeClient = [
 
 export const addressInputsInline = [
   {
-    type: 'text',
+    type: 'number',
     name: 'addressNumber',  
     label: 'Número'  
   },

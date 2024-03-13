@@ -26,17 +26,17 @@ globalStyle(`${AboutContainer} > div`, {
 })
 
 globalStyle(`${AboutContainer} > div > article`, {
+  top: '-40px',
   padding: '2em',
   display: 'grid',
   placeItems: 'center',
-  top: '-40px',
   position: 'absolute',
   width: '700px',
   height: '25em',
   background: `linear-gradient(28deg,${vars.color.primary} 35%, ${vars.color.blue} 97%)`,
   '@media': {
-    'screen and (max-width: 720px)': {
-      width: 'calc(100% - 50px)',
+    'screen and (max-width: 720px)': {      
+      width: 'calc(100%)',
       gridGap: '1em',
       padding: '1em',
       minHeight: '25em',
