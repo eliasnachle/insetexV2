@@ -3,24 +3,40 @@ import { vars } from '../../../presentation/styles/theme/theme.css'
 
 export const containerTypeClient = style({
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',  
 })
 
 export const contentTypeClient = style({
   display: 'flex',
   justifyContent: 'space-between',
-  gap: '1em'
+  gap: '1em',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      flexDirection: 'column'      
+    }
+  },
 })
 
 globalStyle(`${contentTypeClient} > div `, {
-  width: '230px'
+  width: '230px',  
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '100%'  
+    }
+  },
 })
 
 export const addressContainer = style({
   display: 'grid',
   gridGap: '1.5em',
   padding: '0 0 3em 0',
-  width: '100%'
+  width: '100%',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      padding: '1.5em 0 3em 0',
+
+    }
+  },  
 })
 
 globalStyle(`${addressContainer} > div > input `, {  
@@ -29,15 +45,41 @@ globalStyle(`${addressContainer} > div > input `, {
 
 export const inlineInputContainer = style({
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      flexDirection: 'column',
+      width: '100%'
+    }
+  },  
 })
 
 globalStyle(`${inlineInputContainer} > div:first-child > input`, {
-  maxWidth: '200px'
+  maxWidth: '200px',
+  '@media': {
+    'screen and (max-width: 820px)': {      
+      maxWidth: '100%',
+      width: '100%'
+    }
+  },  
+})
+
+globalStyle(`${inlineInputContainer} > div:nth-child(2) > label`, {  
+  '@media': {
+    'screen and (max-width: 820px)': {
+      paddingTop: '1.5em',      
+    }
+  },  
 })
 
 globalStyle(`${inlineInputContainer} > div:nth-child(2) > input`, {
-  maxWidth: '400px'
+  maxWidth: '400px',
+  '@media': {
+    'screen and (max-width: 820px)': {      
+      maxWidth: '100%',
+      width: '100%'
+    }
+  },  
 })
 
 export const suggestionContainer = style({
@@ -47,7 +89,13 @@ export const suggestionContainer = style({
   background: vars.color.backgroundLight,
   position: 'absolute',
   zIndex: '999',
-  width: '736px'
+  width: '736px',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '95%',
+      left: '10px',      
+    },
+  },
 })
 
 globalStyle(`${suggestionContainer} > div`, {
@@ -56,7 +104,12 @@ globalStyle(`${suggestionContainer} > div`, {
   display: 'flex',
   alignItems: 'center',
   gap: '20px',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      padding: '40px 1em'
+    },
+  },
 })
 
 globalStyle(`${suggestionContainer} > div > svg`, {

@@ -11,11 +11,29 @@ export const userContainer = style({
 export const inlineInputContainer = style({
   display: 'flex',
   justifyContent: 'space-between',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      flexDirection: 'column'
+    },
+  },
 })
 
 globalStyle(`${inlineInputContainer} > div > input`, {
   width: '300px',
   maxWidth: '100%',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '100%'
+    },
+  },
+})
+
+globalStyle(`${inlineInputContainer} > div:nth-child(2) > label`, {  
+  '@media': {
+    'screen and (max-width: 820px)': {
+      marginTop: '1.25em'
+    },
+  },
 })
 
 export const userTextAreaContainer = style({})
@@ -32,6 +50,5 @@ globalStyle(`${userTextAreaContainer} > div > textarea`, {
 })
 
 export const smallText = style({
-  fontSize: '12px',
-  
+  fontSize: '12px',  
 })

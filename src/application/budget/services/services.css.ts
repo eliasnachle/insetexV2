@@ -22,5 +22,10 @@ globalStyle(`${problemContainer} > div`, {
 globalStyle(`${problemContainer} > div > textarea`, {
   height: '80px',
   marginBottom: '1.5em',
-  width: '100%'
+  width: '100%',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      height: '100px',
+    },
+  },
 })

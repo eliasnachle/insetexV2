@@ -6,10 +6,20 @@ export const stepContainer = style({
   padding: '1em 0 0 0',
   width: '100%',
   height: '650px',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      height: 'auto',
+    },
+  },
 })
 
 globalStyle(`${stepContainer} > div`, {
   height: '500px',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      height: 'auto',
+    },
+  },
 })
 
 globalStyle(`${stepContainer} > article`, {
@@ -23,6 +33,11 @@ globalStyle(`${stepContainer} > article > h1`, {
   fontFamily: vars.fonts.Poppins,
   fontWeight: 500,
   color: vars.color.blueText,
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '18px'
+    },
+  },
 })
 
 globalStyle(`${stepContainer} > article > p`, {
@@ -31,6 +46,11 @@ globalStyle(`${stepContainer} > article > p`, {
   fontFamily: vars.fonts.DMSans,
   color: vars.color.lightBlueText,
   height: '100%',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      padding: '0'
+    },
+  },
 })
 
 export const divideBar = style({
@@ -46,15 +66,29 @@ export const stepItem = style({
   gridTemplateColumns: 'repeat(3, auto)',
   gridGap: '1em',
   width: '100%',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      gridTemplateColumns: 'repeat(auto-fill, 200px)'
+    },
+    'screen and (max-width: 480px)': {
+      gridTemplateColumns: '1fr',
+      placeItems: 'center'
+    },
+  },
 })
 
 export const stepSuccess = style({
   display: 'grid',
   placeItems: 'center',
   textAlign: 'center',  
-  height: '300px !important',
-  marginTop: '25px'
+  height: '300px',
+  marginTop: '25px',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      height: '100%',
+    },
+  },
 })
 
 globalStyle(`${stepSuccess} > h1`, {

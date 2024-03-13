@@ -11,6 +11,16 @@ export const chebkboxItem = style({
   placeItems: 'center',
   cursor: 'pointer',
   transition: 'all ease 250ms',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '200px',
+    },
+    'screen and (max-width: 480px)': {
+      width: '80%',
+      placeItems: 'center',
+      textAlign: 'center'
+    },
+  },  
 })
 
 export const checkboxInput = style({
@@ -38,16 +48,31 @@ globalStyle(`${chebkboxItem} > label`, {
   width: '100%',
   height: '100%',
   cursor: 'pointer',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      gridTemplateColumns: '90% 10%'
+    }
+  },  
 })
 
 globalStyle(`${chebkboxItem} > label > div`, {
   display: 'grid',
+  '@media': {    
+    'screen and (max-width: 480px)': {
+      placeItems: 'center'
+    },
+  },    
 })
 
 globalStyle(`${chebkboxItem} > label > div > svg`, {
   fill: vars.color.blueText,
   width: '35px',
   height: 'fit-content',
+  '@media': {
+    'screen and (max-width: 480px)': {
+      width: '30px',
+    },
+  },  
 })
 
 globalStyle(`${chebkboxItem} > label > div > span`, {
