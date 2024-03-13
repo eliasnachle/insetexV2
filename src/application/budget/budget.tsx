@@ -8,18 +8,20 @@ import Services from './services/services'
 import AddressDetail from './address/address'
 import User from './user/user'
 import { Steps } from '@/domain/types/budget/budgetEnum'
+import Success from './success/success'
 
 const stepComponents: StepComponents = {
   [Steps.STEP_SERVICES]: Services,
   [Steps.STEP_ADDRESS]: AddressDetail,
   [Steps.STEP_USER]: User,
+  [Steps.STEP_SUCCESS]: Success,
 }
 
 export default class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
-      step: Steps.STEP_USER,      
+      step: Steps.STEP_SERVICES,      
       serviceData: {
         services:[
           { name: 'desratizacao', checked: false },

@@ -6,26 +6,21 @@ export default class ValidateUserStep extends ValidateStep {
     state: BudgetState,
     handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void,
   ): boolean {
-    let isValidated = false
-    const fieldsToValidate: [keyof IUserData, string][] = [
-      ['name', 'Nome inválido'],
-      ['phone', 'Telefone inválido'],
-      ['email', 'E-mail inválido'],
+    let isValidated = true
+    const fieldsToValidate: [keyof IUserData, string, RegExp | null][] = [
+      ['name', 'Nome inválido', null],
+      ['phone', 'Telefone inválido', /^\(\d{2}\)\s\d{4,5}-\d{4}$/],
+      ['email', 'E-mail inválido', null],
     ]
     const updatedUserData: Partial<IUserData> = {}
-    fieldsToValidate.forEach(([fieldName, errorMessage]) => {      
+    fieldsToValidate.forEach(([fieldName, errorMessage, regex]) => {
       const inputValue = state.userData[fieldName].inputValue
-      // if(fieldName === 'phone') {
-      //   updatedUserData[fieldName] = {
-      //     ...state.userData[fieldName],
-      //     error: errorMessage,
-      //   } 
-      // }
-      if (inputValue.length === 0) {
+      if (inputValue.length === 0 || (regex && !regex.test(inputValue))) {
         updatedUserData[fieldName] = {
           ...state.userData[fieldName],
           error: errorMessage,
         }
+        isValidated = false
       }
     })
     if (Object.keys(updatedUserData).length > 0) {
@@ -33,8 +28,6 @@ export default class ValidateUserStep extends ValidateStep {
         ...state.userData,
         ...updatedUserData,
       })
-    } else {
-      isValidated = true
     }
     return isValidated
   }

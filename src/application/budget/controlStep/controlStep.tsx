@@ -17,11 +17,14 @@ const validationFunctions: { [step in Steps]: ValidateStep } = {
   [Steps.STEP_SERVICES]: new ValidateServicesStep(),
   [Steps.STEP_ADDRESS]: new ValidateAddressStep(),
   [Steps.STEP_USER]: new ValidateUserStep(),
+  [Steps.STEP_SUCCESS]: new ValidateUserStep(),
 }
 
-export default class ControlStep extends Component<IStep> {
+export default class ControlStep extends Component<IStep> {  
   render() {
     const { state, handleSetStep, handleInputChange } = this.props
+
+    if (state.step === Steps.STEP_SUCCESS) return null    
 
     const handleNextStep = () => {
       const validationFunction = validationFunctions[state.step as Steps]
@@ -31,17 +34,17 @@ export default class ControlStep extends Component<IStep> {
 
     const handlePrevStep = () => {
       handleSetStep(state.step - 1)
-    }
+    }    
 
-    return (
+    return (      
       <div
         className={containerControlStep}
         style={{ justifyContent: state.step >= Steps.STEP_ADDRESS ? 'space-between' : 'end' }}>
-        {state.step >= 1 && (
+        {state.step >= Steps.STEP_ADDRESS && (
           <button className={previousButton} onClick={handlePrevStep}>
             Voltar
           </button>
-        )}
+        )}        
         <button onClick={handleNextStep}>Continuar</button>
       </div>
     )

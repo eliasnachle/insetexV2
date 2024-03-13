@@ -8,12 +8,13 @@ export default function ContactForm() {
 
   return (
     <div className={formContainer}>
-      <h1>Fale Conosco</h1>
+      <SentMail />
+      {/* <h1>Fale Conosco</h1>
       <p>
         Preencha todos os campos obrigatórios do formulário de contato com suas
         informações corretas.
       </p>
-      {isSent ? <SentMail /> : <UserForm setIsSent={setIsSent} />}
+      {isSent ? <SentMail /> : <UserForm setIsSent={setIsSent} />} */}
     </div>
   )
 }

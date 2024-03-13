@@ -48,3 +48,44 @@ export const stepItem = style({
   width: '100%',
   justifyContent: 'space-between'
 })
+
+export const stepSuccess = style({
+  display: 'grid',
+  placeItems: 'center',
+  textAlign: 'center',  
+  height: '300px !important',
+  marginTop: '25px'
+})
+
+globalStyle(`${stepSuccess} > h1`, {
+  fontSize: '2em',
+  fontFamily: vars.fonts.Poppins,
+  fontWeight: 500,
+  color: vars.color.blueText,
+})
+
+globalStyle(`${stepSuccess} > p`, {
+  padding: '1em 0',
+  fontSize: '16px',
+  fontFamily: vars.fonts.DMSans,
+  color: vars.color.lightBlueText,
+  height: '100%',
+})
+
+globalStyle(`${stepSuccess} > button`, {
+  textDecoration: 'none',
+  fontFamily: vars.fonts.DMSans,
+  transition: 'all ease-in 200ms',
+  background: vars.color.backgroundBlackBlue,
+  color: vars.color.lightText,
+  borderRadius: '12px',
+  outline: 'none',
+  padding: '16px 40px',
+  border: 'none',
+  fontSize: '16px',  
+  cursor: 'pointer'
+})
+
+globalStyle(`${stepSuccess} > button:hover`, {  
+  opacity: 0.8,
+})
