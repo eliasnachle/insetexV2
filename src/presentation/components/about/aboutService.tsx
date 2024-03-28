@@ -12,12 +12,11 @@ export default function AboutService() {
         <p>
           Com décadas de experiência, remodelamos o controle de pragas urbanas.
           Utilizando tecnologias avançadas e metodologias de controle e
-          extermínio, combatemos efetivamente pragas e vetores. Somos filiados a
-          órgãos competentes e seguimos diretrizes da OMS, ANVISA e ABNT. Nossas
+          extermínio, combatemos efetivamente pragas e vetores. Nossas
           equipes são altamente treinadas, oferecendo excelência no cumprimento
           dos contratos. Proporcionamos um programa eficiente de saúde
           ambiental, buscando a satisfação plena dos clientes. Nosso lema:
-          Serviços com Eficiência, Eficácia e Efetividade..
+          Serviços com Eficiência, Eficácia e Efetividade.
         </p>
       </article>
     </div>
