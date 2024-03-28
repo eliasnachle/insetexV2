@@ -17,7 +17,7 @@ export default function AboutService() {
           equipes são altamente treinadas, oferecendo excelência no cumprimento
           dos contratos. Proporcionamos um programa eficiente de saúde
           ambiental, buscando a satisfação plena dos clientes. Nosso lema:
-          Serviços com Eficiência, Eficácia e Efetividade.
+          Serviços com Eficiência, Eficácia e Efetividade..
         </p>
       </article>
     </div>
