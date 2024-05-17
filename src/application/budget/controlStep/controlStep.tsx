@@ -1,5 +1,7 @@
 import { Steps } from '@/domain/types/budget/budgetEnum'
 import { BudgetState } from '@/domain/types/budget/budgetTypes'
+import { sendBudgetMail } from '@/useCases/budgetUseCases'
+import { scrollToTop } from '@/utils/utils'
 import { Component } from 'react'
 import { containerControlStep, previousButton } from './controlStep.css'
 import ValidateAddressStep from './validateStep/validateAddressStep'
@@ -13,7 +15,7 @@ interface IStep {
   handleInputChange: <K extends keyof BudgetState>(key: K, value: BudgetState[K]) => void
 }
 
-const validationFunctions: { [step in Steps]: ValidateStep } = {
+const validationSteps: { [step in Steps]: ValidateStep } = {
   [Steps.STEP_SERVICES]: new ValidateServicesStep(),
   [Steps.STEP_ADDRESS]: new ValidateAddressStep(),
   [Steps.STEP_USER]: new ValidateUserStep(),
@@ -26,18 +28,14 @@ export default class ControlStep extends Component<IStep> {
 
     if (state.step === Steps.STEP_SUCCESS) return null
 
-    const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    };
-
-    const handleNextStep = () => {
-      const validationFunction = validationFunctions[state.step as Steps]
-      if (validationFunction && validationFunction.validate(state, handleInputChange))
-      handleSetStep(state.step + 1)
-      scrollToTop()      
+    const handleNextStepClick = async () => {      
+      const validationFunction = validationSteps[state.step as Steps]
+      if (validationFunction && validationFunction.validate(state, handleInputChange))          
+      if(state.step != Steps.STEP_USER) {
+        handleSetStep(state.step + 1)
+        scrollToTop()      
+      }            
+      await handleSuccessStep(state, handleSetStep)
     }
 
     const handlePrevStep = () => {
@@ -54,8 +52,17 @@ export default class ControlStep extends Component<IStep> {
             Voltar
           </button>
         )}        
-        <button onClick={handleNextStep}>Continuar</button>
+        <button onClick={handleNextStepClick}>Continuar</button>
       </div>
     )
+  }
+}
+
+
+const handleSuccessStep = async (state: BudgetState, handleSetStep: (newStep: number) => void) => {  
+  const response = await sendBudgetMail(state)
+  if(response) {
+    handleSetStep(state.step + 1)
+    scrollToTop()
   }
 }

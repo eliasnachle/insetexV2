@@ -49,6 +49,7 @@ export default class Budget extends Component<object, BudgetState> {
         message: { inputValue: ''},
       },
       suggestions: [],
+      isCompletedForm: false
     }
   }
 

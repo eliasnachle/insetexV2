@@ -37,6 +37,7 @@ export interface BudgetState {
   addressData: IAddressData
   userData: IUserData
   suggestions: string[]
+  isCompletedForm: boolean
 }
 
 export type StepPropsMap = {
