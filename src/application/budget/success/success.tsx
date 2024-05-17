@@ -17,9 +17,8 @@ export default class Success extends Component<SuccessProps> {
     return (
       <div className={stepSuccess}>                  
           <Lottie animationData={successCheck} loop={false} />
-          <h1>Obrigado, {userData.name.inputValue}!</h1>
-          <p>Agradecemos pelo seu interesse em nossos serviços/produtos! Estamos trabalhando duro para preparar um orçamento personalizado para atender às suas necessidades. Fique atento(a), pois em breve você receberá o orçamento completo por e-mail.</p>
-          <p>Se tiver alguma dúvida ou precisar de mais informações enquanto isso, não hesite em entrar em contato conosco. Estamos aqui para ajudar!</p>          
+          <h1>{userData.name.inputValue}, recebemos seu orçamento e estamos trabalhando para atendê-lo.</h1>
+          <p>Obrigado por nos procurar! Estamos elaborando um orçamento adaptado às suas necessidades. Aguarde o envio por e-mail. Se precisar de esclarecimentos, estamos à disposição!</p>
       </div>
     )
   }

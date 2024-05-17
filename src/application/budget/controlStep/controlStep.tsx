@@ -36,8 +36,8 @@ export default class ControlStep extends Component<IStep> {
     const handleNextStep = () => {
       const validationFunction = validationFunctions[state.step as Steps]
       if (validationFunction && validationFunction.validate(state, handleInputChange))
-        handleSetStep(state.step + 1)
-        scrollToTop()
+      handleSetStep(state.step + 1)
+      scrollToTop()      
     }
 
     const handlePrevStep = () => {

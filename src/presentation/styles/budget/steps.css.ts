@@ -79,31 +79,40 @@ export const stepItem = style({
 })
 
 export const stepSuccess = style({
+  background: vars.color.backgroundBlackBlue,
   display: 'grid',
   placeItems: 'center',
-  textAlign: 'center',  
-  height: '300px',
+  textAlign: 'center',    
   marginTop: '25px',
+  padding: '0em 4em 2em 4em',
+  borderRadius: '35px',
   '@media': {
     'screen and (max-width: 820px)': {
       height: '100%',
+      padding: '0em 1.5em',
     },
   },
 })
 
 globalStyle(`${stepSuccess} > h1`, {
-  fontSize: '2em',
+  fontSize: '1.75em',
   fontFamily: vars.fonts.Poppins,
-  fontWeight: 500,
-  color: vars.color.blueText,
+  fontWeight: 600,
+  color: vars.color.lightText,
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '18px',
+    },
+  },
 })
 
 globalStyle(`${stepSuccess} > p`, {
   padding: '1em 0',
-  fontSize: '16px',
-  fontFamily: vars.fonts.DMSans,
-  color: vars.color.lightBlueText,
+  fontSize: '14px',
+  fontFamily: vars.fonts.Poppins,
+  color: vars.color.grayText,
   height: '100%',
+  letterSpacing: '0.25px'
 })
 
 globalStyle(`${stepSuccess} > button`, {

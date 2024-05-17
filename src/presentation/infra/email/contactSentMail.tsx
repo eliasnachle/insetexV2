@@ -36,7 +36,7 @@ export const ContactSentMail = (name: string) => (
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          © 2023 Insetex Controle Tecnologico de Insetos
+          © 2024 Insetex Controle Tecnologico de Insetos
         </Text>
       </Container>
     </Body>

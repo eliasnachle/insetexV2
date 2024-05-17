@@ -59,7 +59,7 @@ export default class User extends Component<UserProps> {
             <Input
               label="Telefone"
               value={this.props.userData.phone.inputValue}
-              type="number"
+              type="text"
               name="phone"
               handleInputChange={this.handleInputChange('phone')}
               className={formInput}
