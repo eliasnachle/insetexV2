@@ -54,3 +54,8 @@ export interface IInputData {
 export type StepComponents = {
   [step in Steps]: React.ComponentType<StepPropsMap[step]>
 }
+
+export interface ValidationResult {
+  isValid: boolean;
+  errors?: string[];
+}
