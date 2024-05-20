@@ -49,7 +49,6 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
                     </Text>
                   </Column>
                 </Row>
-
                 <Row>
                   <Column style={informationTableColumn}>
                     <Text style={informationTableLabel}>E-mail:</Text>
@@ -97,7 +96,6 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
                     </Text>
                   </Column>
                 </Row>
-
                 <Row>
                   <Column style={informationTableColumn}>
                     <Text style={informationTableLabel}>Endereço:</Text>
@@ -113,6 +111,18 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
           </Section>
           <Section style={productTitleTable}>
             <Text style={productsTitle}>Serviços</Text>
+          </Section>
+          <Section style={informationTable}>
+            <Row style={informationTableRow}>
+              <Column colSpan={2}>
+                <Row>
+                  <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>Detalhe do serviço:</Text>
+                    <Text style={informationTableValue}>{budgetData.serviceData.detail}</Text>
+                  </Column>
+                </Row>
+              </Column>
+            </Row>
           </Section>
           <Section>
             {budgetData.serviceData.services
