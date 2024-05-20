@@ -1,10 +1,5 @@
 import Logo from '/public/logo_light.svg'
-import {
-  footerContainer,
-  footerContent,
-  footerCopyrigth,
-  footerGrid,
-} from './footer.css'
+import { footerContainer, footerContent, footerCopyrigth, footerGrid } from './footer.css'
 import FooterItens from './footerItens/footerItens'
 
 export default function Footer() {
@@ -14,7 +9,10 @@ export default function Footer() {
         <div className={footerGrid}>
           <article>
             <Logo />
-            <p>Sua defesa imbatível contra pragas, soluções sob medida para um ambiente livre e tranquilo.</p>
+            <p>
+              Sua defesa imbatível contra pragas, soluções sob medida para um ambiente livre e
+              tranquilo.
+            </p>
           </article>
           <FooterItens />
         </div>

@@ -33,14 +33,14 @@ export const serviceItensContainer = style({
   },
 })
 
-globalStyle(`${serviceContainer} > article`, {  
+globalStyle(`${serviceContainer} > article`, {
   maxWidth: vars.sizes.desktopWidth,
   display: 'grid',
   placeItems: 'center',
   gridGap: '3em',
 })
 
-globalStyle(`${serviceContainer} > article > h1`, {  
+globalStyle(`${serviceContainer} > article > h1`, {
   color: vars.color.blueText,
   fontSize: 'clamp(2.5em, 3vw, 4em)',
   textAlign: 'center',

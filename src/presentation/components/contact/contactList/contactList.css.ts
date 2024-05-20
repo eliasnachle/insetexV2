@@ -30,8 +30,8 @@ globalStyle(`${ContactItem} > div > p`, {
 })
 
 globalStyle(`${ContactItem} > div > a`, {
-  textDecoration: 'none',  
-  color: vars.color.primary
+  textDecoration: 'none',
+  color: vars.color.primary,
 })
 
 globalStyle(`${ContactItem} > div > a > span`, {

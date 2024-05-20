@@ -15,7 +15,7 @@ export const footerContent = style({
   padding: '0 1em',
 })
 
-export const footerGrid = style({  
+export const footerGrid = style({
   display: 'flex',
   justifyContent: 'space-between',
   padding: '45px 0 0 0',
@@ -29,13 +29,13 @@ export const footerGrid = style({
 })
 
 globalStyle(`${footerGrid} > article`, {
-  maxWidth: '350px', 
+  maxWidth: '350px',
 })
 
 globalStyle(`${footerGrid} > article > p`, {
   padding: '1em 0',
   fontSize: '16px',
-  opacity: 0.6
+  opacity: 0.6,
 })
 
 globalStyle(`${footerGrid} > div`, {
@@ -44,7 +44,7 @@ globalStyle(`${footerGrid} > div`, {
   '@media': {
     'screen and (max-width: 920px)': {
       flexDirection: 'column',
-      padding: '1em 0'
+      padding: '1em 0',
     },
   },
 })
@@ -54,7 +54,7 @@ globalStyle(`${footerGrid} > article > svg`, {
 })
 
 globalStyle(`${footerGrid} > article > svg > path`, {
-  fill: '#fff !important'
+  fill: '#fff !important',
 })
 
 export const footerCopyrigth = style({
@@ -65,7 +65,7 @@ export const footerCopyrigth = style({
 
 globalStyle(`${footerCopyrigth} > hr`, {
   opacity: 0.25,
-  margin: '1.75em 0'
+  margin: '1.75em 0',
 })
 
 globalStyle(`${footerCopyrigth} > span`, {

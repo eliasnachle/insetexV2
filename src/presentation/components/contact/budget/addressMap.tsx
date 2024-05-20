@@ -25,13 +25,13 @@ const typeClient = [
 export const addressInputsInline = [
   {
     type: 'number',
-    name: 'addressNumber',  
-    label: 'Número'  
+    name: 'addressNumber',
+    label: 'Número',
   },
   {
     type: 'text',
-    name: 'complement',    
-    label: 'Complemento'
+    name: 'complement',
+    label: 'Complemento',
   },
 ]
 

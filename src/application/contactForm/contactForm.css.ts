@@ -5,14 +5,14 @@ import { vars } from '../../presentation/styles/theme/theme.css'
 export const formContainer = style({
   padding: 'calc(80px + 2em) 1em',
   display: 'grid',
-  placeItems: 'center'
+  placeItems: 'center',
 })
 
 globalStyle(`${formContainer} > h1`, {
   fontSize: '3em',
-  color: vars.color.blueText,  
+  color: vars.color.blueText,
   fontFamily: vars.fonts.Poppins,
-  fontWeight: 500
+  fontWeight: 500,
 })
 
 globalStyle(`${formContainer} > p`, {
@@ -101,7 +101,7 @@ const rotate = keyframes({
 })
 
 export const errorButton = style({
-  background: `${vars.color.backgroundError} !important`
+  background: `${vars.color.backgroundError} !important`,
 })
 
 export const loadingButton = style({
@@ -132,5 +132,5 @@ export const errorMessage = style({
 globalStyle(`${errorMessage} > a`, {
   color: vars.color.primary,
   textDecoration: 'none',
-  cursor: 'pointer'
+  cursor: 'pointer',
 })

@@ -41,17 +41,27 @@ export default class Stepper extends Component<IStepProps> {
     isActiveStep: boolean,
     isCompletedStep: boolean,
   ) {
-    const iconBorderColor = isActiveStep ? vars.color.blue : isCompletedStep ? vars.color.success : vars.color.pendentItem
-    const iconBackground = isActiveStep ? vars.color.none : isCompletedStep ? vars.color.success : vars.color.none
+    const iconBorderColor = isActiveStep
+      ? vars.color.blue
+      : isCompletedStep
+      ? vars.color.success
+      : vars.color.pendentItem
+    const iconBackground = isActiveStep
+      ? vars.color.none
+      : isCompletedStep
+      ? vars.color.success
+      : vars.color.none
     return (
       <div
-        className={`${StepperItem} ${isActiveStep && activeStep} ${isCompletedStep && completedStep}`}>
-        <motion.div          
+        className={`${StepperItem} ${isActiveStep && activeStep} ${
+          isCompletedStep && completedStep
+        }`}>
+        <motion.div
           className={StepperIcon}
           initial={false}
           animate={{ border: `2px solid ${iconBorderColor}`, background: iconBackground }}
-          transition={{ animation: stepperAnimation }}>          
-          {it.icon}          
+          transition={{ animation: stepperAnimation }}>
+          {it.icon}
         </motion.div>
         <span>{it.label}</span>
       </div>
@@ -60,7 +70,11 @@ export default class Stepper extends Component<IStepProps> {
 
   private progressBar(isActiveStep: boolean, isCompletedStep: boolean) {
     const progressBarWidth = isActiveStep || isCompletedStep ? '100%' : '0%'
-    const progressBarBackground = isActiveStep ? vars.color.blue : isCompletedStep ? vars.color.success : vars.color.pendentItem
+    const progressBarBackground = isActiveStep
+      ? vars.color.blue
+      : isCompletedStep
+      ? vars.color.success
+      : vars.color.pendentItem
     return (
       <div className={lineProgress}>
         <motion.div

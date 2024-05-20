@@ -26,7 +26,12 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
         <Container style={container}>
           <Section>
             <Column>
-              <Img src="https://www.insetex.com.br/logo.png" width="auto" height="42" alt="Insetex" />
+              <Img
+                src="https://www.insetex.com.br/logo.png"
+                width="auto"
+                height="42"
+                alt="Insetex"
+              />
             </Column>
           </Section>
           <Section style={informationTable}>
@@ -72,7 +77,11 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
                   <Column style={informationTableColumn}>
                     <Text style={informationTableLabel}>Tipo de cliente:</Text>
                     <Text style={informationTableValue}>
-                      {typeClient.find((it) => it.name === budgetData.addressData.typeClient.inputValue)?.label}
+                      {
+                        typeClient.find(
+                          (it) => it.name === budgetData.addressData.typeClient.inputValue,
+                        )?.label
+                      }
                     </Text>
                   </Column>
                   <Column style={informationTableColumn}>
@@ -93,7 +102,9 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
                   <Column style={informationTableColumn}>
                     <Text style={informationTableLabel}>Endereço:</Text>
                     <Text style={informationTableValue}>
-                      {budgetData.addressData.address.inputValue}, {budgetData.addressData.addressNumber.inputValue} - {budgetData.addressData.zipCode.inputValue}
+                      {budgetData.addressData.address.inputValue},{' '}
+                      {budgetData.addressData.addressNumber.inputValue} -{' '}
+                      {budgetData.addressData.zipCode.inputValue}
                     </Text>
                   </Column>
                 </Row>
@@ -108,8 +119,12 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
               .filter((it: IService) => it.checked)
               .map((it: IService, index: number) => (
                 <Row key={index} style={{ marginLeft: '30px', marginTop: '10px' }}>
-                  <Text style={productTitle}>{servicesMap.find((c) => c.name === it.name)?.label}</Text>
-                  <Text style={productDescription}>{servicesMap.find((c) => c.name === it.name)?.description}</Text>
+                  <Text style={productTitle}>
+                    {servicesMap.find((c) => c.name === it.name)?.label}
+                  </Text>
+                  <Text style={productDescription}>
+                    {servicesMap.find((c) => c.name === it.name)?.description}
+                  </Text>
                 </Row>
               ))}
           </Section>
@@ -117,7 +132,12 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
           <Hr style={productPriceLineBottom} />
           <Section>
             <Column align="center" style={block}>
-              <Img src={'https://www.insetex.com.br/logo.png'} width="auto" height="17" alt="Apple Card" />
+              <Img
+                src={'https://www.insetex.com.br/logo.png'}
+                width="auto"
+                height="17"
+                alt="Apple Card"
+              />
             </Column>
           </Section>
           <Text style={footerCopyright}>

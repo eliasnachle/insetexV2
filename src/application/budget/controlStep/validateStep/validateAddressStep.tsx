@@ -11,11 +11,11 @@ export default class ValidateAddressStep extends ValidateStep {
       ['address', 'Endereço inválido'],
       ['typeClient', 'Tipo de cliente inválido'],
       ['addressNumber', 'Número de endereço inválido'],
-      ['typeClient', 'Escolha um tipo de estabelecimento']
+      ['typeClient', 'Escolha um tipo de estabelecimento'],
     ]
     const updatedAddressData: Partial<IAddressData> = {}
     fieldsToValidate.forEach(([fieldName, errorMessage]) => {
-      const inputValue = state.addressData[fieldName].inputValue      
+      const inputValue = state.addressData[fieldName].inputValue
       if (inputValue.length === 0) {
         updatedAddressData[fieldName] = {
           ...state.addressData[fieldName],

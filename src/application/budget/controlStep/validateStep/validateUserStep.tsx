@@ -32,10 +32,10 @@ export default class ValidateUserStep extends ValidateStep {
     }
     updateValidationState(isValidated, state)
     return isValidated
-  }  
+  }
 }
 
-const updateValidationState = (isValidated: boolean, state: BudgetState): void => {    
+const updateValidationState = (isValidated: boolean, state: BudgetState): void => {
   isValidated = true
   state.isCompletedForm = true
 }

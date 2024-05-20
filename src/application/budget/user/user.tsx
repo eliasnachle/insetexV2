@@ -83,7 +83,7 @@ export default class User extends Component<UserProps> {
                 <span className={smallText}> (Não obrigatório)</span>
               </p>
               <TextArea
-                placeholder='Use este campo para inserir uma mensagem, se necessário.'
+                placeholder="Use este campo para inserir uma mensagem, se necessário."
                 value={this.props.userData.message.inputValue}
                 name="message"
                 handleInputChange={this.handleInputChange('message')}

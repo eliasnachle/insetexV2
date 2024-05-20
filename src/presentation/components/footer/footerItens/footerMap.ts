@@ -15,7 +15,7 @@ export const services = [
     name: 'Sanitização',
   },
   {
-    name: 'Limpeza de Caixas D\' Água',
+    name: "Limpeza de Caixas D' Água",
   },
 ]
 

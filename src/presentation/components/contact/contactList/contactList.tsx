@@ -20,8 +20,7 @@ export default function ContactList() {
       className={ContactItens}
       variants={contactAnimation}
       initial="hidden"
-      animate="show"
-    >
+      animate="show">
       {contactListMap.map((it, i) => (
         <article key={i} className={ContactItem}>
           <figure>{it.figure}</figure>

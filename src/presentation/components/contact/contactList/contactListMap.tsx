@@ -13,8 +13,7 @@ export const contactListMap = [
   {
     figure: <TbBrandWhatsapp />,
     title: 'Whatsapp',
-    description:
-      'Nossa equipe está pronta para responder suas dúvidas e oferecer suporte.',
+    description: 'Nossa equipe está pronta para responder suas dúvidas e oferecer suporte.',
     value: 'Fale agora!',
     href: 'https://wa.me/551123591308',
   },

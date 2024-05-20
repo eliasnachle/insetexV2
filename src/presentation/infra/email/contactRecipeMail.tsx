@@ -28,12 +28,7 @@ export const ContactRecipeMail = (customerData: ICustomerData) => (
       <Container style={container}>
         <Section>
           <Column>
-            <Img
-              src="https://www.insetex.com.br/logo.png"
-              width="auto"
-              height="42"
-              alt="Insetex"
-            />
+            <Img src="https://www.insetex.com.br/logo.png" width="auto" height="42" alt="Insetex" />
           </Column>
         </Section>
         <Section style={informationTable}>
@@ -46,18 +41,14 @@ export const ContactRecipeMail = (customerData: ICustomerData) => (
                 </Column>
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>E-mail:</Text>
-                  <Text style={informationTableValue}>
-                    {customerData.email}
-                  </Text>
+                  <Text style={informationTableValue}>{customerData.email}</Text>
                 </Column>
               </Row>
 
               <Row>
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>Telefone:</Text>
-                  <Text style={informationTableLabel}>
-                    {customerData.phone}
-                  </Text>
+                  <Text style={informationTableLabel}>{customerData.phone}</Text>
                 </Column>
               </Row>
             </Column>
@@ -75,12 +66,7 @@ export const ContactRecipeMail = (customerData: ICustomerData) => (
         <Hr style={productPriceLineBottom} />
         <Section>
           <Column align="center" style={block}>
-            <Img
-              src="https://www.insetex.com.br/logo.png"
-              width="auto"
-              height="17"
-              alt="Insetex"
-            />
+            <Img src="https://www.insetex.com.br/logo.png" width="auto" height="17" alt="Insetex" />
           </Column>
         </Section>
         <Text style={footerCopyright}>

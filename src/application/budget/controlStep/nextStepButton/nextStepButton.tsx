@@ -10,16 +10,20 @@ import {
 } from '@/useCases/budgetUseCases'
 import { IStepButtonProps } from '@/domain/types/budget/controlStepTypes'
 
-export default function NextStepButton({ state, handleInputChange, handleSetStep }: IStepButtonProps) {
+export default function NextStepButton({
+  state,
+  handleInputChange,
+  handleSetStep,
+}: IStepButtonProps) {
   const [statusResponse, setStatusResponse] = useState(StatusResponse.NONE)
   const [buttonMessage, setButtonMessage] = useState<string | React.ReactElement>('Enviar mensagem')
 
   const handleNextStepClick = async () => {
     const validationStep = createValidationStep(state.step as Steps)
-    if (validationStep.validate(state, handleInputChange)) 
-      state.step === Steps.STEP_USER 
-      ? await handleSuccessStep()
-      : incrementStepAndScrollToTop(state, handleSetStep)    
+    if (validationStep.validate(state, handleInputChange))
+      state.step === Steps.STEP_USER
+        ? await handleSuccessStep()
+        : incrementStepAndScrollToTop(state, handleSetStep)
   }
 
   const handleSuccessStep = async () => {

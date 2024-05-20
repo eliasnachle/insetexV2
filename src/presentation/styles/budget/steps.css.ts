@@ -35,7 +35,7 @@ globalStyle(`${stepContainer} > article > h1`, {
   color: vars.color.blueText,
   '@media': {
     'screen and (max-width: 820px)': {
-      fontSize: '18px'
+      fontSize: '18px',
     },
   },
 })
@@ -48,7 +48,7 @@ globalStyle(`${stepContainer} > article > p`, {
   height: '100%',
   '@media': {
     'screen and (max-width: 820px)': {
-      padding: '0'
+      padding: '0',
     },
   },
 })
@@ -69,11 +69,11 @@ export const stepItem = style({
   justifyContent: 'space-between',
   '@media': {
     'screen and (max-width: 820px)': {
-      gridTemplateColumns: 'repeat(auto-fill, 200px)'
+      gridTemplateColumns: 'repeat(auto-fill, 200px)',
     },
     'screen and (max-width: 480px)': {
       gridTemplateColumns: '1fr',
-      placeItems: 'center'
+      placeItems: 'center',
     },
   },
 })
@@ -82,7 +82,7 @@ export const stepSuccess = style({
   background: vars.color.backgroundBlackBlue,
   display: 'grid',
   placeItems: 'center',
-  textAlign: 'center',    
+  textAlign: 'center',
   marginTop: '25px',
   padding: '0em 4em 2em 4em',
   borderRadius: '35px',
@@ -112,7 +112,7 @@ globalStyle(`${stepSuccess} > p`, {
   fontFamily: vars.fonts.Poppins,
   color: vars.color.grayText,
   height: '100%',
-  letterSpacing: '0.25px'
+  letterSpacing: '0.25px',
 })
 
 globalStyle(`${stepSuccess} > button`, {
@@ -125,10 +125,10 @@ globalStyle(`${stepSuccess} > button`, {
   outline: 'none',
   padding: '16px 40px',
   border: 'none',
-  fontSize: '16px',  
-  cursor: 'pointer'
+  fontSize: '16px',
+  cursor: 'pointer',
 })
 
-globalStyle(`${stepSuccess} > button:hover`, {  
+globalStyle(`${stepSuccess} > button:hover`, {
   opacity: 0.8,
 })

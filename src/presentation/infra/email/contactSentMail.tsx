@@ -25,8 +25,8 @@ export const ContactSentMail = (name: string) => (
         />
         <Text style={paragraph}>Olá {name},</Text>
         <Text style={paragraph}>
-          Recebemos sua mensagem e nossa equipe está trabalhando para responder
-          o mais breve possível.
+          Recebemos sua mensagem e nossa equipe está trabalhando para responder o mais breve
+          possível.
         </Text>
         <Section style={btnContainer} />
         <Text style={paragraph}>
@@ -35,9 +35,7 @@ export const ContactSentMail = (name: string) => (
           Equipe Insetex
         </Text>
         <Hr style={hr} />
-        <Text style={footer}>
-          © 2024 Insetex Controle Tecnologico de Insetos
-        </Text>
+        <Text style={footer}>© 2024 Insetex Controle Tecnologico de Insetos</Text>
       </Container>
     </Body>
   </Html>

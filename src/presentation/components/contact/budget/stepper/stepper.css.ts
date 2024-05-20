@@ -76,7 +76,7 @@ globalStyle(`${completedStep} > div`, {
   background: vars.color.success,
 })
 
-globalStyle(`${completedStep} > div > svg`, {  
+globalStyle(`${completedStep} > div > svg`, {
   fill: vars.color.lightText,
 })
 

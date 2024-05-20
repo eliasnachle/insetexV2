@@ -2,7 +2,10 @@ import { AddressDetailState, AddressSuggestion } from '@/domain/types/budget/add
 import { Component } from 'react'
 
 interface AddressDetailProps {
-  handleChangeSuggestion: (name: keyof AddressDetailState, newSuggestion: AddressSuggestion[] | boolean) => void
+  handleChangeSuggestion: (
+    name: keyof AddressDetailState,
+    newSuggestion: AddressSuggestion[] | boolean,
+  ) => void
 }
 
 export default class AutoComplete extends Component<AddressDetailProps> {

@@ -15,7 +15,7 @@ export interface IService {
   checked: boolean
 }
 
-export interface IAddressData {  
+export interface IAddressData {
   typeClient: IInputData
   address: IInputData
   addressNumber: IInputData
@@ -32,7 +32,7 @@ export interface IUserData {
 }
 
 export interface BudgetState {
-  step: number  
+  step: number
   serviceData: IServiceData
   addressData: IAddressData
   userData: IUserData
@@ -44,7 +44,8 @@ export type StepPropsMap = {
   [Steps.STEP_SERVICES]: ServicesProps
   [Steps.STEP_ADDRESS]: AddressDetailProps
   [Steps.STEP_USER]: UserProps
-  [Steps.STEP_SUCCESS]: SuccessProps}
+  [Steps.STEP_SUCCESS]: SuccessProps
+}
 
 export interface IInputData {
   inputValue: string
@@ -56,6 +57,6 @@ export type StepComponents = {
 }
 
 export interface ValidationResult {
-  isValid: boolean;
-  errors?: string[];
+  isValid: boolean
+  errors?: string[]
 }

@@ -4,19 +4,19 @@ import { vars } from '../../../presentation/styles/theme/theme.css'
 export const problemContainer = style({
   display: 'grid',
   padding: '.25rem 0',
-  width: '100%'
+  width: '100%',
 })
 
-globalStyle(`${problemContainer} > p`, {     
+globalStyle(`${problemContainer} > p`, {
   fontSize: '14px',
   fontWeight: 500,
-  fontFamily: vars.fonts.DMSans,  
-  color: vars.color.blueText
+  fontFamily: vars.fonts.DMSans,
+  color: vars.color.blueText,
 })
 
-globalStyle(`${problemContainer} > div`, {  
+globalStyle(`${problemContainer} > div`, {
   width: '100%',
-  padding: '.5rem 0'
+  padding: '.5rem 0',
 })
 
 globalStyle(`${problemContainer} > div > textarea`, {

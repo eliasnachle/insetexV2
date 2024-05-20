@@ -18,9 +18,9 @@ export default async function sendEmail(req: IBudget, res: NextApiResponse) {
       user: process.env.CONTACT_MAIL_USER,
       pass: process.env.CONTACT_MAIL_PASS,
     },
-  })  
+  })
 
-  try {    
+  try {
     const customerMail = await transporter.sendMail({
       from: process.env.CONTACT_MAIL_USER,
       to: req.body.userData.email.inputValue,
@@ -36,7 +36,7 @@ export default async function sendEmail(req: IBudget, res: NextApiResponse) {
     })
     console.log(`${req.body.userData.email.inputValue} - enviado!`)
     console.log(companyMail.messageId)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     res.status(500).json({ error: error.message || error.toString() })
   }

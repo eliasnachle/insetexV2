@@ -17,7 +17,7 @@ globalStyle(`${aboutContainer} > div > article > h1`, {
   fontSize: '60px',
   color: vars.color.blueText,
   fontFamily: vars.fonts.Poppins,
-  fontWeight: 500
+  fontWeight: 500,
 })
 
 globalStyle(`${aboutContainer} > div > article > p`, {

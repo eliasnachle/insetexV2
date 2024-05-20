@@ -1,9 +1,4 @@
-import {
-  ContactContainer,
-  ContactContent,
-  ContactArticle,
-  Button,
-} from './contact.css'
+import { ContactContainer, ContactContent, ContactArticle, Button } from './contact.css'
 import Link from 'next/link'
 import ContactList from './contactList/contactList'
 import { easeInOut, motion } from 'framer-motion'
@@ -28,13 +23,9 @@ export default function Contact() {
           className={ContactArticle}
           variants={contactAnimation}
           initial="hidden"
-          animate="show"
-        >
+          animate="show">
           <h1>Procurando uma solução eficaz contra pragas?</h1>
-          <p>
-            Contrate nosso serviço de dedetização e livre-se das pragas de uma
-            vez por todas!
-          </p>
+          <p>Contrate nosso serviço de dedetização e livre-se das pragas de uma vez por todas!</p>
           <Link className={Button} href="/contato/fale-conosco">
             Fale conosco
           </Link>

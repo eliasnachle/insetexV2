@@ -28,20 +28,17 @@ export default function SentMail() {
       className={sentMailContainer}
       variants={customerAnimation}
       initial="hidden"
-      animate="show"
-    >
+      animate="show">
       <Lottie animationData={successCheck} loop={false} />
       <div>
         <h1>
           Obrigado! <br /> sua mensagem foi enviada.
         </h1>
         <p>
-          Nossa equipe recebeu sua mensagem e nossa equipe já está trabalhando
-          para lhe fornecer uma resposta o mais breve possível.
+          Nossa equipe recebeu sua mensagem e nossa equipe já está trabalhando para lhe fornecer uma
+          resposta o mais breve possível.
         </p>
-        <button onClick={() => router.back()}>
-          Retornar a pagina anterior
-        </button>
+        <button onClick={() => router.back()}>Retornar a pagina anterior</button>
       </div>
     </motion.div>
   )

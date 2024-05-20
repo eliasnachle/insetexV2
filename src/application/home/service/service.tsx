@@ -1,8 +1,4 @@
-import {
-  serviceContainer,
-  serviceItensContainer,
-  serviceItem,
-} from './service.css'
+import { serviceContainer, serviceItensContainer, serviceItem } from './service.css'
 import serviceMap from './serviceMap'
 import { motion } from 'framer-motion'
 
@@ -24,8 +20,7 @@ export default function Service() {
       variants={serviceAnimation}
       initial="hidden"
       animate="show"
-      className={serviceContainer}
-    >
+      className={serviceContainer}>
       <article>
         <h1>Porque a Insetex é a melhor no combate de pragas?</h1>
         <div className={serviceItensContainer}>

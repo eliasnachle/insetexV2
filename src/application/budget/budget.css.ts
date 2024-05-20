@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 export const budgetSection = style({
   display: 'grid',
-  placeItems: 'center'
+  placeItems: 'center',
 })
 
 export const budgetContainer = style({

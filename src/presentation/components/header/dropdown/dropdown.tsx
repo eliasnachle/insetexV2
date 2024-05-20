@@ -24,8 +24,7 @@ export default function Dropdown() {
       variants={heroAnimation}
       initial="hidden"
       animate="show"
-      className={dropdownContainer}
-    >
+      className={dropdownContainer}>
       <div className={chevron} />
       <ul>
         {serviceMap.map((it, i) => (

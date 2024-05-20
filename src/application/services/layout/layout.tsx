@@ -1,11 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import { Key } from 'react'
-import {
-  layoutCotnainer,
-  serviceDetail,
-  serviceDetailContainer,
-  serviceItem,
-} from './layout.css'
+import { layoutCotnainer, serviceDetail, serviceDetailContainer, serviceItem } from './layout.css'
 
 type Item = {
   title: string
@@ -34,11 +29,7 @@ export default function Layout({ serviceItemMap }: { serviceItemMap: Item }) {
           <p>{serviceItemMap.describe}</p>
         </article>
         <figure>
-          <Image
-            src={serviceItemMap.img}
-            alt={serviceItemMap.imgAlt}
-            placeholder="blur"
-          />
+          <Image src={serviceItemMap.img} alt={serviceItemMap.imgAlt} placeholder="blur" />
         </figure>
       </div>
       <div className={serviceDetail}>

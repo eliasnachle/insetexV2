@@ -13,7 +13,7 @@ export const inlineInputContainer = style({
   justifyContent: 'space-between',
   '@media': {
     'screen and (max-width: 820px)': {
-      flexDirection: 'column'
+      flexDirection: 'column',
     },
   },
 })
@@ -23,15 +23,15 @@ globalStyle(`${inlineInputContainer} > div > input`, {
   maxWidth: '100%',
   '@media': {
     'screen and (max-width: 820px)': {
-      width: '100%'
+      width: '100%',
     },
   },
 })
 
-globalStyle(`${inlineInputContainer} > div:nth-child(2) > label`, {  
+globalStyle(`${inlineInputContainer} > div:nth-child(2) > label`, {
   '@media': {
     'screen and (max-width: 820px)': {
-      marginTop: '1.25em'
+      marginTop: '1.25em',
     },
   },
 })
@@ -50,5 +50,5 @@ globalStyle(`${userTextAreaContainer} > div > textarea`, {
 })
 
 export const smallText = style({
-  fontSize: '12px',  
+  fontSize: '12px',
 })

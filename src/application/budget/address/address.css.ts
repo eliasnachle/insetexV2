@@ -3,7 +3,7 @@ import { vars } from '../../../presentation/styles/theme/theme.css'
 
 export const containerTypeClient = style({
   display: 'flex',
-  flexDirection: 'column',  
+  flexDirection: 'column',
 })
 
 export const contentTypeClient = style({
@@ -12,17 +12,17 @@ export const contentTypeClient = style({
   gap: '1em',
   '@media': {
     'screen and (max-width: 820px)': {
-      flexDirection: 'column'      
-    }
+      flexDirection: 'column',
+    },
   },
 })
 
 globalStyle(`${contentTypeClient} > div `, {
-  width: '230px',  
+  width: '230px',
   '@media': {
     'screen and (max-width: 820px)': {
-      width: '100%'  
-    }
+      width: '100%',
+    },
   },
 })
 
@@ -34,13 +34,12 @@ export const addressContainer = style({
   '@media': {
     'screen and (max-width: 820px)': {
       padding: '1.5em 0 3em 0',
-
-    }
-  },  
+    },
+  },
 })
 
-globalStyle(`${addressContainer} > div > input `, {  
-  width: '100%'
+globalStyle(`${addressContainer} > div > input `, {
+  width: '100%',
 })
 
 export const inlineInputContainer = style({
@@ -49,37 +48,37 @@ export const inlineInputContainer = style({
   '@media': {
     'screen and (max-width: 820px)': {
       flexDirection: 'column',
-      width: '100%'
-    }
-  },  
+      width: '100%',
+    },
+  },
 })
 
 globalStyle(`${inlineInputContainer} > div:first-child > input`, {
   maxWidth: '200px',
   '@media': {
-    'screen and (max-width: 820px)': {      
+    'screen and (max-width: 820px)': {
       maxWidth: '100%',
-      width: '100%'
-    }
-  },  
+      width: '100%',
+    },
+  },
 })
 
-globalStyle(`${inlineInputContainer} > div:nth-child(2) > label`, {  
+globalStyle(`${inlineInputContainer} > div:nth-child(2) > label`, {
   '@media': {
     'screen and (max-width: 820px)': {
-      paddingTop: '1.5em',      
-    }
-  },  
+      paddingTop: '1.5em',
+    },
+  },
 })
 
 globalStyle(`${inlineInputContainer} > div:nth-child(2) > input`, {
   maxWidth: '400px',
   '@media': {
-    'screen and (max-width: 820px)': {      
+    'screen and (max-width: 820px)': {
       maxWidth: '100%',
-      width: '100%'
-    }
-  },  
+      width: '100%',
+    },
+  },
 })
 
 export const suggestionContainer = style({
@@ -93,7 +92,7 @@ export const suggestionContainer = style({
   '@media': {
     'screen and (max-width: 820px)': {
       width: '95%',
-      left: '10px',      
+      left: '10px',
     },
   },
 })
@@ -107,13 +106,13 @@ globalStyle(`${suggestionContainer} > div`, {
   cursor: 'pointer',
   '@media': {
     'screen and (max-width: 820px)': {
-      padding: '40px 1em'
+      padding: '40px 1em',
     },
   },
 })
 
 globalStyle(`${suggestionContainer} > div > svg`, {
-  fill: vars.color.lightBlueText
+  fill: vars.color.lightBlueText,
 })
 
 export const suggestionItem = style({
@@ -134,9 +133,8 @@ globalStyle(`${suggestionContainer} > span:hover`, {
 globalStyle(`${suggestionItem} > span:nth-child(2)`, {
   fontSize: '14px',
   transition: 'all ease-in 150ms',
-  color: vars.color.grayText,  
+  color: vars.color.grayText,
 })
-
 
 export const typeClientError = style({
   display: 'flex',

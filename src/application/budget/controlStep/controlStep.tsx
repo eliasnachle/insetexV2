@@ -11,9 +11,7 @@ export default function ControlStep({ state, handleInputChange, handleSetStep }:
   const buttonProps = { state, handleInputChange, handleSetStep }
   return (
     <div className={containerControlStep} style={containerStyle}>
-      {isStepAddressOrBeyond && (
-        <PreviousStepButton {...buttonProps} />
-      )}
+      {isStepAddressOrBeyond && <PreviousStepButton {...buttonProps} />}
       <NextStepButton {...buttonProps} />
     </div>
   )

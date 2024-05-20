@@ -7,11 +7,11 @@ export default function ContactForm() {
   const [isSent, setIsSent] = useState(false)
 
   return (
-    <div className={formContainer}>      
+    <div className={formContainer}>
       <h1>Fale Conosco</h1>
       <p>
-        Preencha todos os campos obrigatórios do formulário de contato com suas
-        informações corretas.
+        Preencha todos os campos obrigatórios do formulário de contato com suas informações
+        corretas.
       </p>
       {isSent ? <SentMail /> : <UserForm setIsSent={setIsSent} />}
     </div>

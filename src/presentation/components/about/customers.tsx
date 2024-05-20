@@ -21,8 +21,7 @@ export default function Customers() {
         className={customersContainer}
         variants={customerAnimation}
         initial="hidden"
-        animate="show"
-      >
+        animate="show">
         <div>
           {customersMap.map((it, i) => (
             <Image key={i} src={it.img} alt={it.alt} />

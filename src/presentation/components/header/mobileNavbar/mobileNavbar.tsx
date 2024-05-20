@@ -23,10 +23,7 @@ export default function MobileNavbar({ setIsMobile }: UseStateProps) {
   }
 
   return (
-    <nav
-      className={navbar}
-      style={{ display: isDropdown ? 'block' : 'hidden' }}
-    >
+    <nav className={navbar} style={{ display: isDropdown ? 'block' : 'hidden' }}>
       <ul>
         {headerMap.map((it, i) => {
           if (it.name == 'services') {
@@ -36,16 +33,12 @@ export default function MobileNavbar({ setIsMobile }: UseStateProps) {
                   {it.label}{' '}
                   <RiArrowDownSLine
                     style={{
-                      transform:
-                        toggleHeight === 0 ? 'rotate(0deg)' : 'rotate(180deg)',
+                      transform: toggleHeight === 0 ? 'rotate(0deg)' : 'rotate(180deg)',
                     }}
                   />
                 </motion.span>
                 <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
-                    style={{ overflowY: 'auto' }}
-                    animate={{ height: toggleHeight }}
-                  >
+                  <motion.div style={{ overflowY: 'auto' }} animate={{ height: toggleHeight }}>
                     <MobileDropdown setIsMobile={setIsMobile} />
                   </motion.div>
                 </AnimatePresence>

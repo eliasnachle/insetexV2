@@ -13,7 +13,7 @@ export const sendBudgetMail = async (budgetData: BudgetState): Promise<boolean> 
     return response.status === 200
   } catch (e) {
     console.error('Erro ao enviar orçamento:', e)
-    throw new Error("Failed to send budget mail")            
+    throw new Error('Failed to send budget mail')
   }
 }
 
@@ -30,7 +30,10 @@ export const createValidationStep = (step: Steps): ValidateStep => {
   }
 }
 
-export function incrementStepAndScrollToTop(state: BudgetState, handleSetStep: (newStep: Steps) => void) {
+export function incrementStepAndScrollToTop(
+  state: BudgetState,
+  handleSetStep: (newStep: Steps) => void,
+) {
   handleSetStep(state.step + 1)
   scrollToTop()
 }

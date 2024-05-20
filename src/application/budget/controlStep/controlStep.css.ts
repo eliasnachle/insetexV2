@@ -6,7 +6,7 @@ export const containerControlStep = style({
   display: 'flex',
   alignItems: 'center',
   gap: '2em',
-  height: '60px'
+  height: '60px',
 })
 
 globalStyle(`${containerControlStep} > button`, {
@@ -20,21 +20,20 @@ globalStyle(`${containerControlStep} > button`, {
   outline: 'none',
   padding: '16px 45px',
   border: 'none',
-  cursor: 'pointer'
+  cursor: 'pointer',
 })
 
 globalStyle(`${containerControlStep} > button:nth-child(2)`, {
   width: '100%',
-  maxWidth: '225px'
+  maxWidth: '225px',
 })
-
 
 globalStyle(`${containerControlStep} > button:hover`, {
-  opacity: 0.8
+  opacity: 0.8,
 })
 
-export const previousButton = style({  
+export const previousButton = style({
   background: `${vars.color.backgroundLight} !important`,
   color: `${vars.color.blueText} !important`,
-  border: `2px solid ${vars.color.blueText} !important`
+  border: `2px solid ${vars.color.blueText} !important`,
 })

@@ -1,4 +1,8 @@
-import { chebkboxItem, chebkboxItemChecked, checkboxInput } from '@/presentation/styles/inputs/inputs.css'
+import {
+  chebkboxItem,
+  chebkboxItemChecked,
+  checkboxInput,
+} from '@/presentation/styles/inputs/inputs.css'
 import React, { ChangeEvent } from 'react'
 
 interface IInputData {

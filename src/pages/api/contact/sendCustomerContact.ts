@@ -40,7 +40,7 @@ export default async function sendEmail(req: IContact, res: NextApiResponse) {
     })
     console.log(`${req.body.email} - enviado!`)
     console.log(companyMail.messageId)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     res.status(500).json({ error: error.message || error.toString() })
   }

@@ -20,9 +20,9 @@ export default class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
-      step: Steps.STEP_SERVICES,      
+      step: Steps.STEP_SERVICES,
       serviceData: {
-        services:[
+        services: [
           { name: 'desratizacao', checked: false },
           { name: 'descupinizacao', checked: false },
           { name: 'desinsetizacao', checked: false },
@@ -31,24 +31,24 @@ export default class Budget extends Component<object, BudgetState> {
           { name: 'pipe', checked: false },
         ],
         detail: '',
-        servicesErrorMessage: ''
+        servicesErrorMessage: '',
       },
       addressData: {
-        typeClient: { inputValue: ''},
+        typeClient: { inputValue: '' },
         address: { inputValue: '' },
         addressNumber: { inputValue: '' },
         complement: { inputValue: '' },
         reference: { inputValue: '' },
         zipCode: { inputValue: '' },
       },
-      userData: { 
-        name: { inputValue: ''},
-        phone: { inputValue: ''},
-        email: { inputValue: ''},
-        message: { inputValue: ''},
+      userData: {
+        name: { inputValue: '' },
+        phone: { inputValue: '' },
+        email: { inputValue: '' },
+        message: { inputValue: '' },
       },
       suggestions: [],
-      isCompletedForm: false
+      isCompletedForm: false,
     }
   }
 

@@ -18,9 +18,9 @@ export const chebkboxItem = style({
     'screen and (max-width: 480px)': {
       width: '80%',
       placeItems: 'center',
-      textAlign: 'center'
+      textAlign: 'center',
     },
-  },  
+  },
 })
 
 export const checkboxInput = style({
@@ -50,18 +50,18 @@ globalStyle(`${chebkboxItem} > label`, {
   cursor: 'pointer',
   '@media': {
     'screen and (max-width: 820px)': {
-      gridTemplateColumns: '90% 10%'
-    }
-  },  
+      gridTemplateColumns: '90% 10%',
+    },
+  },
 })
 
 globalStyle(`${chebkboxItem} > label > div`, {
   display: 'grid',
-  '@media': {    
+  '@media': {
     'screen and (max-width: 480px)': {
-      placeItems: 'center'
+      placeItems: 'center',
     },
-  },    
+  },
 })
 
 globalStyle(`${chebkboxItem} > label > div > svg`, {
@@ -72,7 +72,7 @@ globalStyle(`${chebkboxItem} > label > div > svg`, {
     'screen and (max-width: 480px)': {
       width: '30px',
     },
-  },  
+  },
 })
 
 globalStyle(`${chebkboxItem} > label > div > span`, {
@@ -155,22 +155,28 @@ globalStyle(`${formTextArea} > textarea`, {
   resize: 'none',
 })
 
-globalStyle(`${formInput} > input::placeholder, ${formTextArea} > textarea::placeholder, ${formInputFullWidth} > input::placeholder`, {
-  fontSize: '14px',
-  fontFamily: vars.fonts.DMSans,
-  fontWeight: 400,
-  color: '#9795ab',
-})
+globalStyle(
+  `${formInput} > input::placeholder, ${formTextArea} > textarea::placeholder, ${formInputFullWidth} > input::placeholder`,
+  {
+    fontSize: '14px',
+    fontFamily: vars.fonts.DMSans,
+    fontWeight: 400,
+    color: '#9795ab',
+  },
+)
 
-globalStyle(`${formInput} > input:focus, ${formTextArea} > textarea:focus, ${formInputFullWidth} > input:focus`, {
-  border: '2px solid #00a5ff',
-  background: '#00a5ff03',
-})
+globalStyle(
+  `${formInput} > input:focus, ${formTextArea} > textarea:focus, ${formInputFullWidth} > input:focus`,
+  {
+    border: '2px solid #00a5ff',
+    background: '#00a5ff03',
+  },
+)
 
 globalStyle(`${formInputFullWidth} > input`, {
-  width: '100%'
+  width: '100%',
 })
 
 export const errorMessage = style({
-  color: `${vars.color.backgroundError} !important`
+  color: `${vars.color.backgroundError} !important`,
 })
