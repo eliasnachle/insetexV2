@@ -11,13 +11,13 @@ export const serviceItemMap = {
   itemDetail: [
     {
       icon: <FaTablets />,
-      title: 'Pastilhas',
+      title: "Pastilhas",
       describe:
         "As pastilhas de limpeza de caixas d'água são populares devido à sua praticidade. Elas contêm cloro orgânico e são colocadas diretamente na água para eliminar bactérias e micro-organismos. No entanto, é importante ressaltar que essa técnica não é adequada para acúmulos excessivos de sujeira. É crucial seguir as instruções do fabricante para garantir resultados eficazes e água de qualidade.",
     },
     {
       icon: <AiOutlineClear />,
-      title: 'Lavagem',
+      title: "Lavagem",
       describe:
         "A lavagem da caixa d'água é realizada utilizando-se água limpa e escovas apropriadas. Recomenda-se utilizar uma solução de água com cloro ou outro desinfetante adequado para eliminar possíveis bactérias e microrganismos. As paredes internas e o fundo da caixa d'água devem ser escovados cuidadosamente para garantir uma limpeza completa.",
     },

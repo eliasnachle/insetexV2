@@ -1,8 +1,7 @@
 import { Component } from 'react'
-import { stepContainer, stepSuccess } from '@/presentation/styles/budget/steps.css'
+import { stepSuccess } from '@/presentation/styles/budget/steps.css'
 import { IUserData } from '@/domain/types/budget/budgetTypes'
 import Lottie from 'lottie-react'
-import { useRouter } from 'next/router'
 
 export interface SuccessProps {
   userData: IUserData

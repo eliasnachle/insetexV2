@@ -3,7 +3,7 @@ import ValidateServicesStep from '@/application/budget/controlStep/validateStep/
 import ValidateStep from '@/application/budget/controlStep/validateStep/validateStep'
 import ValidateUserStep from '@/application/budget/controlStep/validateStep/validateUserStep'
 import { Steps } from '@/domain/types/budget/budgetEnum'
-import { BudgetState, ValidationResult } from '@/domain/types/budget/budgetTypes'
+import { BudgetState } from '@/domain/types/budget/budgetTypes'
 import { scrollToTop } from '@/utils/utils'
 import axios from 'axios'
 

@@ -1,5 +1,4 @@
 import { BudgetState, IUserData } from '@/domain/types/budget/budgetTypes'
-import axios from 'axios'
 import ValidateStep from './validateStep'
 
 export default class ValidateUserStep extends ValidateStep {
