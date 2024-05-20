@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className={footerCopyrigth}>
           <hr />
-          <span>Copyright © 2023 Insetex Controle de Pragas.</span>
+          <span>Copyright © 2024 Insetex Controle de Pragas.</span>
         </div>
       </div>
     </footer>

@@ -4,7 +4,7 @@ import { vars } from '../../styles/theme/theme.css'
 export const headerContainer = style({
   fontFamily: vars.fonts.DMSans,
   width: '100%',
-  height: '80px',
+  height: '85px',
   padding: '.5rem 1em',
   boxShadow: `inset 0 -1px 0 ${vars.color.headerShadow}`,
   display: 'grid',

@@ -46,12 +46,12 @@ export default class Stepper extends Component<IStepProps> {
     return (
       <div
         className={`${StepperItem} ${isActiveStep && activeStep} ${isCompletedStep && completedStep}`}>
-        <motion.div
+        <motion.div          
           className={StepperIcon}
           initial={false}
           animate={{ border: `2px solid ${iconBorderColor}`, background: iconBackground }}
-          transition={{ animation: stepperAnimation }}>
-          {it.icon}
+          transition={{ animation: stepperAnimation }}>          
+          {it.icon}          
         </motion.div>
         <span>{it.label}</span>
       </div>

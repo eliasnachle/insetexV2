@@ -84,7 +84,7 @@ export const ContactRecipeMail = (customerData: ICustomerData) => (
           </Column>
         </Section>
         <Text style={footerCopyright}>
-          Copyright © 2023 Insetex. <br />{' '}
+          Copyright © 2024 Insetex. <br />{' '}
           <Link href="http://insetex.com.br/">All rights reserved</Link>
         </Text>
       </Container>

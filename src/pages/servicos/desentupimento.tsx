@@ -1,6 +1,6 @@
-import Layout from '@/presentation/components/services/layout/layout'
 import { serviceItemMap } from '@/data/services/desentupimento'
 import Head from 'next/head'
+import Layout from '@/application/services/layout/layout'
 
 export default function desentupimento() {
   return (

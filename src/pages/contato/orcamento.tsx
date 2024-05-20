@@ -1,4 +1,4 @@
-import Budget from '@/presentation/components/contact/budget/budget'
+import Budget from '@/application/budget/budget'
 import Head from 'next/head'
 import React from 'react'
 

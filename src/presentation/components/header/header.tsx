@@ -1,11 +1,5 @@
 import { useState } from 'react'
-import {
-  headerContainer,
-  headerLogo,
-  headerContent,
-  headerBtn,
-  headerBurger,
-} from './header.css'
+import { headerContainer, headerLogo, headerContent, headerBtn, headerBurger } from './header.css'
 import headerMap from './headerMap'
 import Dropdown from './dropdown/dropdown'
 import Logo from '/public/logo.svg'
@@ -40,19 +34,13 @@ export default function Header() {
               {headerMap.map((it, i) => {
                 if (it.name == 'services') {
                   return (
-                    <li
-                      key={i}
-                      onMouseEnter={onMouseEnter}
-                      onMouseLeave={onMouseLeave}
-                    >
+                    <li key={i} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                       {isDropdown && <Dropdown />}
                       {it.label}{' '}
                       <RiArrowDownSLine
                         style={{
                           transition: 'all ease-in 150ms',
-                          transform: isDropdown
-                            ? 'rotate(180deg)'
-                            : 'rotate(0deg)',
+                          transform: isDropdown ? 'rotate(180deg)' : 'rotate(0deg)',
                         }}
                       />
                     </li>
@@ -70,10 +58,7 @@ export default function Header() {
           <button className={headerBtn}>
             <Link href="/login">Entrar</Link>
           </button>
-          <MdMenu
-            className={headerBurger}
-            onClick={() => setIsMobile(!isMobile)}
-          />
+          <MdMenu className={headerBurger} onClick={() => setIsMobile(!isMobile)} />
         </div>
         {isMobile && <MobileNavbar setIsMobile={setIsMobile} />}
       </header>

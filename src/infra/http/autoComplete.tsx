@@ -1,4 +1,4 @@
-import { AddressDetailState, AddressSuggestion } from '@/presentation/components/contact/budget/steps/address/addressTypes'
+import { AddressDetailState, AddressSuggestion } from '@/domain/types/budget/addressTypes'
 import { Component } from 'react'
 
 interface AddressDetailProps {

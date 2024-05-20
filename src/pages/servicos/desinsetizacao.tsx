@@ -1,4 +1,4 @@
-import Layout from '@/presentation/components/services/layout/layout'
+import Layout from '@/application/services/layout/layout'
 import { serviceItemMap } from '@/data/services/desinsetizacao'
 import Head from 'next/head'
 

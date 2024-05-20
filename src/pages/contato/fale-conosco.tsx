@@ -1,4 +1,4 @@
-import ContactForm from '@/presentation/components/contact/contactForm/contactForm'
+import ContactForm from '@/application/contactForm/contactForm'
 import Head from 'next/head'
 
 export default function FaleConosco() {

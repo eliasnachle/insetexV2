@@ -11,6 +11,16 @@ export const chebkboxItem = style({
   placeItems: 'center',
   cursor: 'pointer',
   transition: 'all ease 250ms',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '200px',
+    },
+    'screen and (max-width: 480px)': {
+      width: '80%',
+      placeItems: 'center',
+      textAlign: 'center'
+    },
+  },  
 })
 
 export const checkboxInput = style({
@@ -38,16 +48,31 @@ globalStyle(`${chebkboxItem} > label`, {
   width: '100%',
   height: '100%',
   cursor: 'pointer',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      gridTemplateColumns: '90% 10%'
+    }
+  },  
 })
 
 globalStyle(`${chebkboxItem} > label > div`, {
   display: 'grid',
+  '@media': {    
+    'screen and (max-width: 480px)': {
+      placeItems: 'center'
+    },
+  },    
 })
 
 globalStyle(`${chebkboxItem} > label > div > svg`, {
   fill: vars.color.blueText,
   width: '35px',
   height: 'fit-content',
+  '@media': {
+    'screen and (max-width: 480px)': {
+      width: '30px',
+    },
+  },  
 })
 
 globalStyle(`${chebkboxItem} > label > div > span`, {
@@ -75,13 +100,19 @@ export const formInput = style({
   fontFamily: vars.fonts.DMSans,
 })
 
+export const formInputFullWidth = style({
+  display: 'flex',
+  flexDirection: 'column',
+  fontFamily: vars.fonts.DMSans,
+})
+
 export const formTextArea = style({
   display: 'flex',
   flexDirection: 'column',
   fontFamily: vars.fonts.DMSans,
 })
 
-globalStyle(`${formInput} > label, ${formTextArea} > label`, {
+globalStyle(`${formInput} > label, ${formTextArea} > label, ${formInputFullWidth} > label`, {
   color: vars.color.blackText,
   opacity: 0.7,
   fontSize: '14px',
@@ -94,7 +125,7 @@ globalStyle(`${formInput} > label, ${formTextArea} > label`, {
   },
 })
 
-globalStyle(`${formInput} > input, ${formTextArea} > textarea`, {
+globalStyle(`${formInput} > input, ${formTextArea} > textarea, ${formInputFullWidth} > input`, {
   transition: 'all ease-in 50ms',
   background: vars.color.backgroundLight,
   height: '55px',
@@ -113,7 +144,7 @@ globalStyle(`${formInput} > input, ${formTextArea} > textarea`, {
   },
 })
 
-globalStyle(`${formInput} > span, ${formTextArea} > span`, {
+globalStyle(`${formInput} > span, ${formTextArea} > span, ${formInputFullWidth} > span`, {
   color: vars.color.backgroundError,
   fontSize: '12px',
   fontWeight: 500,
@@ -124,14 +155,22 @@ globalStyle(`${formTextArea} > textarea`, {
   resize: 'none',
 })
 
-globalStyle(`${formInput} > input::placeholder, ${formTextArea} > textarea::placeholder`, {
+globalStyle(`${formInput} > input::placeholder, ${formTextArea} > textarea::placeholder, ${formInputFullWidth} > input::placeholder`, {
   fontSize: '14px',
   fontFamily: vars.fonts.DMSans,
   fontWeight: 400,
   color: '#9795ab',
 })
 
-globalStyle(`${formInput} > input:focus, ${formTextArea} > textarea:focus`, {
+globalStyle(`${formInput} > input:focus, ${formTextArea} > textarea:focus, ${formInputFullWidth} > input:focus`, {
   border: '2px solid #00a5ff',
   background: '#00a5ff03',
+})
+
+globalStyle(`${formInputFullWidth} > input`, {
+  width: '100%'
+})
+
+export const errorMessage = style({
+  color: `${vars.color.backgroundError} !important`
 })
