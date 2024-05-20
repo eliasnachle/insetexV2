@@ -1,5 +1,4 @@
-import React from 'react'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { budgetContainer, budgetSection } from './budget.css'
 import { BudgetState, StepComponents } from '../../domain/types/budget/budgetTypes'
 import Stepper from '@/presentation/components/contact/budget/stepper/stepper'
