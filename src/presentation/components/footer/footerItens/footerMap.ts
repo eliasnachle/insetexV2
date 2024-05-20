@@ -1,35 +1,35 @@
 export const services = [
   {
-    name: "Desinsetização",
+    name: 'Desinsetização',
   },
   {
-    name: "Desratização",
+    name: 'Desratização',
   },
   {
-    name: "Descupinização",
+    name: 'Descupinização',
   },
   {
-    name: "Desentupimento",
+    name: 'Desentupimento',
   },
   {
-    name: "Sanitização",
+    name: 'Sanitização',
   },
   {
-    name: "Limpeza de Caixas D' Água",
+    name: 'Limpeza de Caixas D\' Água',
   },
 ]
 
 export const contact = [
   {
-    name: "contato@insetex.com.br",
+    name: 'contato@insetex.com.br',
   },
   {
-    name: "(11) 2359-1308",
+    name: '(11) 2359-1308',
   },
 ]
 
 export const about = [
   {
-    name: "Sobre nós",
+    name: 'Sobre nós',
   },
 ]

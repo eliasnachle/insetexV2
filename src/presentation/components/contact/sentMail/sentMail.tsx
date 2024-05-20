@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { easeIn, motion } from 'framer-motion'
 import { sentMailContainer } from '../../../../application/contactForm/contactForm.css'
 import { useRouter } from 'next/router'
 import Lottie from 'lottie-react'
-
-const successCheck = require('/public/success_check.json')
+import successCheck from '/public/success_check.json'
 
 export default function SentMail() {
   const router = useRouter()
