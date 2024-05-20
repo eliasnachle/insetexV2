@@ -2,12 +2,11 @@ import { Component } from 'react'
 import { stepSuccess } from '@/presentation/styles/budget/steps.css'
 import { IUserData } from '@/domain/types/budget/budgetTypes'
 import Lottie from 'lottie-react'
+import successCheck from '/public/success_check.json'
 
 export interface SuccessProps {
   userData: IUserData
 }
-
-const successCheck = require('/public/success_check.json')
 
 export default class Success extends Component<SuccessProps> {
   render() {
