@@ -20,7 +20,7 @@ export default class Budget extends Component<object, BudgetState> {
   constructor(props: object) {
     super(props)
     this.state = {
-      step: Steps.STEP_USER,      
+      step: Steps.STEP_SERVICES,      
       serviceData: {
         services:[
           { name: 'desratizacao', checked: false },
