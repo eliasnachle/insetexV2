@@ -23,6 +23,12 @@ globalStyle(`${containerControlStep} > button`, {
   cursor: 'pointer'
 })
 
+globalStyle(`${containerControlStep} > button:nth-child(2)`, {
+  width: '100%',
+  maxWidth: '225px'
+})
+
+
 globalStyle(`${containerControlStep} > button:hover`, {
   opacity: 0.8
 })

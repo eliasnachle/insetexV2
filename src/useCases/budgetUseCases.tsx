@@ -13,7 +13,7 @@ export const sendBudgetMail = async (budgetData: BudgetState): Promise<boolean> 
     return response.status === 200
   } catch (e) {
     console.error('Erro ao enviar orçamento:', e)
-    return false
+    throw new Error("Failed to send budget mail")            
   }
 }
 

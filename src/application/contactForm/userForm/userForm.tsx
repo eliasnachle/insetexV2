@@ -8,15 +8,10 @@ import { formInput, formTextArea } from '@/presentation/styles/inputs/inputs.css
 import { errorButton, errorMessage, loadingButton } from '../contactForm.css'
 import TextareaForm from '@/presentation/components/contact/contactForm/textareaForm/textareaForm'
 import Inputform from '@/presentation/components/contact/contactForm/inputForm/inputForm'
+import { StatusResponse } from '@/domain/enum/statusResponse'
 
 interface UseStateProps {
   setIsSent: Dispatch<SetStateAction<boolean>>
-}
-
-enum StatusResponse {
-  NONE,
-  SUCCESS,
-  FAILED,
 }
 
 export default function UserForm({ setIsSent }: UseStateProps) {
@@ -43,18 +38,18 @@ export default function UserForm({ setIsSent }: UseStateProps) {
     const regexPhone = /^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
 
-    if (values.name.length < 3 || !regexName.test(values.name)) {
-      errors.name = values.name.length < 3 ? defaultMessage : 'Contém espaços em branco'
-    }
-    if (values.phone.length < 15 || !regexPhone.test(values.phone)) {
-      errors.phone = values.phone.length < 15 ? defaultMessage : 'Telefone inválido'
-    }
-    if (!values.email || !regexEmail.test(values.email)) {
-      errors.email = !values.email ? defaultMessage : 'Formato inválido!'
-    }
-    if (!values.message || values.message.length < 4) {
-      errors.message = defaultMessage
-    }
+    // if (values.name.length < 3 || !regexName.test(values.name)) {
+    //   errors.name = values.name.length < 3 ? defaultMessage : 'Contém espaços em branco'
+    // }
+    // if (values.phone.length < 15 || !regexPhone.test(values.phone)) {
+    //   errors.phone = values.phone.length < 15 ? defaultMessage : 'Telefone inválido'
+    // }
+    // if (!values.email || !regexEmail.test(values.email)) {
+    //   errors.email = !values.email ? defaultMessage : 'Formato inválido!'
+    // }
+    // if (!values.message || values.message.length < 4) {
+    //   errors.message = defaultMessage
+    // }
     setIsValited(Object.values(errors).every((o) => o === ''))
     return errors
   }

@@ -18,9 +18,7 @@ export default async function sendEmail(req: IBudget, res: NextApiResponse) {
       user: process.env.CONTACT_MAIL_USER,
       pass: process.env.CONTACT_MAIL_PASS,
     },
-  })
-  
-  console.log("email ::: ", req.body.userData.email.inputValue)
+  })  
 
   try {    
     const customerMail = await transporter.sendMail({
