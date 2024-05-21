@@ -84,6 +84,12 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
                     </Text>
                   </Column>
                   <Column style={informationTableColumn}>
+                    <Text style={informationTableLabel}>Número:</Text>
+                    <Text style={informationTableValue}>
+                      {budgetData.addressData.addressNumber.inputValue}
+                    </Text>
+                  </Column>
+                  <Column style={informationTableColumn}>
                     <Text style={informationTableLabel}>Complemento:</Text>
                     <Text style={informationTableValue}>
                       {budgetData.addressData.complement.inputValue}
@@ -101,8 +107,6 @@ export default function BudgetRecipeMail(budgetData: BudgetState) {
                     <Text style={informationTableLabel}>Endereço:</Text>
                     <Text style={informationTableValue}>
                       {budgetData.addressData.address.inputValue},{' '}
-                      {budgetData.addressData.addressNumber.inputValue} -{' '}
-                      {budgetData.addressData.zipCode.inputValue}
                     </Text>
                   </Column>
                 </Row>

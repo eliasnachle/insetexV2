@@ -18,17 +18,19 @@ export default function NextStepButton({
   const [statusResponse, setStatusResponse] = useState(StatusResponse.NONE)
   const [buttonMessage, setButtonMessage] = useState<string | React.ReactElement>('Enviar mensagem')
 
-  const handleNextStepClick = async () => {
+  const handleNextStepClick = async () => {    
     const validationStep = createValidationStep(state.step as Steps)
-    if (validationStep.validate(state, handleInputChange))
+    if (validationStep.validate(state, handleInputChange)) {
       state.step === Steps.STEP_USER
-        ? await handleSuccessStep()
-        : incrementStepAndScrollToTop(state, handleSetStep)
+      ? await handleSuccessStep()
+      : incrementStepAndScrollToTop(state, handleSetStep)
+    }      
   }
 
   const handleSuccessStep = async () => {
+    if(statusResponse === StatusResponse.LOADING) return
     setStatusResponse(StatusResponse.LOADING)
-    setButtonMessage(<AiOutlineLoading3Quarters className={loadingButton} />)
+    setButtonMessage(<AiOutlineLoading3Quarters className={loadingButton} />)    
     try {
       await sendBudgetMail(state)
       incrementStepAndScrollToTop(state, handleSetStep)
