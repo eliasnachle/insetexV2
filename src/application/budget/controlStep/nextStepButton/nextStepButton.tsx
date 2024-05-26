@@ -4,7 +4,13 @@ import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLo
 import { errorButton, loadingButton } from '@/application/contactForm/contactForm.css'
 import { Steps } from '@/domain/types/budget/budgetEnum'
 import { IStepButtonProps } from '@/domain/types/budget/controlStepTypes'
-import { createBudgetFirestore, createValidationStep, incrementStepAndScrollToTop, parseBudgetFirestore, sendBudgetMail } from '@/useCases/budget/budgetUseCases'
+import {
+  createBudgetFirestore,
+  createValidationStep,
+  incrementStepAndScrollToTop,
+  parseBudgetFirestore,
+  sendBudgetMail,
+} from '@/useCases/budget/budgetUseCases'
 
 export default function NextStepButton({
   state,
@@ -14,19 +20,19 @@ export default function NextStepButton({
   const [statusResponse, setStatusResponse] = useState(StatusResponse.NONE)
   const [buttonMessage, setButtonMessage] = useState<string | React.ReactElement>('Enviar mensagem')
 
-  const handleNextStepClick = async () => {    
+  const handleNextStepClick = async () => {
     const validationStep = createValidationStep(state.step as Steps)
     if (validationStep.validate(state, handleInputChange)) {
       state.step === Steps.STEP_USER
-      ? await handleSuccessStep()
-      : incrementStepAndScrollToTop(state, handleSetStep)
-    }      
+        ? await handleSuccessStep()
+        : incrementStepAndScrollToTop(state, handleSetStep)
+    }
   }
 
   const handleSuccessStep = async () => {
-    if(statusResponse === StatusResponse.LOADING) return
+    if (statusResponse === StatusResponse.LOADING) return
     setStatusResponse(StatusResponse.LOADING)
-    setButtonMessage(<AiOutlineLoading3Quarters className={loadingButton} />)    
+    setButtonMessage(<AiOutlineLoading3Quarters className={loadingButton} />)
     try {
       // await sendBudgetMail(state)
       await createBudgetFirestore(parseBudgetFirestore(state))

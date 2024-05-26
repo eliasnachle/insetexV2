@@ -12,8 +12,8 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 }
 
-const app = initializeApp(firebaseConfig)
-const firestore = getFirestore(app)
-const auth = getAuth(app)
+const firebaseApp = initializeApp(firebaseConfig)
+const firestore = getFirestore(firebaseApp)
+const auth = getAuth(firebaseApp)
 
-export {app as firebaseApp, firestore, auth}
+export { firebaseApp, firestore, auth }

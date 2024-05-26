@@ -66,10 +66,10 @@ export default class AddressDetail extends Component<AddressDetailProps, Address
       })
     }
 
-  handleSetSuggestion = (e: AddressSuggestion) => { 
+  handleSetSuggestion = (e: AddressSuggestion) => {
     this.setState({ isSuggestion: false })
     const zipCodeContext = e.context.find((item) => item?.id?.startsWith('postcode'))
-    const zipCode = zipCodeContext ? zipCodeContext.text : ''    
+    const zipCode = zipCodeContext ? zipCodeContext.text : ''
     const newAddressData: IAddressData = {
       ...this.props.addressData,
       address: {
