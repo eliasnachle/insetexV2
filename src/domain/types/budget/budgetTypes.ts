@@ -60,3 +60,10 @@ export interface ValidationResult {
   isValid: boolean
   errors?: string[]
 }
+
+export interface BudgetFirestore {
+  address: string
+  serviceDetail: string
+  services: string[]
+  userData: string
+}

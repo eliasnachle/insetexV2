@@ -3,12 +3,8 @@ import { StatusResponse } from '@/domain/enum/statusResponse'
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters'
 import { errorButton, loadingButton } from '@/application/contactForm/contactForm.css'
 import { Steps } from '@/domain/types/budget/budgetEnum'
-import {
-  createValidationStep,
-  incrementStepAndScrollToTop,
-  sendBudgetMail,
-} from '@/useCases/budgetUseCases'
 import { IStepButtonProps } from '@/domain/types/budget/controlStepTypes'
+import { createBudgetFirestore, createValidationStep, incrementStepAndScrollToTop, parseBudgetFirestore, sendBudgetMail } from '@/useCases/budget/budgetUseCases'
 
 export default function NextStepButton({
   state,
@@ -32,8 +28,9 @@ export default function NextStepButton({
     setStatusResponse(StatusResponse.LOADING)
     setButtonMessage(<AiOutlineLoading3Quarters className={loadingButton} />)    
     try {
-      await sendBudgetMail(state)
-      incrementStepAndScrollToTop(state, handleSetStep)
+      // await sendBudgetMail(state)
+      await createBudgetFirestore(parseBudgetFirestore(state))
+      // incrementStepAndScrollToTop(state, handleSetStep)
       setStatusResponse(StatusResponse.SUCCESS)
       setButtonMessage('Enviado com sucesso!')
     } catch (e) {

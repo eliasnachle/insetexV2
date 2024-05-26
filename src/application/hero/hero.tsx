@@ -5,7 +5,7 @@ import Button from '@/presentation/components/buttons/defaultButton/button'
 export default function hero() {
   const btnData = {
     text: 'Faça um orçamento',
-    url: '/contato/fale-conosco',
+    url: '/contato/orcamento',
   }
   const heroAnimation = {
     hidden: { opacity: 0, y: 20 },
