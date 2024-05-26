@@ -34,9 +34,9 @@ export default function NextStepButton({
     setStatusResponse(StatusResponse.LOADING)
     setButtonMessage(<AiOutlineLoading3Quarters className={loadingButton} />)
     try {
-      // await sendBudgetMail(state)
+      await sendBudgetMail(state)
       await createBudgetFirestore(parseBudgetFirestore(state))
-      // incrementStepAndScrollToTop(state, handleSetStep)
+      incrementStepAndScrollToTop(state, handleSetStep)
       setStatusResponse(StatusResponse.SUCCESS)
       setButtonMessage('Enviado com sucesso!')
     } catch (e) {
