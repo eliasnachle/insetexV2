@@ -8,11 +8,9 @@ export default function About() {
         <article>
           <Logo />
           <p>
-            Há duas décadas no mercado de Controle de Pragas e Desentupimento a INSETEX, vem
-            prestando serviços com qualidade, segurança e eficiência altamente especializada,
-            seguindo padrões e normas de segurança e qualidade. Fundada há quase três decadas, a
-            INSETEX começou a comercializar seus serviços apenas na Grande São Paulo com o objetivo
-            inicial de suprir as necessidades locais. buscando constante aprimoramento.
+          Há duas décadas no mercado de Controle de Pragas e Desentupimento, a INSETEX vem prestando serviços com qualidade, segurança e eficiência altamente especializada, seguindo padrões e normas de segurança e qualidade. 
+          Fundada há quase três décadas, a INSETEX começou a comercializar seus serviços apenas na Grande São Paulo com o objetivo inicial de suprir as necessidades locais, 
+          atuando sempre de forma regulamentada por meio do alvará nº 351630901-812-000062-1-1, e buscando constante aprimoramento.
           </p>
         </article>
       </div>

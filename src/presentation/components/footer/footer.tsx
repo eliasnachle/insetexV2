@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
         <div className={footerCopyrigth}>
           <hr />
-          <span>Copyright © 2024 Insetex Controle de Pragas.</span>
+          <span>CEVS: 351630901-812-000062-1-1 | Copyright © 2025 Insetex Controle de Pragas.</span>
         </div>
       </div>
     </footer>
